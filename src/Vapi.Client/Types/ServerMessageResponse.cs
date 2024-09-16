@@ -1,0 +1,28 @@
+using System.Text.Json.Serialization;
+using OneOf;
+using Vapi.Client.Core;
+
+#nullable enable
+
+namespace Vapi.Client;
+
+public record ServerMessageResponse
+{
+    /// <summary>
+    /// This is the response that is expected from the server to the message.
+    ///
+    /// Note: Most messages don't expect a response. Only "assistant-request", "tool-calls" and "transfer-destination-request" do.
+    /// </summary>
+    [JsonPropertyName("messageResponse")]
+    public required OneOf<
+        ServerMessageResponseAssistantRequest,
+        ServerMessageResponseToolCalls,
+        ServerMessageResponseTransferDestinationRequest,
+        ServerMessageResponseVoiceRequest
+    > MessageResponse { get; set; }
+
+    public override string ToString()
+    {
+        return JsonUtils.Serialize(this);
+    }
+}
