@@ -7,7 +7,7 @@
         <NuGetAudit>false</NuGetAudit>
         <LangVersion>12</LangVersion>
         <Nullable>enable</Nullable>
-        <Version>0.0.8</Version>
+        <Version>0.0.14</Version>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageProjectUrl>https://github.com/fern-demo/vapi-csharp-sdk</PackageProjectUrl>
     </PropertyGroup>
