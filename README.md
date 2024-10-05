@@ -1,14 +1,14 @@
 # Vapi C# Library
 
-[![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-SDK%20generated%20by%20Fern-brightgreen)](https://github.com/fern-api/fern)
-[![nuget shield](https://img.shields.io/nuget/v/Vapi.Client)](https://nuget.org/packages/Vapi.Client)
+[![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-Built%20with%20Fern-brightgreen)](https://buildwithfern.com?utm_source=github&utm_medium=github&utm_campaign=readme&utm_source=https%3A%2F%2Fgithub.com%2Ffern-demo%2Fvapi-csharp-sdk)
+[![nuget shield](https://img.shields.io/nuget/v/Vapi.Net)](https://nuget.org/packages/Vapi.Net)
 
 The Vapi C# library provides convenient access to the Vapi API from C#.
 
 ## Installation
 
 ```sh
-nuget install Vapi.Client
+nuget install Vapi.Net
 ```
 
 ## Usage
@@ -16,9 +16,9 @@ nuget install Vapi.Client
 Instantiate and use the client with the following:
 
 ```csharp
-using Vapi.Client;
+using Vapi.Net;
 
-var client = new Vapi("TOKEN");
+var client = new VapiClient("TOKEN");
 await client.Calls.CreateAsync(new CreateCallDto());
 ```
 
@@ -28,11 +28,11 @@ When the API returns a non-success status code (4xx or 5xx response), a subclass
 will be thrown.
 
 ```csharp
-using Vapi.Client;
+using Vapi.Net;
 
 try {
     var response = await client.Calls.CreateAsync(...);
-} catch (VapiApiException e) {
+} catch (VapiClientApiException e) {
     System.Console.WriteLine(e.Body);
     System.Console.WriteLine(e.StatusCode);
 }
