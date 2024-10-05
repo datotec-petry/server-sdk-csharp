@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -17,7 +18,13 @@ public record CreateVapiPhoneNumberDto
     /// If this is not set and above conditions are met, the inbound call is hung up with an error message.
     /// </summary>
     [JsonPropertyName("fallbackDestination")]
-    public object? FallbackDestination { get; set; }
+    public OneOf<
+        TransferDestinationNumber,
+        TransferDestinationSip
+    >? FallbackDestination { get; set; }
+
+    [JsonPropertyName("provider")]
+    public required string Provider { get; set; }
 
     /// <summary>
     /// This is the SIP URI of the phone number. You can SIP INVITE this. The assistant attached to this number will answer.

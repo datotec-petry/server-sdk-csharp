@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -19,7 +20,17 @@ public record GroqModel
     /// Both `tools` and `toolIds` can be used together.
     /// </summary>
     [JsonPropertyName("tools")]
-    public IEnumerable<object>? Tools { get; set; }
+    public IEnumerable<
+        OneOf<
+            CreateDtmfToolDto,
+            CreateEndCallToolDto,
+            CreateVoicemailToolDto,
+            CreateFunctionToolDto,
+            CreateGhlToolDto,
+            CreateMakeToolDto,
+            CreateTransferCallToolDto
+        >
+    >? Tools { get; set; }
 
     /// <summary>
     /// These are the tools that the assistant can use during the call. To use transient tools, use `tools`.
@@ -34,6 +45,9 @@ public record GroqModel
     /// </summary>
     [JsonPropertyName("model")]
     public required GroqModelModel Model { get; set; }
+
+    [JsonPropertyName("provider")]
+    public required string Provider { get; set; }
 
     /// <summary>
     /// This is the temperature that will be used for calls. Default is 0 to leverage caching for lower latency.

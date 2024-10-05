@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record ModelCost
 {
     /// <summary>
+    /// This is the type of cost, always 'model' for this class.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
+
+    /// <summary>
     /// This is the model that was used during the call.
     ///
     /// This matches one of the following:

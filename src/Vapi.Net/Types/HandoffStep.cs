@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -11,7 +12,21 @@ public record HandoffStep
     /// This is the block to use. To use an existing block, use `blockId`.
     /// </summary>
     [JsonPropertyName("block")]
-    public object? Block { get; set; }
+    public OneOf<
+        CreateConversationBlockDto,
+        CreateToolCallBlockDto,
+        CreateWorkflowBlockDto
+    >? Block { get; set; }
+
+    /// <summary>
+    /// This is a step that takes a handoff from the previous step. This means it won't return to the calling step. The workflow execution will continue linearly.
+    ///
+    /// Use case:
+    ///
+    /// - You want to collect information linearly (e.g. a form, provide information, etc).
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     /// <summary>
     /// These are the destinations that the step can go to after it's done.

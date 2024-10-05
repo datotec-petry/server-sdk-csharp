@@ -6,8 +6,8 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<TransferDestinationAssistantTransferMode>))]
-public enum TransferDestinationAssistantTransferMode
+[JsonConverter(typeof(StringEnumSerializer<TransferMode>))]
+public enum TransferMode
 {
     [EnumMember(Value = "rolling-history")]
     RollingHistory,

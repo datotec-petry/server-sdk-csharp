@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -16,7 +17,18 @@ public record ServerMessageTransferDestinationRequest
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
-    public object? PhoneNumber { get; set; }
+    public OneOf<
+        CreateByoPhoneNumberDto,
+        CreateTwilioPhoneNumberDto,
+        CreateVonagePhoneNumberDto,
+        CreateVapiPhoneNumberDto
+    >? PhoneNumber { get; set; }
+
+    /// <summary>
+    /// This is the type of the message. "transfer-destination-request" is sent when the model is requesting transfer but destination is unknown.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.

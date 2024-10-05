@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -11,7 +12,7 @@ public record AssignmentMutation
     /// This is an optional array of conditions that must be met for this mutation to be triggered.
     /// </summary>
     [JsonPropertyName("conditions")]
-    public IEnumerable<object>? Conditions { get; set; }
+    public IEnumerable<OneOf<ModelBasedCondition, RuleBasedCondition>>? Conditions { get; set; }
 
     /// <summary>
     /// This mutation assigns a new value to an existing or new variable.

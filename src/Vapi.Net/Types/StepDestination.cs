@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -14,7 +15,7 @@ public record StepDestination
     /// This is an optional array of conditions that must be met for this destination to be triggered. If empty, this is the default destination that the step transfers to.
     /// </summary>
     [JsonPropertyName("conditions")]
-    public IEnumerable<object>? Conditions { get; set; }
+    public IEnumerable<OneOf<ModelBasedCondition, RuleBasedCondition>>? Conditions { get; set; }
 
     [JsonPropertyName("stepName")]
     public required string StepName { get; set; }

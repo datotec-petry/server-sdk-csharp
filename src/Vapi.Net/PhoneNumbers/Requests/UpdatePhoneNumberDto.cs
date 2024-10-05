@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -16,7 +17,10 @@ public record UpdatePhoneNumberDto
     /// If this is not set and above conditions are met, the inbound call is hung up with an error message.
     /// </summary>
     [JsonPropertyName("fallbackDestination")]
-    public object? FallbackDestination { get; set; }
+    public OneOf<
+        TransferDestinationNumber,
+        TransferDestinationSip
+    >? FallbackDestination { get; set; }
 
     /// <summary>
     /// This is the name of the phone number. This is just for your own reference.

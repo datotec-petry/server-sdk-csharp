@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -11,7 +12,21 @@ public record CallbackStep
     /// This is the block to use. To use an existing block, use `blockId`.
     /// </summary>
     [JsonPropertyName("block")]
-    public object? Block { get; set; }
+    public OneOf<
+        CreateConversationBlockDto,
+        CreateToolCallBlockDto,
+        CreateWorkflowBlockDto
+    >? Block { get; set; }
+
+    /// <summary>
+    /// This is a step that calls back to the previous step after it's done. This effectively means we're spawning a new conversation thread. The previous conversation thread will resume where it left off once this step is done.
+    ///
+    /// Use case:
+    ///
+    /// - You are collecting a customer's order and while they were on one item, they start a new item or try to modify a previous one. You would make a OrderUpdate block which calls the same block repeatedly when a new update starts.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     /// <summary>
     /// This is the mutations to apply to the context after the step is done.

@@ -46,7 +46,7 @@ public record ChunkPlan
     /// Default is automatically set to balance the trade-off between quality and latency based on the provider.
     /// </summary>
     [JsonPropertyName("punctuationBoundaries")]
-    public IEnumerable<ChunkPlanPunctuationBoundariesItem>? PunctuationBoundaries { get; set; }
+    public IEnumerable<PunctuationBoundary>? PunctuationBoundaries { get; set; }
 
     /// <summary>
     /// This is the plan for formatting the chunk before it is sent to the voice provider.

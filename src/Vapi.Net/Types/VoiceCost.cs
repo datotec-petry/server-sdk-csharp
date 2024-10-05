@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record VoiceCost
 {
     /// <summary>
+    /// This is the type of cost, always 'voice' for this class.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
+
+    /// <summary>
     /// This is the voice that was used during the call.
     ///
     /// This matches one of the following:

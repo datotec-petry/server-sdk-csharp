@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record TalkscriberTranscriber
 {
     /// <summary>
+    /// This is the transcription provider that will be used.
+    /// </summary>
+    [JsonPropertyName("provider")]
+    public required string Provider { get; set; }
+
+    /// <summary>
     /// This is the model that will be used for the transcription.
     /// </summary>
     [JsonPropertyName("model")]

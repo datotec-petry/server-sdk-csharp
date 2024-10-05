@@ -17,6 +17,12 @@ public record ElevenLabsVoice
     public bool? FillerInjectionEnabled { get; set; }
 
     /// <summary>
+    /// This is the voice provider that will be used.
+    /// </summary>
+    [JsonPropertyName("provider")]
+    public required string Provider { get; set; }
+
+    /// <summary>
     /// This is the provider-specific ID that will be used. Ensure the Voice is present in your 11Labs Voice Library.
     /// </summary>
     [JsonPropertyName("voiceId")]

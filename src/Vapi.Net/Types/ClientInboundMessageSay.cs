@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record ClientInboundMessageSay
 {
     /// <summary>
+    /// This is the type of the message. Send "say" message to make the assistant say something.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public string? Type { get; set; }
+
+    /// <summary>
     /// This is the content to say.
     /// </summary>
     [JsonPropertyName("content")]

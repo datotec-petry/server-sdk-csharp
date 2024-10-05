@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -50,7 +51,7 @@ public record FormatPlan
     /// @default []
     /// </summary>
     [JsonPropertyName("replacements")]
-    public IEnumerable<object>? Replacements { get; set; }
+    public IEnumerable<OneOf<ExactReplacement, RegexReplacement>>? Replacements { get; set; }
 
     public override string ToString()
     {

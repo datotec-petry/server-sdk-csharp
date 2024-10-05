@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record ClientMessageSpeechUpdate
 {
     /// <summary>
+    /// This is the type of the message. "speech-update" is sent whenever assistant or user start or stop speaking.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
+
+    /// <summary>
     /// This is the status of the speech update.
     /// </summary>
     [JsonPropertyName("status")]

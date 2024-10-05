@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -8,10 +9,22 @@ namespace Vapi.Net;
 public record UpdateToolTemplateDto
 {
     [JsonPropertyName("details")]
-    public object? Details { get; set; }
+    public OneOf<
+        CreateDtmfToolDto,
+        CreateEndCallToolDto,
+        CreateVoicemailToolDto,
+        CreateFunctionToolDto,
+        CreateGhlToolDto,
+        CreateMakeToolDto,
+        CreateTransferCallToolDto
+    >? Details { get; set; }
 
     [JsonPropertyName("providerDetails")]
-    public object? ProviderDetails { get; set; }
+    public OneOf<
+        MakeToolProviderDetails,
+        GhlToolProviderDetails,
+        FunctionToolProviderDetails
+    >? ProviderDetails { get; set; }
 
     [JsonPropertyName("metadata")]
     public ToolTemplateMetadata? Metadata { get; set; }

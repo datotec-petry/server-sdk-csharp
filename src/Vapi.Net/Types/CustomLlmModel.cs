@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -19,7 +20,17 @@ public record CustomLlmModel
     /// Both `tools` and `toolIds` can be used together.
     /// </summary>
     [JsonPropertyName("tools")]
-    public IEnumerable<object>? Tools { get; set; }
+    public IEnumerable<
+        OneOf<
+            CreateDtmfToolDto,
+            CreateEndCallToolDto,
+            CreateVoicemailToolDto,
+            CreateFunctionToolDto,
+            CreateGhlToolDto,
+            CreateMakeToolDto,
+            CreateTransferCallToolDto
+        >
+    >? Tools { get; set; }
 
     /// <summary>
     /// These are the tools that the assistant can use during the call. To use transient tools, use `tools`.
@@ -28,6 +39,12 @@ public record CustomLlmModel
     /// </summary>
     [JsonPropertyName("toolIds")]
     public IEnumerable<string>? ToolIds { get; set; }
+
+    /// <summary>
+    /// This is the provider that will be used for the model. Any service, including your own server, that is compatible with the OpenAI API can be used.
+    /// </summary>
+    [JsonPropertyName("provider")]
+    public required string Provider { get; set; }
 
     /// <summary>
     /// This determines whether metadata is sent in requests to the custom provider.

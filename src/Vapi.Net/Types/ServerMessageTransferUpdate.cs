@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -16,13 +17,29 @@ public record ServerMessageTransferUpdate
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
-    public object? PhoneNumber { get; set; }
+    public OneOf<
+        CreateByoPhoneNumberDto,
+        CreateTwilioPhoneNumberDto,
+        CreateVonagePhoneNumberDto,
+        CreateVapiPhoneNumberDto
+    >? PhoneNumber { get; set; }
+
+    /// <summary>
+    /// This is the type of the message. "transfer-update" is sent whenever a transfer happens.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     /// <summary>
     /// This is the destination of the transfer.
     /// </summary>
     [JsonPropertyName("destination")]
-    public object? Destination { get; set; }
+    public OneOf<
+        TransferDestinationAssistant,
+        TransferDestinationStep,
+        TransferDestinationNumber,
+        TransferDestinationSip
+    >? Destination { get; set; }
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.

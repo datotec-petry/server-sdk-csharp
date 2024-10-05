@@ -7,6 +7,9 @@ namespace Vapi.Net;
 
 public record TransferDestinationAssistant
 {
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
+
     /// <summary>
     /// This is the mode to use for the transfer. Default is `rolling-history`.
     ///
@@ -54,7 +57,7 @@ public record TransferDestinationAssistant
     ///   assistant: assistant2 first message (or model generated if firstMessageMode is set to `assistant-speaks-first-with-model-generated-message`)
     /// </summary>
     [JsonPropertyName("transferMode")]
-    public TransferDestinationAssistantTransferMode? TransferMode { get; set; }
+    public TransferMode? TransferMode { get; set; }
 
     /// <summary>
     /// This is the assistant to transfer the call to.

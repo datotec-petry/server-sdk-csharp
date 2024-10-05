@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -16,7 +17,23 @@ public record ServerMessageHang
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
-    public object? PhoneNumber { get; set; }
+    public OneOf<
+        CreateByoPhoneNumberDto,
+        CreateTwilioPhoneNumberDto,
+        CreateVonagePhoneNumberDto,
+        CreateVapiPhoneNumberDto
+    >? PhoneNumber { get; set; }
+
+    /// <summary>
+    /// This is the type of the message. "hang" is sent when the assistant is hanging due to a delay. The delay can be caused by many factors, such as:
+    ///
+    /// - the model is too slow to respond
+    /// - the voice is too slow to respond
+    /// - the tool call is still waiting for a response from your server
+    /// - etc.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.

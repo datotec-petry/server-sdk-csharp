@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -18,7 +19,24 @@ public record ServerMessage
     /// 4. `org.serverUrl` (if configured)
     /// </summary>
     [JsonPropertyName("message")]
-    public required object Message { get; set; }
+    public required OneOf<
+        ServerMessageAssistantRequest,
+        ServerMessageConversationUpdate,
+        ServerMessageEndOfCallReport,
+        ServerMessageHang,
+        ServerMessageModelOutput,
+        ServerMessagePhoneCallControl,
+        ServerMessageSpeechUpdate,
+        ServerMessageStatusUpdate,
+        ServerMessageToolCalls,
+        ServerMessageTransferDestinationRequest,
+        ServerMessageTransferUpdate,
+        ServerMessageTranscript,
+        ServerMessageUserInterrupted,
+        ServerMessageLanguageChanged,
+        ServerMessageVoiceInput,
+        ServerMessageVoiceRequest
+    > Message { get; set; }
 
     public override string ToString()
     {

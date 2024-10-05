@@ -418,7 +418,7 @@ await client.Assistants.UpdateAsync("id", new UpdateAssistantDto());
 </details>
 
 ## PhoneNumbers
-<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">ListAsync</a>(PhoneNumbersListRequest { ... }) -> IEnumerable<object></code></summary>
+<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">ListAsync</a>(PhoneNumbersListRequest { ... }) -> IEnumerable<OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>></code></summary>
 <dl>
 <dd>
 
@@ -458,7 +458,7 @@ await client.PhoneNumbers.ListAsync(new PhoneNumbersListRequest());
 </dl>
 </details>
 
-<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">CreateAsync</a>(object { ... }) -> object</code></summary>
+<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">CreateAsync</a>(OneOf<CreateByoPhoneNumberDto, CreateTwilioPhoneNumberDto, CreateVonagePhoneNumberDto, CreateVapiPhoneNumberDto> { ... }) -> OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber></code></summary>
 <dl>
 <dd>
 
@@ -471,7 +471,9 @@ await client.PhoneNumbers.ListAsync(new PhoneNumbersListRequest());
 <dd>
 
 ```csharp
-await client.PhoneNumbers.CreateAsync(new CreateVapiPhoneNumberDto { SipUri = "string" });
+await client.PhoneNumbers.CreateAsync(
+    new CreateByoPhoneNumberDto { Provider = "byo-phone-number", CredentialId = "credentialId" }
+);
 ```
 </dd>
 </dl>
@@ -486,7 +488,7 @@ await client.PhoneNumbers.CreateAsync(new CreateVapiPhoneNumberDto { SipUri = "s
 <dl>
 <dd>
 
-**request:** `object` 
+**request:** `OneOf<CreateByoPhoneNumberDto, CreateTwilioPhoneNumberDto, CreateVonagePhoneNumberDto, CreateVapiPhoneNumberDto>` 
     
 </dd>
 </dl>
@@ -498,7 +500,7 @@ await client.PhoneNumbers.CreateAsync(new CreateVapiPhoneNumberDto { SipUri = "s
 </dl>
 </details>
 
-<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">GetAsync</a>(id) -> object</code></summary>
+<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">GetAsync</a>(id) -> OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber></code></summary>
 <dl>
 <dd>
 
@@ -538,7 +540,7 @@ await client.PhoneNumbers.GetAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">DeleteAsync</a>(id) -> object</code></summary>
+<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">DeleteAsync</a>(id) -> OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber></code></summary>
 <dl>
 <dd>
 
@@ -578,7 +580,7 @@ await client.PhoneNumbers.DeleteAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">UpdateAsync</a>(id, UpdatePhoneNumberDto { ... }) -> object</code></summary>
+<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">UpdateAsync</a>(id, UpdatePhoneNumberDto { ... }) -> OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber></code></summary>
 <dl>
 <dd>
 
@@ -841,7 +843,7 @@ await client.Squads.UpdateAsync(
 </details>
 
 ## Blocks
-<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">ListAsync</a>(BlocksListRequest { ... }) -> IEnumerable<object></code></summary>
+<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">ListAsync</a>(BlocksListRequest { ... }) -> IEnumerable<OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>></code></summary>
 <dl>
 <dd>
 
@@ -881,7 +883,7 @@ await client.Blocks.ListAsync(new BlocksListRequest());
 </dl>
 </details>
 
-<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">CreateAsync</a>(object { ... }) -> object</code></summary>
+<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">CreateAsync</a>(OneOf<CreateConversationBlockDto, CreateToolCallBlockDto, CreateWorkflowBlockDto> { ... }) -> OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock></code></summary>
 <dl>
 <dd>
 
@@ -894,7 +896,9 @@ await client.Blocks.ListAsync(new BlocksListRequest());
 <dd>
 
 ```csharp
-await client.Blocks.CreateAsync(new CreateWorkflowBlockDto());
+await client.Blocks.CreateAsync(
+    new CreateConversationBlockDto { Type = "conversation", Instruction = "instruction" }
+);
 ```
 </dd>
 </dl>
@@ -909,7 +913,7 @@ await client.Blocks.CreateAsync(new CreateWorkflowBlockDto());
 <dl>
 <dd>
 
-**request:** `object` 
+**request:** `OneOf<CreateConversationBlockDto, CreateToolCallBlockDto, CreateWorkflowBlockDto>` 
     
 </dd>
 </dl>
@@ -921,7 +925,7 @@ await client.Blocks.CreateAsync(new CreateWorkflowBlockDto());
 </dl>
 </details>
 
-<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">GetAsync</a>(id) -> object</code></summary>
+<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">GetAsync</a>(id) -> OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock></code></summary>
 <dl>
 <dd>
 
@@ -961,7 +965,7 @@ await client.Blocks.GetAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">DeleteAsync</a>(id) -> object</code></summary>
+<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">DeleteAsync</a>(id) -> OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock></code></summary>
 <dl>
 <dd>
 
@@ -1001,7 +1005,7 @@ await client.Blocks.DeleteAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">UpdateAsync</a>(id, UpdateBlockDto { ... }) -> object</code></summary>
+<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">UpdateAsync</a>(id, UpdateBlockDto { ... }) -> OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock></code></summary>
 <dl>
 <dd>
 
@@ -1050,7 +1054,7 @@ await client.Blocks.UpdateAsync("id", new UpdateBlockDto());
 </details>
 
 ## Tools
-<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">ListAsync</a>(ToolsListRequest { ... }) -> IEnumerable<object></code></summary>
+<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">ListAsync</a>(ToolsListRequest { ... }) -> IEnumerable<OneOf<DtmfTool, EndCallTool, FunctionTool, GhlTool, MakeTool, TransferCallTool, OutputTool>></code></summary>
 <dl>
 <dd>
 
@@ -1090,7 +1094,7 @@ await client.Tools.ListAsync(new ToolsListRequest());
 </dl>
 </details>
 
-<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">CreateAsync</a>(object { ... }) -> object</code></summary>
+<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">CreateAsync</a>(OneOf<CreateDtmfToolDto, CreateEndCallToolDto, CreateFunctionToolDto, CreateGhlToolDto, CreateMakeToolDto, CreateTransferCallToolDto, CreateOutputToolDto> { ... }) -> OneOf<DtmfTool, EndCallTool, FunctionTool, GhlTool, MakeTool, TransferCallTool, OutputTool></code></summary>
 <dl>
 <dd>
 
@@ -1103,7 +1107,7 @@ await client.Tools.ListAsync(new ToolsListRequest());
 <dd>
 
 ```csharp
-await client.Tools.CreateAsync(new CreateOutputToolDto { Async = false });
+await client.Tools.CreateAsync(new CreateDtmfToolDto { Type = "dtmf" });
 ```
 </dd>
 </dl>
@@ -1118,7 +1122,7 @@ await client.Tools.CreateAsync(new CreateOutputToolDto { Async = false });
 <dl>
 <dd>
 
-**request:** `object` 
+**request:** `OneOf<CreateDtmfToolDto, CreateEndCallToolDto, CreateFunctionToolDto, CreateGhlToolDto, CreateMakeToolDto, CreateTransferCallToolDto, CreateOutputToolDto>` 
     
 </dd>
 </dl>
@@ -1130,7 +1134,7 @@ await client.Tools.CreateAsync(new CreateOutputToolDto { Async = false });
 </dl>
 </details>
 
-<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">GetAsync</a>(id) -> object</code></summary>
+<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">GetAsync</a>(id) -> OneOf<DtmfTool, EndCallTool, FunctionTool, GhlTool, MakeTool, TransferCallTool, OutputTool></code></summary>
 <dl>
 <dd>
 
@@ -1170,7 +1174,7 @@ await client.Tools.GetAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">DeleteAsync</a>(id) -> object</code></summary>
+<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">DeleteAsync</a>(id) -> OneOf<DtmfTool, EndCallTool, FunctionTool, GhlTool, MakeTool, TransferCallTool, OutputTool></code></summary>
 <dl>
 <dd>
 
@@ -1210,7 +1214,7 @@ await client.Tools.DeleteAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">UpdateAsync</a>(id, UpdateToolDto { ... }) -> object</code></summary>
+<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">UpdateAsync</a>(id, UpdateToolDto { ... }) -> OneOf<DtmfTool, EndCallTool, FunctionTool, GhlTool, MakeTool, TransferCallTool, OutputTool></code></summary>
 <dl>
 <dd>
 

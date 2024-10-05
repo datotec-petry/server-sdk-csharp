@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -11,7 +12,12 @@ public record ServerMessageResponseTransferDestinationRequest
     /// This is the destination you'd like the call to be transferred to.
     /// </summary>
     [JsonPropertyName("destination")]
-    public object? Destination { get; set; }
+    public OneOf<
+        TransferDestinationAssistant,
+        TransferDestinationStep,
+        TransferDestinationNumber,
+        TransferDestinationSip
+    >? Destination { get; set; }
 
     /// <summary>
     /// This is the error message if the transfer should not be made.

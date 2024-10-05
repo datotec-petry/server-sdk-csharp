@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -25,7 +26,15 @@ public record MakeToolWithToolCall
     /// For some tools, this is auto-filled based on special fields like `tool.destinations`. For others like the function tool, these can be custom configured.
     /// </summary>
     [JsonPropertyName("messages")]
-    public IEnumerable<object>? Messages { get; set; }
+    public IEnumerable<
+        OneOf<ToolMessageStart, ToolMessageComplete, ToolMessageFailed, ToolMessageDelayed>
+    >? Messages { get; set; }
+
+    /// <summary>
+    /// The type of tool. "make" for Make tool.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     [JsonPropertyName("toolCall")]
     public required ToolCall ToolCall { get; set; }

@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record TransportCost
 {
     /// <summary>
+    /// This is the type of cost, always 'transport' for this class.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
+
+    /// <summary>
     /// This is the minutes of `transport` usage. This should match `call.endedAt` - `call.startedAt`.
     /// </summary>
     [JsonPropertyName("minutes")]

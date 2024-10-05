@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -11,7 +12,7 @@ public record UpdateBlockDto
     /// These are the pre-configured messages that will be spoken to the user while the block is running.
     /// </summary>
     [JsonPropertyName("messages")]
-    public IEnumerable<object>? Messages { get; set; }
+    public IEnumerable<OneOf<BlockStartMessage, BlockCompleteMessage>>? Messages { get; set; }
 
     /// <summary>
     /// This is the input schema for the block. This is the input the block needs to run. It's given to the block as `steps[0].input`
@@ -42,13 +43,21 @@ public record UpdateBlockDto
     /// This is the tool that the block will call. To use an existing tool, use `toolId`.
     /// </summary>
     [JsonPropertyName("tool")]
-    public object? Tool { get; set; }
+    public OneOf<
+        CreateDtmfToolDto,
+        CreateEndCallToolDto,
+        CreateVoicemailToolDto,
+        CreateFunctionToolDto,
+        CreateGhlToolDto,
+        CreateMakeToolDto,
+        CreateTransferCallToolDto
+    >? Tool { get; set; }
 
     /// <summary>
     /// These are the steps in the workflow.
     /// </summary>
     [JsonPropertyName("steps")]
-    public IEnumerable<object>? Steps { get; set; }
+    public IEnumerable<OneOf<HandoffStep, CallbackStep>>? Steps { get; set; }
 
     /// <summary>
     /// This is the name of the block. This is just for your reference.

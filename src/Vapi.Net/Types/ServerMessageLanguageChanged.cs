@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -16,7 +17,18 @@ public record ServerMessageLanguageChanged
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
-    public object? PhoneNumber { get; set; }
+    public OneOf<
+        CreateByoPhoneNumberDto,
+        CreateTwilioPhoneNumberDto,
+        CreateVonagePhoneNumberDto,
+        CreateVapiPhoneNumberDto
+    >? PhoneNumber { get; set; }
+
+    /// <summary>
+    /// This is the type of the message. "language-switched" is sent when the transcriber is automatically switched based on the detected language.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.

@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -11,19 +12,44 @@ public record CreateAssistantDto
     /// These are the options for the assistant's transcriber.
     /// </summary>
     [JsonPropertyName("transcriber")]
-    public object? Transcriber { get; set; }
+    public OneOf<
+        DeepgramTranscriber,
+        GladiaTranscriber,
+        TalkscriberTranscriber
+    >? Transcriber { get; set; }
 
     /// <summary>
     /// These are the options for the assistant's LLM.
     /// </summary>
     [JsonPropertyName("model")]
-    public object? Model { get; set; }
+    public OneOf<
+        AnyscaleModel,
+        AnthropicModel,
+        CustomLlmModel,
+        DeepInfraModel,
+        GroqModel,
+        OpenAiModel,
+        OpenRouterModel,
+        PerplexityAiModel,
+        TogetherAiModel,
+        VapiModel
+    >? Model { get; set; }
 
     /// <summary>
     /// These are the options for the assistant's voice.
     /// </summary>
     [JsonPropertyName("voice")]
-    public object? Voice { get; set; }
+    public OneOf<
+        AzureVoice,
+        CartesiaVoice,
+        DeepgramVoice,
+        ElevenLabsVoice,
+        LmntVoice,
+        NeetsVoice,
+        OpenAiVoice,
+        PlayHtVoice,
+        RimeAiVoice
+    >? Voice { get; set; }
 
     /// <summary>
     /// This is the mode for the first message. Default is 'assistant-speaks-first'.

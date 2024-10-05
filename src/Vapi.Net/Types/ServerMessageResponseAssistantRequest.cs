@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -13,7 +14,7 @@ public record ServerMessageResponseAssistantRequest
     /// If this is sent, `assistantId`, `assistant`, `squadId`, and `squad` are ignored.
     /// </summary>
     [JsonPropertyName("destination")]
-    public object? Destination { get; set; }
+    public OneOf<TransferDestinationNumber, TransferDestinationSip>? Destination { get; set; }
 
     /// <summary>
     /// This is the assistant that will be used for the call. To use a transient assistant, use `assistant` instead.

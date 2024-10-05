@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record RuleBasedCondition
 {
     /// <summary>
+    /// This condition is based on a strict rule.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
+
+    /// <summary>
     /// This is the operator you want to use to compare the left side and right side.
     ///
     /// The operation becomes `(leftSide) operator (rightSide)`.

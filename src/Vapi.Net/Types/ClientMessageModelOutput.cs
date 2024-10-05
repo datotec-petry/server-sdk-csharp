@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record ClientMessageModelOutput
 {
     /// <summary>
+    /// This is the type of the message. "model-output" is sent as the model outputs tokens.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
+
+    /// <summary>
     /// This is the output of the model. It can be a token or tool call.
     /// </summary>
     [JsonPropertyName("output")]

@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -11,7 +12,13 @@ public record BlockStartMessage
     /// This is an optional array of conditions that must be met for this message to be triggered.
     /// </summary>
     [JsonPropertyName("conditions")]
-    public IEnumerable<object>? Conditions { get; set; }
+    public IEnumerable<OneOf<ModelBasedCondition, RuleBasedCondition>>? Conditions { get; set; }
+
+    /// <summary>
+    /// This is the message type that is triggered when the block starts.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     /// <summary>
     /// This is the content that the assistant will say when this message is triggered.

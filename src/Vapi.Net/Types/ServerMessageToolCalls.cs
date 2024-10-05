@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -16,13 +17,27 @@ public record ServerMessageToolCalls
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
-    public object? PhoneNumber { get; set; }
+    public OneOf<
+        CreateByoPhoneNumberDto,
+        CreateTwilioPhoneNumberDto,
+        CreateVonagePhoneNumberDto,
+        CreateVapiPhoneNumberDto
+    >? PhoneNumber { get; set; }
+
+    /// <summary>
+    /// This is the type of the message. "tool-calls" is sent to call a tool.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public string? Type { get; set; }
 
     /// <summary>
     /// This is the list of tools calls that the model is requesting along with the original tool configuration.
     /// </summary>
     [JsonPropertyName("toolWithToolCallList")]
-    public IEnumerable<object> ToolWithToolCallList { get; set; } = new List<object>();
+    public IEnumerable<
+        OneOf<FunctionToolWithToolCall, GhlToolWithToolCall, MakeToolWithToolCall>
+    > ToolWithToolCallList { get; set; } =
+        new List<OneOf<FunctionToolWithToolCall, GhlToolWithToolCall, MakeToolWithToolCall>>();
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.

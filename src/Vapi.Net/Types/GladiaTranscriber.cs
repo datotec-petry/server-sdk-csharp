@@ -7,6 +7,12 @@ namespace Vapi.Net;
 
 public record GladiaTranscriber
 {
+    /// <summary>
+    /// This is the transcription provider that will be used.
+    /// </summary>
+    [JsonPropertyName("provider")]
+    public required string Provider { get; set; }
+
     [JsonPropertyName("model")]
     public GladiaTranscriberModel? Model { get; set; }
 

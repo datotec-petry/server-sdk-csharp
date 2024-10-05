@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record ModelBasedCondition
 {
     /// <summary>
+    /// This condition is based on a model.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
+
+    /// <summary>
     /// This is the instruction which should output a boolean value when passed to a model.
     ///
     /// You can reference any variable in the context of the current block execution (step):

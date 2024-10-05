@@ -6,14 +6,14 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ChunkPlanPunctuationBoundariesItem>))]
-public enum ChunkPlanPunctuationBoundariesItem
+[JsonConverter(typeof(StringEnumSerializer<PunctuationBoundary>))]
+public enum PunctuationBoundary
 {
     [EnumMember(Value = "。")]
     Circle,
 
     [EnumMember(Value = "，")]
-    Comma,
+    FullWidthComma,
 
     [EnumMember(Value = ".")]
     Dot,

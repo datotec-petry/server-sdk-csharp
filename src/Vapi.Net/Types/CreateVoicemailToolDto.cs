@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -25,7 +26,15 @@ public record CreateVoicemailToolDto
     /// For some tools, this is auto-filled based on special fields like `tool.destinations`. For others like the function tool, these can be custom configured.
     /// </summary>
     [JsonPropertyName("messages")]
-    public IEnumerable<object>? Messages { get; set; }
+    public IEnumerable<
+        OneOf<ToolMessageStart, ToolMessageComplete, ToolMessageFailed, ToolMessageDelayed>
+    >? Messages { get; set; }
+
+    /// <summary>
+    /// The type of tool. "voicemail". This uses the model itself to determine if a voicemil was reached. Can be used alternatively/alongside with TwilioVoicemailDetection
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     /// <summary>
     /// This is the function definition of the tool.

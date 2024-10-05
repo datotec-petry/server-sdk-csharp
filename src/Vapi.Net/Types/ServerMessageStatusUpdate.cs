@@ -17,7 +17,18 @@ public record ServerMessageStatusUpdate
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
-    public object? PhoneNumber { get; set; }
+    public OneOf<
+        CreateByoPhoneNumberDto,
+        CreateTwilioPhoneNumberDto,
+        CreateVonagePhoneNumberDto,
+        CreateVapiPhoneNumberDto
+    >? PhoneNumber { get; set; }
+
+    /// <summary>
+    /// This is the type of the message. "status-update" is sent whenever the `call.status` changes.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
     /// <summary>
     /// This is the status of the call.
@@ -49,7 +60,7 @@ public record ServerMessageStatusUpdate
     /// This is the destination the call is being transferred to. This is only sent if the status is "forwarding".
     /// </summary>
     [JsonPropertyName("destination")]
-    public object? Destination { get; set; }
+    public OneOf<TransferDestinationNumber, TransferDestinationSip>? Destination { get; set; }
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.
