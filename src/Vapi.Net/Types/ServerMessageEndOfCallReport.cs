@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -17,18 +16,7 @@ public record ServerMessageEndOfCallReport
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
-    public OneOf<
-        CreateByoPhoneNumberDto,
-        CreateTwilioPhoneNumberDto,
-        CreateVonagePhoneNumberDto,
-        CreateVapiPhoneNumberDto
-    >? PhoneNumber { get; set; }
-
-    /// <summary>
-    /// This is the type of the message. "end-of-call-report" is sent when the call ends and post-processing is complete.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
+    public object? PhoneNumber { get; set; }
 
     /// <summary>
     /// This is the reason the call ended. This can also be found at `call.endedReason` on GET /call/:id.
@@ -46,9 +34,7 @@ public record ServerMessageEndOfCallReport
     /// These are the costs of individual components of the call in USD. This can also be found at `call.costs` on GET /call/:id.
     /// </summary>
     [JsonPropertyName("costs")]
-    public IEnumerable<
-        OneOf<TransportCost, TranscriberCost, ModelCost, VoiceCost, VapiCost, AnalysisCost>
-    >? Costs { get; set; }
+    public IEnumerable<object>? Costs { get; set; }
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.

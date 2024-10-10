@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -17,18 +16,7 @@ public record ServerMessageVoiceInput
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
-    public OneOf<
-        CreateByoPhoneNumberDto,
-        CreateTwilioPhoneNumberDto,
-        CreateVonagePhoneNumberDto,
-        CreateVapiPhoneNumberDto
-    >? PhoneNumber { get; set; }
-
-    /// <summary>
-    /// This is the type of the message. "voice-input" is sent when a generation is requested from voice provider.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
+    public object? PhoneNumber { get; set; }
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.

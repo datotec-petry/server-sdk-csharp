@@ -8,12 +8,6 @@ namespace Vapi.Net;
 public record ClientMessageMetadata
 {
     /// <summary>
-    /// This is the type of the message. "metadata" is sent to forward metadata to the client.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
-    /// <summary>
     /// This is the metadata content
     /// </summary>
     [JsonPropertyName("metadata")]

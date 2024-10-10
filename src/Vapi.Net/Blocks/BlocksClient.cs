@@ -1,7 +1,6 @@
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -22,9 +21,7 @@ public partial class BlocksClient
     /// await client.Blocks.ListAsync(new BlocksListRequest());
     /// </code>
     /// </example>
-    public async Task<
-        IEnumerable<OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>>
-    > ListAsync(
+    public async Task<IEnumerable<object>> ListAsync(
         BlocksListRequest request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -83,9 +80,7 @@ public partial class BlocksClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    IEnumerable<OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>>
-                >(responseBody)!;
+                return JsonUtils.Deserialize<IEnumerable<object>>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -102,13 +97,11 @@ public partial class BlocksClient
 
     /// <example>
     /// <code>
-    /// await client.Blocks.CreateAsync(
-    ///     new CreateConversationBlockDto { Type = "conversation", Instruction = "instruction" }
-    /// );
+    /// await client.Blocks.CreateAsync(new CreateWorkflowBlockDto());
     /// </code>
     /// </example>
-    public async Task<OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>> CreateAsync(
-        OneOf<CreateConversationBlockDto, CreateToolCallBlockDto, CreateWorkflowBlockDto> request,
+    public async Task<object> CreateAsync(
+        object request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
@@ -129,9 +122,7 @@ public partial class BlocksClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -151,7 +142,7 @@ public partial class BlocksClient
     /// await client.Blocks.GetAsync("id");
     /// </code>
     /// </example>
-    public async Task<OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>> GetAsync(
+    public async Task<object> GetAsync(
         string id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -172,9 +163,7 @@ public partial class BlocksClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -194,7 +183,7 @@ public partial class BlocksClient
     /// await client.Blocks.DeleteAsync("id");
     /// </code>
     /// </example>
-    public async Task<OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>> DeleteAsync(
+    public async Task<object> DeleteAsync(
         string id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -215,9 +204,7 @@ public partial class BlocksClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -237,7 +224,7 @@ public partial class BlocksClient
     /// await client.Blocks.UpdateAsync("id", new UpdateBlockDto());
     /// </code>
     /// </example>
-    public async Task<OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>> UpdateAsync(
+    public async Task<object> UpdateAsync(
         string id,
         UpdateBlockDto request,
         RequestOptions? options = null,
@@ -260,9 +247,7 @@ public partial class BlocksClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<ConversationBlock, ToolCallBlock, WorkflowBlock>
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {

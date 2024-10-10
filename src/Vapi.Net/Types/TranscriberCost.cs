@@ -8,12 +8,6 @@ namespace Vapi.Net;
 public record TranscriberCost
 {
     /// <summary>
-    /// This is the type of cost, always 'transcriber' for this class.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
-    /// <summary>
     /// This is the transcriber that was used during the call.
     ///
     /// This matches one of the below:

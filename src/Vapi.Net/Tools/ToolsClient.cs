@@ -1,7 +1,6 @@
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -22,19 +21,7 @@ public partial class ToolsClient
     /// await client.Tools.ListAsync(new ToolsListRequest());
     /// </code>
     /// </example>
-    public async Task<
-        IEnumerable<
-            OneOf<
-                DtmfTool,
-                EndCallTool,
-                FunctionTool,
-                GhlTool,
-                MakeTool,
-                TransferCallTool,
-                OutputTool
-            >
-        >
-    > ListAsync(
+    public async Task<IEnumerable<object>> ListAsync(
         ToolsListRequest request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -93,19 +80,7 @@ public partial class ToolsClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    IEnumerable<
-                        OneOf<
-                            DtmfTool,
-                            EndCallTool,
-                            FunctionTool,
-                            GhlTool,
-                            MakeTool,
-                            TransferCallTool,
-                            OutputTool
-                        >
-                    >
-                >(responseBody)!;
+                return JsonUtils.Deserialize<IEnumerable<object>>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -122,21 +97,11 @@ public partial class ToolsClient
 
     /// <example>
     /// <code>
-    /// await client.Tools.CreateAsync(new CreateDtmfToolDto { Type = "dtmf" });
+    /// await client.Tools.CreateAsync(new CreateOutputToolDto { Async = false });
     /// </code>
     /// </example>
-    public async Task<
-        OneOf<DtmfTool, EndCallTool, FunctionTool, GhlTool, MakeTool, TransferCallTool, OutputTool>
-    > CreateAsync(
-        OneOf<
-            CreateDtmfToolDto,
-            CreateEndCallToolDto,
-            CreateFunctionToolDto,
-            CreateGhlToolDto,
-            CreateMakeToolDto,
-            CreateTransferCallToolDto,
-            CreateOutputToolDto
-        > request,
+    public async Task<object> CreateAsync(
+        object request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
@@ -157,17 +122,7 @@ public partial class ToolsClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<
-                        DtmfTool,
-                        EndCallTool,
-                        FunctionTool,
-                        GhlTool,
-                        MakeTool,
-                        TransferCallTool,
-                        OutputTool
-                    >
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -187,9 +142,7 @@ public partial class ToolsClient
     /// await client.Tools.GetAsync("id");
     /// </code>
     /// </example>
-    public async Task<
-        OneOf<DtmfTool, EndCallTool, FunctionTool, GhlTool, MakeTool, TransferCallTool, OutputTool>
-    > GetAsync(
+    public async Task<object> GetAsync(
         string id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -210,17 +163,7 @@ public partial class ToolsClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<
-                        DtmfTool,
-                        EndCallTool,
-                        FunctionTool,
-                        GhlTool,
-                        MakeTool,
-                        TransferCallTool,
-                        OutputTool
-                    >
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -240,9 +183,7 @@ public partial class ToolsClient
     /// await client.Tools.DeleteAsync("id");
     /// </code>
     /// </example>
-    public async Task<
-        OneOf<DtmfTool, EndCallTool, FunctionTool, GhlTool, MakeTool, TransferCallTool, OutputTool>
-    > DeleteAsync(
+    public async Task<object> DeleteAsync(
         string id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -263,17 +204,7 @@ public partial class ToolsClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<
-                        DtmfTool,
-                        EndCallTool,
-                        FunctionTool,
-                        GhlTool,
-                        MakeTool,
-                        TransferCallTool,
-                        OutputTool
-                    >
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -293,9 +224,7 @@ public partial class ToolsClient
     /// await client.Tools.UpdateAsync("id", new UpdateToolDto());
     /// </code>
     /// </example>
-    public async Task<
-        OneOf<DtmfTool, EndCallTool, FunctionTool, GhlTool, MakeTool, TransferCallTool, OutputTool>
-    > UpdateAsync(
+    public async Task<object> UpdateAsync(
         string id,
         UpdateToolDto request,
         RequestOptions? options = null,
@@ -318,17 +247,7 @@ public partial class ToolsClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<
-                        DtmfTool,
-                        EndCallTool,
-                        FunctionTool,
-                        GhlTool,
-                        MakeTool,
-                        TransferCallTool,
-                        OutputTool
-                    >
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {

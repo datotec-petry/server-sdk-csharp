@@ -8,19 +8,6 @@ namespace Vapi.Net;
 public record ToolMessageDelayed
 {
     /// <summary>
-    /// This message is triggered when the tool call is delayed.
-    ///
-    /// There are the two things that can trigger this message:
-    ///
-    /// 1. The user talks with the assistant while your server is processing the request. Default is "Sorry, a few more seconds."
-    /// 2. The server doesn't respond within `timingMilliseconds`.
-    ///
-    /// This message is never triggered for async tool calls.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
-    /// <summary>
     /// The number of milliseconds to wait for the server response before saying this message.
     /// </summary>
     [JsonPropertyName("timingMilliseconds")]

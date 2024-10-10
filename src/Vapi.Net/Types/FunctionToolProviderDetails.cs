@@ -16,12 +16,6 @@ public record FunctionToolProviderDetails
     [JsonPropertyName("setupInstructions")]
     public IEnumerable<ToolTemplateSetup>? SetupInstructions { get; set; }
 
-    /// <summary>
-    /// The type of tool. "function" for Function tool.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
     public override string ToString()
     {
         return JsonUtils.Serialize(this);

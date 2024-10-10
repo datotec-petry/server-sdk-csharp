@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -26,25 +25,13 @@ public record TransferCallTool
     /// For some tools, this is auto-filled based on special fields like `tool.destinations`. For others like the function tool, these can be custom configured.
     /// </summary>
     [JsonPropertyName("messages")]
-    public IEnumerable<
-        OneOf<ToolMessageStart, ToolMessageComplete, ToolMessageFailed, ToolMessageDelayed>
-    >? Messages { get; set; }
-
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
+    public IEnumerable<object>? Messages { get; set; }
 
     /// <summary>
     /// These are the destinations that the call can be transferred to. If no destinations are provided, server.url will be used to get the transfer destination once the tool is called.
     /// </summary>
     [JsonPropertyName("destinations")]
-    public IEnumerable<
-        OneOf<
-            TransferDestinationAssistant,
-            TransferDestinationStep,
-            TransferDestinationNumber,
-            TransferDestinationSip
-        >
-    >? Destinations { get; set; }
+    public IEnumerable<object>? Destinations { get; set; }
 
     /// <summary>
     /// This is the unique identifier for the tool.

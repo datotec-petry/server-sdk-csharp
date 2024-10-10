@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -17,20 +16,7 @@ public record ServerMessagePhoneCallControl
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
-    public OneOf<
-        CreateByoPhoneNumberDto,
-        CreateTwilioPhoneNumberDto,
-        CreateVonagePhoneNumberDto,
-        CreateVapiPhoneNumberDto
-    >? PhoneNumber { get; set; }
-
-    /// <summary>
-    /// This is the type of the message. "phone-call-control" is an advanced type of message.
-    ///
-    /// When it is requested in `assistant.serverMessages`, the hangup and forwarding responsibilities are delegated to your server. Vapi will no longer do the actual transfer and hangup.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
+    public object? PhoneNumber { get; set; }
 
     /// <summary>
     /// This is the request to control the phone call.
@@ -42,7 +28,7 @@ public record ServerMessagePhoneCallControl
     /// This is the destination to forward the call to if the request is "forward".
     /// </summary>
     [JsonPropertyName("destination")]
-    public OneOf<TransferDestinationNumber, TransferDestinationSip>? Destination { get; set; }
+    public object? Destination { get; set; }
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.

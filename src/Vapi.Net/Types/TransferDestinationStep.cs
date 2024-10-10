@@ -7,9 +7,6 @@ namespace Vapi.Net;
 
 public record TransferDestinationStep
 {
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
     /// <summary>
     /// This is the step to transfer to.
     /// </summary>

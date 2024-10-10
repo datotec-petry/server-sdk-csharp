@@ -1,7 +1,6 @@
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -22,9 +21,7 @@ public partial class PhoneNumbersClient
     /// await client.PhoneNumbers.ListAsync(new PhoneNumbersListRequest());
     /// </code>
     /// </example>
-    public async Task<
-        IEnumerable<OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>>
-    > ListAsync(
+    public async Task<IEnumerable<object>> ListAsync(
         PhoneNumbersListRequest request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -83,11 +80,7 @@ public partial class PhoneNumbersClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    IEnumerable<
-                        OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>
-                    >
-                >(responseBody)!;
+                return JsonUtils.Deserialize<IEnumerable<object>>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -104,20 +97,11 @@ public partial class PhoneNumbersClient
 
     /// <example>
     /// <code>
-    /// await client.PhoneNumbers.CreateAsync(
-    ///     new CreateByoPhoneNumberDto { Provider = "byo-phone-number", CredentialId = "credentialId" }
-    /// );
+    /// await client.PhoneNumbers.CreateAsync(new CreateVapiPhoneNumberDto { SipUri = "string" });
     /// </code>
     /// </example>
-    public async Task<
-        OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>
-    > CreateAsync(
-        OneOf<
-            CreateByoPhoneNumberDto,
-            CreateTwilioPhoneNumberDto,
-            CreateVonagePhoneNumberDto,
-            CreateVapiPhoneNumberDto
-        > request,
+    public async Task<object> CreateAsync(
+        object request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
@@ -138,9 +122,7 @@ public partial class PhoneNumbersClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -160,9 +142,7 @@ public partial class PhoneNumbersClient
     /// await client.PhoneNumbers.GetAsync("id");
     /// </code>
     /// </example>
-    public async Task<
-        OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>
-    > GetAsync(
+    public async Task<object> GetAsync(
         string id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -183,9 +163,7 @@ public partial class PhoneNumbersClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -205,9 +183,7 @@ public partial class PhoneNumbersClient
     /// await client.PhoneNumbers.DeleteAsync("id");
     /// </code>
     /// </example>
-    public async Task<
-        OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>
-    > DeleteAsync(
+    public async Task<object> DeleteAsync(
         string id,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -228,9 +204,7 @@ public partial class PhoneNumbersClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {
@@ -250,9 +224,7 @@ public partial class PhoneNumbersClient
     /// await client.PhoneNumbers.UpdateAsync("id", new UpdatePhoneNumberDto());
     /// </code>
     /// </example>
-    public async Task<
-        OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>
-    > UpdateAsync(
+    public async Task<object> UpdateAsync(
         string id,
         UpdatePhoneNumberDto request,
         RequestOptions? options = null,
@@ -275,9 +247,7 @@ public partial class PhoneNumbersClient
         {
             try
             {
-                return JsonUtils.Deserialize<
-                    OneOf<ByoPhoneNumber, TwilioPhoneNumber, VonagePhoneNumber, VapiPhoneNumber>
-                >(responseBody)!;
+                return JsonUtils.Deserialize<object>(responseBody)!;
             }
             catch (JsonException e)
             {

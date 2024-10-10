@@ -18,9 +18,7 @@ public record Call
     /// These are the costs of individual components of the call in USD.
     /// </summary>
     [JsonPropertyName("costs")]
-    public IEnumerable<
-        OneOf<TransportCost, TranscriberCost, ModelCost, VoiceCost, VapiCost, AnalysisCost>
-    >? Costs { get; set; }
+    public IEnumerable<object>? Costs { get; set; }
 
     [JsonPropertyName("messages")]
     public IEnumerable<
@@ -59,7 +57,7 @@ public record Call
     /// This is the destination where the call ended up being transferred to. If the call was not transferred, this will be empty.
     /// </summary>
     [JsonPropertyName("destination")]
-    public OneOf<TransferDestinationNumber, TransferDestinationSip>? Destination { get; set; }
+    public object? Destination { get; set; }
 
     /// <summary>
     /// This is the unique identifier for the call.

@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -18,13 +17,7 @@ public record CreateVonagePhoneNumberDto
     /// If this is not set and above conditions are met, the inbound call is hung up with an error message.
     /// </summary>
     [JsonPropertyName("fallbackDestination")]
-    public OneOf<
-        TransferDestinationNumber,
-        TransferDestinationSip
-    >? FallbackDestination { get; set; }
-
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
+    public object? FallbackDestination { get; set; }
 
     /// <summary>
     /// These are the digits of the phone number you own on your Vonage.

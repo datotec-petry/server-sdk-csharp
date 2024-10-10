@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -12,7 +11,7 @@ public record WorkflowBlock
     /// These are the pre-configured messages that will be spoken to the user while the block is running.
     /// </summary>
     [JsonPropertyName("messages")]
-    public IEnumerable<OneOf<BlockStartMessage, BlockCompleteMessage>>? Messages { get; set; }
+    public IEnumerable<object>? Messages { get; set; }
 
     /// <summary>
     /// This is the input schema for the block. This is the input the block needs to run. It's given to the block as `steps[0].input`
@@ -42,14 +41,11 @@ public record WorkflowBlock
     [JsonPropertyName("outputSchema")]
     public JsonSchema? OutputSchema { get; set; }
 
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
     /// <summary>
     /// These are the steps in the workflow.
     /// </summary>
     [JsonPropertyName("steps")]
-    public IEnumerable<OneOf<HandoffStep, CallbackStep>>? Steps { get; set; }
+    public IEnumerable<object>? Steps { get; set; }
 
     /// <summary>
     /// This is the unique identifier for the block.

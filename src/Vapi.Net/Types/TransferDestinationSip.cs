@@ -7,9 +7,6 @@ namespace Vapi.Net;
 
 public record TransferDestinationSip
 {
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
     /// <summary>
     /// This is the SIP URI to transfer the call to.
     /// </summary>

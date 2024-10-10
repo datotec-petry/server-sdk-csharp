@@ -17,99 +17,10 @@ public record RimeAiVoice
     public bool? FillerInjectionEnabled { get; set; }
 
     /// <summary>
-    /// This is the voice provider that will be used.
-    /// </summary>
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
-    /// <summary>
     /// This is the provider-specific ID that will be used.
     /// </summary>
     [JsonPropertyName("voiceId")]
-    public required OneOf<
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string,
-        string
-    > VoiceId { get; set; }
+    public required OneOf<RimeAiVoiceIdEnum, string> VoiceId { get; set; }
 
     /// <summary>
     /// This is the model that will be used. Defaults to 'v1' when not specified.

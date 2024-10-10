@@ -16,12 +16,6 @@ public record MakeToolProviderDetails
     [JsonPropertyName("setupInstructions")]
     public IEnumerable<ToolTemplateSetup>? SetupInstructions { get; set; }
 
-    /// <summary>
-    /// The type of tool. "make" for Make tool.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
     [JsonPropertyName("scenarioId")]
     public double? ScenarioId { get; set; }
 

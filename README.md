@@ -1,6 +1,6 @@
 # Vapi C# Library
 
-[![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-Built%20with%20Fern-brightgreen)](https://buildwithfern.com?utm_source=github&utm_medium=github&utm_campaign=readme&utm_source=https%3A%2F%2Fgithub.com%2Ffern-demo%2Fvapi-csharp-sdk)
+[![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-Built%20with%20Fern-brightgreen)](https://buildwithfern.com?utm_source=github&utm_medium=github&utm_campaign=readme&utm_source=https%3A%2F%2Fgithub.com%2FVapiAI%2Fserver-sdk-csharp)
 [![nuget shield](https://img.shields.io/nuget/v/Vapi.Net)](https://nuget.org/packages/Vapi.Net)
 
 The Vapi C# library provides convenient access to the Vapi API from C#.

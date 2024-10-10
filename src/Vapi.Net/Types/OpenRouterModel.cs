@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -20,17 +19,7 @@ public record OpenRouterModel
     /// Both `tools` and `toolIds` can be used together.
     /// </summary>
     [JsonPropertyName("tools")]
-    public IEnumerable<
-        OneOf<
-            CreateDtmfToolDto,
-            CreateEndCallToolDto,
-            CreateVoicemailToolDto,
-            CreateFunctionToolDto,
-            CreateGhlToolDto,
-            CreateMakeToolDto,
-            CreateTransferCallToolDto
-        >
-    >? Tools { get; set; }
+    public IEnumerable<object>? Tools { get; set; }
 
     /// <summary>
     /// These are the tools that the assistant can use during the call. To use transient tools, use `tools`.
@@ -39,9 +28,6 @@ public record OpenRouterModel
     /// </summary>
     [JsonPropertyName("toolIds")]
     public IEnumerable<string>? ToolIds { get; set; }
-
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
 
     /// <summary>
     /// This is the name of the model. Ex. cognitivecomputations/dolphin-mixtral-8x7b

@@ -7,9 +7,6 @@ namespace Vapi.Net;
 
 public record TransferDestinationAssistant
 {
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
     /// <summary>
     /// This is the mode to use for the transfer. Default is `rolling-history`.
     ///

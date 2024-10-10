@@ -8,12 +8,6 @@ namespace Vapi.Net;
 public record DeepgramTranscriber
 {
     /// <summary>
-    /// This is the transcription provider that will be used.
-    /// </summary>
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
-    /// <summary>
     /// This is the Deepgram model that will be used. A list of models can be found here: https://developers.deepgram.com/docs/models-languages-overview
     /// </summary>
     [JsonPropertyName("model")]

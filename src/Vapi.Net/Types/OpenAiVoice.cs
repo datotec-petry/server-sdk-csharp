@@ -16,16 +16,10 @@ public record OpenAiVoice
     public bool? FillerInjectionEnabled { get; set; }
 
     /// <summary>
-    /// This is the voice provider that will be used.
-    /// </summary>
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
-    /// <summary>
     /// This is the provider-specific ID that will be used.
     /// </summary>
     [JsonPropertyName("voiceId")]
-    public required OpenAiVoiceVoiceId VoiceId { get; set; }
+    public required OpenAiVoiceId VoiceId { get; set; }
 
     /// <summary>
     /// This is the speed multiplier that will be used.

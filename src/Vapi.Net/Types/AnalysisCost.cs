@@ -8,12 +8,6 @@ namespace Vapi.Net;
 public record AnalysisCost
 {
     /// <summary>
-    /// This is the type of cost, always 'analysis' for this class.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
-    /// <summary>
     /// This is the type of analysis performed.
     /// </summary>
     [JsonPropertyName("analysisType")]

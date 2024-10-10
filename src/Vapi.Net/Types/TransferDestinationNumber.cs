@@ -7,9 +7,6 @@ namespace Vapi.Net;
 
 public record TransferDestinationNumber
 {
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
     /// <summary>
     /// This is the flag to toggle the E164 check for the `number` field. This is an advanced property which should be used if you know your use case requires it.
     ///

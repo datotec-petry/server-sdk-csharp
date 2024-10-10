@@ -16,12 +16,6 @@ public record CartesiaVoice
     public bool? FillerInjectionEnabled { get; set; }
 
     /// <summary>
-    /// This is the voice provider that will be used.
-    /// </summary>
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
-    /// <summary>
     /// This is the model that will be used. This is optional and will default to the correct model for the voiceId.
     /// </summary>
     [JsonPropertyName("model")]

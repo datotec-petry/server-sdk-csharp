@@ -16,12 +16,6 @@ public record GhlToolProviderDetails
     [JsonPropertyName("setupInstructions")]
     public IEnumerable<ToolTemplateSetup>? SetupInstructions { get; set; }
 
-    /// <summary>
-    /// The type of tool. "ghl" for GHL tool.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
     [JsonPropertyName("workflowId")]
     public string? WorkflowId { get; set; }
 

@@ -6,8 +6,8 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<OpenAiVoiceVoiceId>))]
-public enum OpenAiVoiceVoiceId
+[JsonConverter(typeof(StringEnumSerializer<OpenAiVoiceId>))]
+public enum OpenAiVoiceId
 {
     [EnumMember(Value = "alloy")]
     Alloy,
