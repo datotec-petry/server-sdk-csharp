@@ -44,7 +44,7 @@ public record LogsGetRequest
     /// <summary>
     /// This is the page number to return. Defaults to 1.
     /// </summary>
-    public double? Page { get; set; }
+    public int? Page { get; set; }
 
     /// <summary>
     /// This is the sort order for pagination. Defaults to 'ASC'.

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vapi.Net", "Vapi.Net\Vapi.Net.csproj", "{78DCECF6-D870-44EA-8620-496137FFD83E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vapi.Net", "Vapi.Net\Vapi.Net.csproj", "{066B77DF-99E8-463D-9A57-B45A1688288E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vapi.Net.Test", "Vapi.Net.Test\Vapi.Net.Test.csproj", "{5069B9C6-842E-42F3-92D6-AE02B3806F1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vapi.Net.Test", "Vapi.Net.Test\Vapi.Net.Test.csproj", "{2FD9975E-9A75-4817-8B8D-B90E12637680}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +16,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{78DCECF6-D870-44EA-8620-496137FFD83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78DCECF6-D870-44EA-8620-496137FFD83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78DCECF6-D870-44EA-8620-496137FFD83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78DCECF6-D870-44EA-8620-496137FFD83E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5069B9C6-842E-42F3-92D6-AE02B3806F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5069B9C6-842E-42F3-92D6-AE02B3806F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5069B9C6-842E-42F3-92D6-AE02B3806F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5069B9C6-842E-42F3-92D6-AE02B3806F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066B77DF-99E8-463D-9A57-B45A1688288E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066B77DF-99E8-463D-9A57-B45A1688288E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066B77DF-99E8-463D-9A57-B45A1688288E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066B77DF-99E8-463D-9A57-B45A1688288E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD9975E-9A75-4817-8B8D-B90E12637680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD9975E-9A75-4817-8B8D-B90E12637680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD9975E-9A75-4817-8B8D-B90E12637680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD9975E-9A75-4817-8B8D-B90E12637680}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
