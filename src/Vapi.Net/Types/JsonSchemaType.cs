@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<JsonSchemaType>))]
+[JsonConverter(typeof(EnumSerializer<JsonSchemaType>))]
 public enum JsonSchemaType
 {
     [EnumMember(Value = "string")]

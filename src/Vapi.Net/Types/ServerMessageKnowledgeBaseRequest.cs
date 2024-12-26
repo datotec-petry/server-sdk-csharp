@@ -1,22 +1,37 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
 
 namespace Vapi.Net;
 
-public record ServerMessageLanguageChanged
+public record ServerMessageKnowledgeBaseRequest
 {
     /// <summary>
     /// This is the phone number associated with the call.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.phoneNumber`,
     /// - `call.phoneNumberId`.
     /// </summary>
     [JsonPropertyName("phoneNumber")]
     public object? PhoneNumber { get; set; }
+
+    /// <summary>
+    /// These are the messages that are going to be sent to the `model` right after the `knowledge-base-request` webhook completes.
+    /// </summary>
+    [JsonPropertyName("messages")]
+    public IEnumerable<
+        OneOf<UserMessage, SystemMessage, BotMessage, ToolCallMessage, ToolCallResultMessage>
+    >? Messages { get; set; }
+
+    /// <summary>
+    /// This is just `messages` formatted for OpenAI.
+    /// </summary>
+    [JsonPropertyName("messagesOpenAIFormatted")]
+    public IEnumerable<OpenAiMessage> MessagesOpenAiFormatted { get; set; } =
+        new List<OpenAiMessage>();
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.
@@ -36,13 +51,12 @@ public record ServerMessageLanguageChanged
     /// This is the assistant that is currently active. This is provided for convenience.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.assistant`,
     /// - `call.assistantId`,
     /// - `call.squad[n].assistant`,
     /// - `call.squad[n].assistantId`,
-    /// - `call.squadId->[n].assistant`,
-    /// - `call.squadId->[n].assistantId`.
+    /// - `call.squadId-&gt;[n].assistant`,
+    /// - `call.squadId-&gt;[n].assistantId`.
     /// </summary>
     [JsonPropertyName("assistant")]
     public CreateAssistantDto? Assistant { get; set; }
@@ -51,7 +65,6 @@ public record ServerMessageLanguageChanged
     /// This is the customer associated with the call.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.customer`,
     /// - `call.customerId`.
     /// </summary>
@@ -67,12 +80,6 @@ public record ServerMessageLanguageChanged
     /// </summary>
     [JsonPropertyName("call")]
     public Call? Call { get; set; }
-
-    /// <summary>
-    /// This is the language the transcriber is switched to.
-    /// </summary>
-    [JsonPropertyName("language")]
-    public required string Language { get; set; }
 
     public override string ToString()
     {

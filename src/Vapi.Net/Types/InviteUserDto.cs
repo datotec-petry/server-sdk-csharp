@@ -7,8 +7,8 @@ namespace Vapi.Net;
 
 public record InviteUserDto
 {
-    [JsonPropertyName("email")]
-    public required string Email { get; set; }
+    [JsonPropertyName("emails")]
+    public IEnumerable<string> Emails { get; set; } = new List<string>();
 
     [JsonPropertyName("role")]
     public required InviteUserDtoRole Role { get; set; }

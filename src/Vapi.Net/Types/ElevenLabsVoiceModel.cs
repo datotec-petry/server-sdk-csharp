@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ElevenLabsVoiceModel>))]
+[JsonConverter(typeof(EnumSerializer<ElevenLabsVoiceModel>))]
 public enum ElevenLabsVoiceModel
 {
     [EnumMember(Value = "eleven_multilingual_v2")]

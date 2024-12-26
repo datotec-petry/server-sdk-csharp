@@ -9,14 +9,6 @@ namespace Vapi.Net;
 public record DeepgramVoice
 {
     /// <summary>
-    /// This determines whether fillers are injected into the model output before inputting it into the voice provider.
-    ///
-    /// Default `false` because you can achieve better results with prompting the model.
-    /// </summary>
-    [JsonPropertyName("fillerInjectionEnabled")]
-    public bool? FillerInjectionEnabled { get; set; }
-
-    /// <summary>
     /// This is the provider-specific ID that will be used.
     /// </summary>
     [JsonPropertyName("voiceId")]
@@ -27,6 +19,12 @@ public record DeepgramVoice
     /// </summary>
     [JsonPropertyName("chunkPlan")]
     public ChunkPlan? ChunkPlan { get; set; }
+
+    /// <summary>
+    /// This is the plan for voice provider fallbacks in the event that the primary voice provider fails.
+    /// </summary>
+    [JsonPropertyName("fallbackPlan")]
+    public FallbackPlan? FallbackPlan { get; set; }
 
     public override string ToString()
     {

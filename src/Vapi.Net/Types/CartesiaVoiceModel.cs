@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CartesiaVoiceModel>))]
+[JsonConverter(typeof(EnumSerializer<CartesiaVoiceModel>))]
 public enum CartesiaVoiceModel
 {
     [EnumMember(Value = "sonic-english")]

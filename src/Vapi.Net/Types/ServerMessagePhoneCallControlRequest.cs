@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ServerMessagePhoneCallControlRequest>))]
+[JsonConverter(typeof(EnumSerializer<ServerMessagePhoneCallControlRequest>))]
 public enum ServerMessagePhoneCallControlRequest
 {
     [EnumMember(Value = "forward")]

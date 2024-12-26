@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<VoiceLibraryGender>))]
+[JsonConverter(typeof(EnumSerializer<VoiceLibraryGender>))]
 public enum VoiceLibraryGender
 {
     [EnumMember(Value = "male")]

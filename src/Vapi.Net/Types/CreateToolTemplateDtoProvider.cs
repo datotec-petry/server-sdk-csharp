@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CreateToolTemplateDtoProvider>))]
+[JsonConverter(typeof(EnumSerializer<CreateToolTemplateDtoProvider>))]
 public enum CreateToolTemplateDtoProvider
 {
     [EnumMember(Value = "make")]

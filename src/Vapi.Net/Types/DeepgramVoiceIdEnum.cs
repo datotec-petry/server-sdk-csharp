@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<DeepgramVoiceIdEnum>))]
+[JsonConverter(typeof(EnumSerializer<DeepgramVoiceIdEnum>))]
 public enum DeepgramVoiceIdEnum
 {
     [EnumMember(Value = "asteria")]

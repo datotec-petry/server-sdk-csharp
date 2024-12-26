@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<AnalyticsOperationOperation>))]
+[JsonConverter(typeof(EnumSerializer<AnalyticsOperationOperation>))]
 public enum AnalyticsOperationOperation
 {
     [EnumMember(Value = "sum")]

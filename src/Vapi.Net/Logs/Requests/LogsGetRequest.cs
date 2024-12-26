@@ -17,6 +17,11 @@ public record LogsGetRequest
     public LogsGetRequestType? Type { get; set; }
 
     /// <summary>
+    /// This is the type of the webhook, given the log is from a webhook.
+    /// </summary>
+    public string? WebhookType { get; set; }
+
+    /// <summary>
     /// This is the ID of the assistant.
     /// </summary>
     public string? AssistantId { get; set; }
@@ -44,7 +49,7 @@ public record LogsGetRequest
     /// <summary>
     /// This is the page number to return. Defaults to 1.
     /// </summary>
-    public int? Page { get; set; }
+    public double? Page { get; set; }
 
     /// <summary>
     /// This is the sort order for pagination. Defaults to 'ASC'.

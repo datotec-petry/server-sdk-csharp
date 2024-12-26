@@ -28,9 +28,17 @@ public partial class CallsClient
     )
     {
         var _query = new Dictionary<string, object>();
+        if (request.Id != null)
+        {
+            _query["id"] = request.Id;
+        }
         if (request.AssistantId != null)
         {
             _query["assistantId"] = request.AssistantId;
+        }
+        if (request.PhoneNumberId != null)
+        {
+            _query["phoneNumberId"] = request.PhoneNumberId;
         }
         if (request.Limit != null)
         {
@@ -117,6 +125,7 @@ public partial class CallsClient
                 Method = HttpMethod.Post,
                 Path = "call",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken
@@ -242,6 +251,7 @@ public partial class CallsClient
                 Method = HttpMethodExtensions.Patch,
                 Path = $"call/{id}",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken

@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ClientMessageSpeechUpdateRole>))]
+[JsonConverter(typeof(EnumSerializer<ClientMessageSpeechUpdateRole>))]
 public enum ClientMessageSpeechUpdateRole
 {
     [EnumMember(Value = "assistant")]

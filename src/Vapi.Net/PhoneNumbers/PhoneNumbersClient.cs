@@ -113,6 +113,7 @@ public partial class PhoneNumbersClient
                 Method = HttpMethod.Post,
                 Path = "phone-number",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken
@@ -238,6 +239,7 @@ public partial class PhoneNumbersClient
                 Method = HttpMethodExtensions.Patch,
                 Path = $"phone-number/{id}",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken

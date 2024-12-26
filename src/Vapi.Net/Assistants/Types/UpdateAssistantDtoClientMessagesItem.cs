@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<UpdateAssistantDtoClientMessagesItem>))]
+[JsonConverter(typeof(EnumSerializer<UpdateAssistantDtoClientMessagesItem>))]
 public enum UpdateAssistantDtoClientMessagesItem
 {
     [EnumMember(Value = "conversation-update")]
@@ -44,6 +44,9 @@ public enum UpdateAssistantDtoClientMessagesItem
 
     [EnumMember(Value = "tool-calls-result")]
     ToolCallsResult,
+
+    [EnumMember(Value = "transfer-update")]
+    TransferUpdate,
 
     [EnumMember(Value = "user-interrupted")]
     UserInterrupted,

@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<PlayHtVoiceEmotion>))]
+[JsonConverter(typeof(EnumSerializer<PlayHtVoiceEmotion>))]
 public enum PlayHtVoiceEmotion
 {
     [EnumMember(Value = "female_happy")]

@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<AnthropicModelModel>))]
+[JsonConverter(typeof(EnumSerializer<AnthropicModelModel>))]
 public enum AnthropicModelModel
 {
     [EnumMember(Value = "claude-3-opus-20240229")]
@@ -20,4 +20,10 @@ public enum AnthropicModelModel
 
     [EnumMember(Value = "claude-3-5-sonnet-20240620")]
     Claude35Sonnet20240620,
+
+    [EnumMember(Value = "claude-3-5-sonnet-20241022")]
+    Claude35Sonnet20241022,
+
+    [EnumMember(Value = "claude-3-5-haiku-20241022")]
+    Claude35Haiku20241022,
 }

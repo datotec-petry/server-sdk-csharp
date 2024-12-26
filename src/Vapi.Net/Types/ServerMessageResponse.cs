@@ -16,6 +16,7 @@ public record ServerMessageResponse
     [JsonPropertyName("messageResponse")]
     public required OneOf<
         ServerMessageResponseAssistantRequest,
+        ServerMessageResponseKnowledgeBaseRequest,
         ServerMessageResponseToolCalls,
         ServerMessageResponseTransferDestinationRequest,
         ServerMessageResponseVoiceRequest

@@ -5,13 +5,13 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-public record ClientMessageLanguageChanged
+public record PaymentRetryDto
 {
     /// <summary>
-    /// This is the language the transcriber is switched to.
+    /// This is the payment ID to retry.
     /// </summary>
-    [JsonPropertyName("language")]
-    public required string Language { get; set; }
+    [JsonPropertyName("paymentId")]
+    public required string PaymentId { get; set; }
 
     public override string ToString()
     {

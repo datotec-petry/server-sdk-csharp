@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CallPhoneCallTransport>))]
+[JsonConverter(typeof(EnumSerializer<CallPhoneCallTransport>))]
 public enum CallPhoneCallTransport
 {
     [EnumMember(Value = "sip")]

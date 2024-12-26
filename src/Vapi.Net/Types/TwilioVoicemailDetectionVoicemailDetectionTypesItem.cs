@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<TwilioVoicemailDetectionVoicemailDetectionTypesItem>))]
+[JsonConverter(typeof(EnumSerializer<TwilioVoicemailDetectionVoicemailDetectionTypesItem>))]
 public enum TwilioVoicemailDetectionVoicemailDetectionTypesItem
 {
     [EnumMember(Value = "machine_start")]

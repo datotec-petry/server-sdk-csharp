@@ -15,6 +15,15 @@ public record Org
     [JsonPropertyName("hipaaEnabled")]
     public bool? HipaaEnabled { get; set; }
 
+    [JsonPropertyName("subscription")]
+    public Subscription? Subscription { get; set; }
+
+    /// <summary>
+    /// This is the ID of the subscription the org belongs to.
+    /// </summary>
+    [JsonPropertyName("subscriptionId")]
+    public string? SubscriptionId { get; set; }
+
     /// <summary>
     /// This is the unique identifier for the org.
     /// </summary>
@@ -74,6 +83,12 @@ public record Org
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
+
+    /// <summary>
+    /// This is the channel of the org. There is the cluster the API traffic for the org will be directed.
+    /// </summary>
+    [JsonPropertyName("channel")]
+    public OrgChannel? Channel { get; set; }
 
     /// <summary>
     /// This is the monthly billing limit for the org. To go beyond $1000/mo, please contact us at support@vapi.ai.

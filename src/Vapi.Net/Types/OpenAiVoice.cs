@@ -8,15 +8,8 @@ namespace Vapi.Net;
 public record OpenAiVoice
 {
     /// <summary>
-    /// This determines whether fillers are injected into the model output before inputting it into the voice provider.
-    ///
-    /// Default `false` because you can achieve better results with prompting the model.
-    /// </summary>
-    [JsonPropertyName("fillerInjectionEnabled")]
-    public bool? FillerInjectionEnabled { get; set; }
-
-    /// <summary>
     /// This is the provider-specific ID that will be used.
+    /// Please note that ash, ballad, coral, sage, and verse may only be used with the `gpt-4o-realtime-preview-2024-10-01` model.
     /// </summary>
     [JsonPropertyName("voiceId")]
     public required OpenAiVoiceId VoiceId { get; set; }
@@ -32,6 +25,12 @@ public record OpenAiVoice
     /// </summary>
     [JsonPropertyName("chunkPlan")]
     public ChunkPlan? ChunkPlan { get; set; }
+
+    /// <summary>
+    /// This is the plan for voice provider fallbacks in the event that the primary voice provider fails.
+    /// </summary>
+    [JsonPropertyName("fallbackPlan")]
+    public FallbackPlan? FallbackPlan { get; set; }
 
     public override string ToString()
     {

@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<OpenAiVoiceId>))]
+[JsonConverter(typeof(EnumSerializer<OpenAiVoiceId>))]
 public enum OpenAiVoiceId
 {
     [EnumMember(Value = "alloy")]
@@ -26,4 +26,19 @@ public enum OpenAiVoiceId
 
     [EnumMember(Value = "shimmer")]
     Shimmer,
+
+    [EnumMember(Value = "ash")]
+    Ash,
+
+    [EnumMember(Value = "ballad")]
+    Ballad,
+
+    [EnumMember(Value = "coral")]
+    Coral,
+
+    [EnumMember(Value = "sage")]
+    Sage,
+
+    [EnumMember(Value = "verse")]
+    Verse,
 }

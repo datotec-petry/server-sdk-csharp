@@ -26,6 +26,14 @@ public record UpdateAssistantDto
     public object? Voice { get; set; }
 
     /// <summary>
+    /// This is the first message that the assistant will say. This can also be a URL to a containerized audio file (mp3, wav, etc.).
+    ///
+    /// If unspecified, assistant will wait for user to speak and use the model to respond once they speak.
+    /// </summary>
+    [JsonPropertyName("firstMessage")]
+    public string? FirstMessage { get; set; }
+
+    /// <summary>
     /// This is the mode for the first message. Default is 'assistant-speaks-first'.
     ///
     /// Use:
@@ -45,7 +53,7 @@ public record UpdateAssistantDto
     public bool? HipaaEnabled { get; set; }
 
     /// <summary>
-    /// These are the messages that will be sent to your Client SDKs. Default is conversation-update,function-call,hang,model-output,speech-update,status-update,transcript,tool-calls,user-interrupted,voice-input. You can check the shape of the messages in ClientMessage schema.
+    /// These are the messages that will be sent to your Client SDKs. Default is conversation-update,function-call,hang,model-output,speech-update,status-update,transfer-update,transcript,tool-calls,user-interrupted,voice-input. You can check the shape of the messages in ClientMessage schema.
     /// </summary>
     [JsonPropertyName("clientMessages")]
     public IEnumerable<UpdateAssistantDtoClientMessagesItem>? ClientMessages { get; set; }
@@ -77,16 +85,6 @@ public record UpdateAssistantDto
     /// </summary>
     [JsonPropertyName("backgroundSound")]
     public UpdateAssistantDtoBackgroundSound? BackgroundSound { get; set; }
-
-    /// <summary>
-    /// This determines whether the model says 'mhmm', 'ahem' etc. while user is speaking.
-    ///
-    /// Default `false` while in beta.
-    ///
-    /// @default false
-    /// </summary>
-    [JsonPropertyName("backchannelingEnabled")]
-    public bool? BackchannelingEnabled { get; set; }
 
     /// <summary>
     /// This enables filtering of noise and background speech while the user is talking.
@@ -123,14 +121,6 @@ public record UpdateAssistantDto
     public string? Name { get; set; }
 
     /// <summary>
-    /// This is the first message that the assistant will say. This can also be a URL to a containerized audio file (mp3, wav, etc.).
-    ///
-    /// If unspecified, assistant will wait for user to speak and use the model to respond once they speak.
-    /// </summary>
-    [JsonPropertyName("firstMessage")]
-    public string? FirstMessage { get; set; }
-
-    /// <summary>
     /// These are the settings to configure or disable voicemail detection. Alternatively, voicemail detection can be configured using the model.tools=[VoicemailTool].
     /// This uses Twilio's built-in detection while the VoicemailTool relies on the model to detect if a voicemail was reached.
     /// You can use neither of them, one of them, or both of them. By default, Twilio built-in detection is enabled while VoicemailTool is not.
@@ -165,24 +155,6 @@ public record UpdateAssistantDto
     /// </summary>
     [JsonPropertyName("metadata")]
     public object? Metadata { get; set; }
-
-    /// <summary>
-    /// This is the URL Vapi will communicate with via HTTP GET and POST Requests. This is used for retrieving context, function calling, and end-of-call reports.
-    ///
-    /// All requests will be sent with the call object among other things relevant to that message. You can find more details in the Server URL documentation.
-    ///
-    /// This overrides the serverUrl set on the org and the phoneNumber. Order of precedence: tool.server.url > assistant.serverUrl > phoneNumber.serverUrl > org.serverUrl
-    /// </summary>
-    [JsonPropertyName("serverUrl")]
-    public string? ServerUrl { get; set; }
-
-    /// <summary>
-    /// This is the secret you can set that Vapi will send with every request to your server. Will be sent as a header called x-vapi-secret.
-    ///
-    /// Same precedence logic as serverUrl.
-    /// </summary>
-    [JsonPropertyName("serverUrlSecret")]
-    public string? ServerUrlSecret { get; set; }
 
     /// <summary>
     /// This is the plan for analysis of assistant's calls. Stored in `call.analysis`.
@@ -247,6 +219,18 @@ public record UpdateAssistantDto
     /// </summary>
     [JsonPropertyName("credentialIds")]
     public IEnumerable<string>? CredentialIds { get; set; }
+
+    /// <summary>
+    /// This is where Vapi will send webhooks. You can find all webhooks available along with their shape in ServerMessage schema.
+    ///
+    /// The order of precedence is:
+    ///
+    /// 1. assistant.server.url
+    /// 2. phoneNumber.serverUrl
+    /// 3. org.serverUrl
+    /// </summary>
+    [JsonPropertyName("server")]
+    public Server? Server { get; set; }
 
     public override string ToString()
     {

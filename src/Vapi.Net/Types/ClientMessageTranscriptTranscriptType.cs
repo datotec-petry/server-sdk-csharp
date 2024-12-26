@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ClientMessageTranscriptTranscriptType>))]
+[JsonConverter(typeof(EnumSerializer<ClientMessageTranscriptTranscriptType>))]
 public enum ClientMessageTranscriptTranscriptType
 {
     [EnumMember(Value = "partial")]

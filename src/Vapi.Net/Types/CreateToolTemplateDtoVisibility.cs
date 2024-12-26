@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CreateToolTemplateDtoVisibility>))]
+[JsonConverter(typeof(EnumSerializer<CreateToolTemplateDtoVisibility>))]
 public enum CreateToolTemplateDtoVisibility
 {
     [EnumMember(Value = "public")]

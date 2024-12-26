@@ -11,13 +11,12 @@ public record VoiceCost
     /// This is the voice that was used during the call.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.assistant.voice`,
-    /// - `call.assistantId->voice`,
+    /// - `call.assistantId-&gt;voice`,
     /// - `call.squad[n].assistant.voice`,
-    /// - `call.squad[n].assistantId->voice`,
-    /// - `call.squadId->[n].assistant.voice`,
-    /// - `call.squadId->[n].assistantId->voice`.
+    /// - `call.squad[n].assistantId-&gt;voice`,
+    /// - `call.squadId-&gt;[n].assistant.voice`,
+    /// - `call.squadId-&gt;[n].assistantId-&gt;voice`.
     /// </summary>
     [JsonPropertyName("voice")]
     public object Voice { get; set; } = new Dictionary<string, object?>();

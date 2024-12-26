@@ -6,68 +6,17 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ServerMessageEndOfCallReportEndedReason>))]
+[JsonConverter(typeof(EnumSerializer<ServerMessageEndOfCallReportEndedReason>))]
 public enum ServerMessageEndOfCallReportEndedReason
 {
-    [EnumMember(Value = "assistant-error")]
-    AssistantError,
-
-    [EnumMember(Value = "assistant-not-found")]
-    AssistantNotFound,
-
-    [EnumMember(Value = "db-error")]
-    DbError,
-
-    [EnumMember(Value = "no-server-available")]
-    NoServerAvailable,
-
-    [EnumMember(Value = "license-check-failed")]
-    LicenseCheckFailed,
-
-    [EnumMember(Value = "pipeline-error-openai-llm-failed")]
-    PipelineErrorOpenaiLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-azure-openai-llm-failed")]
-    PipelineErrorAzureOpenaiLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-groq-llm-failed")]
-    PipelineErrorGroqLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-anthropic-llm-failed")]
-    PipelineErrorAnthropicLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-vapi-llm-failed")]
-    PipelineErrorVapiLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-vapi-400-bad-request-validation-failed")]
-    PipelineErrorVapi400BadRequestValidationFailed,
-
-    [EnumMember(Value = "pipeline-error-vapi-401-unauthorized")]
-    PipelineErrorVapi401Unauthorized,
-
-    [EnumMember(Value = "pipeline-error-vapi-403-model-access-denied")]
-    PipelineErrorVapi403ModelAccessDenied,
-
-    [EnumMember(Value = "pipeline-error-vapi-429-exceeded-quota")]
-    PipelineErrorVapi429ExceededQuota,
-
-    [EnumMember(Value = "pipeline-error-vapi-500-server-error")]
-    PipelineErrorVapi500ServerError,
-
     [EnumMember(Value = "pipeline-error-openai-voice-failed")]
     PipelineErrorOpenaiVoiceFailed,
 
     [EnumMember(Value = "pipeline-error-cartesia-voice-failed")]
     PipelineErrorCartesiaVoiceFailed,
 
-    [EnumMember(Value = "pipeline-error-deepgram-transcriber-failed")]
-    PipelineErrorDeepgramTranscriberFailed,
-
     [EnumMember(Value = "pipeline-error-deepgram-voice-failed")]
     PipelineErrorDeepgramVoiceFailed,
-
-    [EnumMember(Value = "pipeline-error-gladia-transcriber-failed")]
-    PipelineErrorGladiaTranscriberFailed,
 
     [EnumMember(Value = "pipeline-error-eleven-labs-voice-failed")]
     PipelineErrorElevenLabsVoiceFailed,
@@ -86,6 +35,33 @@ public enum ServerMessageEndOfCallReportEndedReason
 
     [EnumMember(Value = "pipeline-error-neets-voice-failed")]
     PipelineErrorNeetsVoiceFailed,
+
+    [EnumMember(Value = "db-error")]
+    DbError,
+
+    [EnumMember(Value = "assistant-not-found")]
+    AssistantNotFound,
+
+    [EnumMember(Value = "license-check-failed")]
+    LicenseCheckFailed,
+
+    [EnumMember(Value = "pipeline-error-vapi-llm-failed")]
+    PipelineErrorVapiLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-vapi-400-bad-request-validation-failed")]
+    PipelineErrorVapi400BadRequestValidationFailed,
+
+    [EnumMember(Value = "pipeline-error-vapi-401-unauthorized")]
+    PipelineErrorVapi401Unauthorized,
+
+    [EnumMember(Value = "pipeline-error-vapi-403-model-access-denied")]
+    PipelineErrorVapi403ModelAccessDenied,
+
+    [EnumMember(Value = "pipeline-error-vapi-429-exceeded-quota")]
+    PipelineErrorVapi429ExceededQuota,
+
+    [EnumMember(Value = "pipeline-error-vapi-500-server-error")]
+    PipelineErrorVapi500ServerError,
 
     [EnumMember(Value = "pipeline-no-available-model")]
     PipelineNoAvailableModel,
@@ -122,6 +98,36 @@ public enum ServerMessageEndOfCallReportEndedReason
 
     [EnumMember(Value = "vapifault-transport-connected-but-call-not-active")]
     VapifaultTransportConnectedButCallNotActive,
+
+    [EnumMember(Value = "vapifault-call-started-but-connection-to-transport-missing")]
+    VapifaultCallStartedButConnectionToTransportMissing,
+
+    [EnumMember(Value = "pipeline-error-deepgram-transcriber-failed")]
+    PipelineErrorDeepgramTranscriberFailed,
+
+    [EnumMember(Value = "pipeline-error-gladia-transcriber-failed")]
+    PipelineErrorGladiaTranscriberFailed,
+
+    [EnumMember(Value = "pipeline-error-assembly-ai-transcriber-failed")]
+    PipelineErrorAssemblyAiTranscriberFailed,
+
+    [EnumMember(Value = "pipeline-error-openai-llm-failed")]
+    PipelineErrorOpenaiLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-azure-openai-llm-failed")]
+    PipelineErrorAzureOpenaiLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-groq-llm-failed")]
+    PipelineErrorGroqLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-google-llm-failed")]
+    PipelineErrorGoogleLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-xai-llm-failed")]
+    PipelineErrorXaiLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-inflection-ai-llm-failed")]
+    PipelineErrorInflectionAiLlmFailed,
 
     [EnumMember(Value = "assistant-not-invalid")]
     AssistantNotInvalid,
@@ -201,6 +207,51 @@ public enum ServerMessageEndOfCallReportEndedReason
     [EnumMember(Value = "pipeline-error-openai-500-server-error")]
     PipelineErrorOpenai500ServerError,
 
+    [EnumMember(Value = "pipeline-error-google-400-bad-request-validation-failed")]
+    PipelineErrorGoogle400BadRequestValidationFailed,
+
+    [EnumMember(Value = "pipeline-error-google-401-unauthorized")]
+    PipelineErrorGoogle401Unauthorized,
+
+    [EnumMember(Value = "pipeline-error-google-403-model-access-denied")]
+    PipelineErrorGoogle403ModelAccessDenied,
+
+    [EnumMember(Value = "pipeline-error-google-429-exceeded-quota")]
+    PipelineErrorGoogle429ExceededQuota,
+
+    [EnumMember(Value = "pipeline-error-google-500-server-error")]
+    PipelineErrorGoogle500ServerError,
+
+    [EnumMember(Value = "pipeline-error-xai-400-bad-request-validation-failed")]
+    PipelineErrorXai400BadRequestValidationFailed,
+
+    [EnumMember(Value = "pipeline-error-xai-401-unauthorized")]
+    PipelineErrorXai401Unauthorized,
+
+    [EnumMember(Value = "pipeline-error-xai-403-model-access-denied")]
+    PipelineErrorXai403ModelAccessDenied,
+
+    [EnumMember(Value = "pipeline-error-xai-429-exceeded-quota")]
+    PipelineErrorXai429ExceededQuota,
+
+    [EnumMember(Value = "pipeline-error-xai-500-server-error")]
+    PipelineErrorXai500ServerError,
+
+    [EnumMember(Value = "pipeline-error-inflection-ai-400-bad-request-validation-failed")]
+    PipelineErrorInflectionAi400BadRequestValidationFailed,
+
+    [EnumMember(Value = "pipeline-error-inflection-ai-401-unauthorized")]
+    PipelineErrorInflectionAi401Unauthorized,
+
+    [EnumMember(Value = "pipeline-error-inflection-ai-403-model-access-denied")]
+    PipelineErrorInflectionAi403ModelAccessDenied,
+
+    [EnumMember(Value = "pipeline-error-inflection-ai-429-exceeded-quota")]
+    PipelineErrorInflectionAi429ExceededQuota,
+
+    [EnumMember(Value = "pipeline-error-inflection-ai-500-server-error")]
+    PipelineErrorInflectionAi500ServerError,
+
     [EnumMember(Value = "pipeline-error-azure-openai-400-bad-request-validation-failed")]
     PipelineErrorAzureOpenai400BadRequestValidationFailed,
 
@@ -245,6 +296,9 @@ public enum ServerMessageEndOfCallReportEndedReason
 
     [EnumMember(Value = "pipeline-error-anthropic-500-server-error")]
     PipelineErrorAnthropic500ServerError,
+
+    [EnumMember(Value = "pipeline-error-anthropic-llm-failed")]
+    PipelineErrorAnthropicLlmFailed,
 
     [EnumMember(Value = "pipeline-error-together-ai-400-bad-request-validation-failed")]
     PipelineErrorTogetherAi400BadRequestValidationFailed,
@@ -372,6 +426,9 @@ public enum ServerMessageEndOfCallReportEndedReason
     [EnumMember(Value = "pipeline-error-custom-llm-llm-failed")]
     PipelineErrorCustomLlmLlmFailed,
 
+    [EnumMember(Value = "pipeline-error-custom-voice-failed")]
+    PipelineErrorCustomVoiceFailed,
+
     [EnumMember(Value = "pipeline-error-cartesia-socket-hang-up")]
     PipelineErrorCartesiaSocketHangUp,
 
@@ -386,9 +443,6 @@ public enum ServerMessageEndOfCallReportEndedReason
 
     [EnumMember(Value = "pipeline-error-cartesia-522-server-error")]
     PipelineErrorCartesia522ServerError,
-
-    [EnumMember(Value = "pipeline-error-custom-voice-failed")]
-    PipelineErrorCustomVoiceFailed,
 
     [EnumMember(Value = "pipeline-error-eleven-labs-voice-not-found")]
     PipelineErrorElevenLabsVoiceNotFound,
@@ -454,6 +508,11 @@ public enum ServerMessageEndOfCallReportEndedReason
     [EnumMember(Value = "pipeline-error-eleven-labs-max-character-limit-exceeded")]
     PipelineErrorElevenLabsMaxCharacterLimitExceeded,
 
+    [EnumMember(
+        Value = "pipeline-error-eleven-labs-blocked-voice-potentially-against-terms-of-service-and-awaiting-verification"
+    )]
+    PipelineErrorElevenLabsBlockedVoicePotentiallyAgainstTermsOfServiceAndAwaitingVerification,
+
     [EnumMember(Value = "pipeline-error-playht-request-timed-out")]
     PipelineErrorPlayhtRequestTimedOut,
 
@@ -465,6 +524,9 @@ public enum ServerMessageEndOfCallReportEndedReason
 
     [EnumMember(Value = "pipeline-error-playht-out-of-credits")]
     PipelineErrorPlayhtOutOfCredits,
+
+    [EnumMember(Value = "pipeline-error-playht-invalid-emotion")]
+    PipelineErrorPlayhtInvalidEmotion,
 
     [EnumMember(Value = "pipeline-error-playht-voice-must-be-a-valid-voice-manifest-uri")]
     PipelineErrorPlayhtVoiceMustBeAValidVoiceManifestUri,
@@ -487,23 +549,40 @@ public enum ServerMessageEndOfCallReportEndedReason
     [EnumMember(Value = "pipeline-error-playht-504-gateway-error")]
     PipelineErrorPlayht504GatewayError,
 
-    [EnumMember(Value = "pipeline-error-deepgram-403-model-access-denied")]
-    PipelineErrorDeepgram403ModelAccessDenied,
+    [EnumMember(Value = "pipeline-error-deepgram-returning-403-model-access-denied")]
+    PipelineErrorDeepgramReturning403ModelAccessDenied,
 
-    [EnumMember(Value = "pipeline-error-deepgram-404-not-found")]
-    PipelineErrorDeepgram404NotFound,
+    [EnumMember(Value = "pipeline-error-deepgram-returning-401-invalid-credentials")]
+    PipelineErrorDeepgramReturning401InvalidCredentials,
 
-    [EnumMember(Value = "pipeline-error-deepgram-400-no-such-model-language-tier-combination")]
-    PipelineErrorDeepgram400NoSuchModelLanguageTierCombination,
+    [EnumMember(Value = "pipeline-error-deepgram-returning-404-not-found")]
+    PipelineErrorDeepgramReturning404NotFound,
 
-    [EnumMember(Value = "pipeline-error-deepgram-500-returning-invalid-json")]
-    PipelineErrorDeepgram500ReturningInvalidJson,
+    [EnumMember(
+        Value = "pipeline-error-deepgram-returning-400-no-such-model-language-tier-combination"
+    )]
+    PipelineErrorDeepgramReturning400NoSuchModelLanguageTierCombination,
 
-    [EnumMember(Value = "sip-gateway-failed-to-connect-call")]
-    SipGatewayFailedToConnectCall,
+    [EnumMember(Value = "pipeline-error-deepgram-returning-500-invalid-json")]
+    PipelineErrorDeepgramReturning500InvalidJson,
+
+    [EnumMember(Value = "pipeline-error-deepgram-returning-502-network-error")]
+    PipelineErrorDeepgramReturning502NetworkError,
+
+    [EnumMember(Value = "pipeline-error-deepgram-returning-502-bad-gateway-ehostunreach")]
+    PipelineErrorDeepgramReturning502BadGatewayEhostunreach,
+
+    [EnumMember(Value = "pipeline-error-tavus-video-failed")]
+    PipelineErrorTavusVideoFailed,
+
+    [EnumMember(Value = "pipeline-error-custom-transcriber-failed")]
+    PipelineErrorCustomTranscriberFailed,
 
     [EnumMember(Value = "silence-timed-out")]
     SilenceTimedOut,
+
+    [EnumMember(Value = "sip-gateway-failed-to-connect-call")]
+    SipGatewayFailedToConnectCall,
 
     [EnumMember(Value = "twilio-failed-to-connect-call")]
     TwilioFailedToConnectCall,
@@ -511,9 +590,9 @@ public enum ServerMessageEndOfCallReportEndedReason
     [EnumMember(Value = "twilio-reported-customer-misdialed")]
     TwilioReportedCustomerMisdialed,
 
-    [EnumMember(Value = "voicemail")]
-    Voicemail,
-
     [EnumMember(Value = "vonage-rejected")]
     VonageRejected,
+
+    [EnumMember(Value = "voicemail")]
+    Voicemail,
 }

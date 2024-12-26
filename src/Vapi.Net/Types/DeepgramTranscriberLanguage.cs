@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<DeepgramTranscriberLanguage>))]
+[JsonConverter(typeof(EnumSerializer<DeepgramTranscriberLanguage>))]
 public enum DeepgramTranscriberLanguage
 {
     [EnumMember(Value = "bg")]

@@ -6,14 +6,14 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CartesiaVoiceLanguage>))]
+[JsonConverter(typeof(EnumSerializer<CartesiaVoiceLanguage>))]
 public enum CartesiaVoiceLanguage
 {
-    [EnumMember(Value = "de")]
-    De,
-
     [EnumMember(Value = "en")]
     En,
+
+    [EnumMember(Value = "de")]
+    De,
 
     [EnumMember(Value = "es")]
     Es,
@@ -29,4 +29,28 @@ public enum CartesiaVoiceLanguage
 
     [EnumMember(Value = "zh")]
     Zh,
+
+    [EnumMember(Value = "hi")]
+    Hi,
+
+    [EnumMember(Value = "it")]
+    It,
+
+    [EnumMember(Value = "ko")]
+    Ko,
+
+    [EnumMember(Value = "nl")]
+    Nl,
+
+    [EnumMember(Value = "pl")]
+    Pl,
+
+    [EnumMember(Value = "ru")]
+    Ru,
+
+    [EnumMember(Value = "sv")]
+    Sv,
+
+    [EnumMember(Value = "tr")]
+    Tr,
 }

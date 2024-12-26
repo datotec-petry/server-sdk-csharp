@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<RegexOptionType>))]
+[JsonConverter(typeof(EnumSerializer<RegexOptionType>))]
 public enum RegexOptionType
 {
     [EnumMember(Value = "ignore-case")]

@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<UpdateUserRoleDtoRole>))]
+[JsonConverter(typeof(EnumSerializer<UpdateUserRoleDtoRole>))]
 public enum UpdateUserRoleDtoRole
 {
     [EnumMember(Value = "admin")]

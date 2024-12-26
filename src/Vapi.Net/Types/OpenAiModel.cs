@@ -30,6 +30,18 @@ public record OpenAiModel
     public IEnumerable<string>? ToolIds { get; set; }
 
     /// <summary>
+    /// These are the options for the knowledge base.
+    /// </summary>
+    [JsonPropertyName("knowledgeBase")]
+    public CreateCustomKnowledgeBaseDto? KnowledgeBase { get; set; }
+
+    /// <summary>
+    /// This is the ID of the knowledge base the model will use.
+    /// </summary>
+    [JsonPropertyName("knowledgeBaseId")]
+    public string? KnowledgeBaseId { get; set; }
+
+    /// <summary>
     /// This is the OpenAI model that will be used.
     /// </summary>
     [JsonPropertyName("model")]
@@ -49,12 +61,6 @@ public record OpenAiModel
     /// </summary>
     [JsonPropertyName("temperature")]
     public double? Temperature { get; set; }
-
-    /// <summary>
-    /// These are the options for the knowledge base.
-    /// </summary>
-    [JsonPropertyName("knowledgeBase")]
-    public KnowledgeBase? KnowledgeBase { get; set; }
 
     /// <summary>
     /// This is the max number of tokens that the assistant will be allowed to generate in each turn of the conversation. Default is 250.

@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<LogsGetRequestType>))]
+[JsonConverter(typeof(EnumSerializer<LogsGetRequestType>))]
 public enum LogsGetRequestType
 {
     [EnumMember(Value = "API")]

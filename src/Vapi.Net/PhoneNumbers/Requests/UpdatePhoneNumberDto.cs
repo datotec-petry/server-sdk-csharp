@@ -45,7 +45,7 @@ public record UpdatePhoneNumberDto
     ///
     /// You can see the shape of the messages sent in `ServerMessage`.
     ///
-    /// This overrides the `org.serverUrl`. Order of precedence: tool.server.url > assistant.serverUrl > phoneNumber.serverUrl > org.serverUrl.
+    /// This overrides the `org.serverUrl`. Order of precedence: tool.server.url &gt; assistant.serverUrl &gt; phoneNumber.serverUrl &gt; org.serverUrl.
     /// </summary>
     [JsonPropertyName("serverUrl")]
     public string? ServerUrl { get; set; }

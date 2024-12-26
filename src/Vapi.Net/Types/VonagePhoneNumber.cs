@@ -9,7 +9,6 @@ public record VonagePhoneNumber
 {
     /// <summary>
     /// This is the fallback destination an inbound call will be transferred to if:
-    ///
     /// 1. `assistantId` is not set
     /// 2. `squadId` is not set
     /// 3. and, `assistant-request` message to the `serverUrl` fails
@@ -70,7 +69,7 @@ public record VonagePhoneNumber
     ///
     /// You can see the shape of the messages sent in `ServerMessage`.
     ///
-    /// This overrides the `org.serverUrl`. Order of precedence: tool.server.url > assistant.serverUrl > phoneNumber.serverUrl > org.serverUrl.
+    /// This overrides the `org.serverUrl`. Order of precedence: tool.server.url &gt; assistant.serverUrl &gt; phoneNumber.serverUrl &gt; org.serverUrl.
     /// </summary>
     [JsonPropertyName("serverUrl")]
     public string? ServerUrl { get; set; }

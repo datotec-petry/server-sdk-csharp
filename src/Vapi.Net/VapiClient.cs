@@ -8,16 +8,15 @@ public partial class VapiClient
 {
     private RawClient _client;
 
-    public VapiClient(string? token = null, ClientOptions? clientOptions = null)
+    public VapiClient(string token, ClientOptions? clientOptions = null)
     {
         var defaultHeaders = new Headers(
             new Dictionary<string, string>()
             {
-                { "Authorization", $"Bearer {token}" },
                 { "X-Fern-Language", "C#" },
                 { "X-Fern-SDK-Name", "Vapi.Net" },
                 { "X-Fern-SDK-Version", Version.Current },
-                { "User-Agent", "Vapi.Net/0.1.0" },
+                { "User-Agent", "Vapi.Net/0.2.0" },
             }
         );
         clientOptions ??= new ClientOptions();
@@ -33,6 +32,7 @@ public partial class VapiClient
         Assistants = new AssistantsClient(_client);
         PhoneNumbers = new PhoneNumbersClient(_client);
         Squads = new SquadsClient(_client);
+        KnowledgeBases = new KnowledgeBasesClient(_client);
         Blocks = new BlocksClient(_client);
         Tools = new ToolsClient(_client);
         Files = new FilesClient(_client);
@@ -47,6 +47,8 @@ public partial class VapiClient
     public PhoneNumbersClient PhoneNumbers { get; init; }
 
     public SquadsClient Squads { get; init; }
+
+    public KnowledgeBasesClient KnowledgeBases { get; init; }
 
     public BlocksClient Blocks { get; init; }
 

@@ -9,14 +9,6 @@ namespace Vapi.Net;
 public record ElevenLabsVoice
 {
     /// <summary>
-    /// This determines whether fillers are injected into the model output before inputting it into the voice provider.
-    ///
-    /// Default `false` because you can achieve better results with prompting the model.
-    /// </summary>
-    [JsonPropertyName("fillerInjectionEnabled")]
-    public bool? FillerInjectionEnabled { get; set; }
-
-    /// <summary>
     /// This is the provider-specific ID that will be used. Ensure the Voice is present in your 11Labs Voice Library.
     /// </summary>
     [JsonPropertyName("voiceId")]
@@ -67,16 +59,22 @@ public record ElevenLabsVoice
     public ElevenLabsVoiceModel? Model { get; set; }
 
     /// <summary>
+    /// This is the plan for chunking the model output before it is sent to the voice provider.
+    /// </summary>
+    [JsonPropertyName("chunkPlan")]
+    public ChunkPlan? ChunkPlan { get; set; }
+
+    /// <summary>
     /// This is the language (ISO 639-1) that is enforced for the model. Currently only Turbo v2.5 supports language enforcement. For other models, an error will be returned if language code is provided.
     /// </summary>
     [JsonPropertyName("language")]
     public string? Language { get; set; }
 
     /// <summary>
-    /// This is the plan for chunking the model output before it is sent to the voice provider.
+    /// This is the plan for voice provider fallbacks in the event that the primary voice provider fails.
     /// </summary>
-    [JsonPropertyName("chunkPlan")]
-    public ChunkPlan? ChunkPlan { get; set; }
+    [JsonPropertyName("fallbackPlan")]
+    public FallbackPlan? FallbackPlan { get; set; }
 
     public override string ToString()
     {

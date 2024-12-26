@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<SuccessEvaluationPlanRubric>))]
+[JsonConverter(typeof(EnumSerializer<SuccessEvaluationPlanRubric>))]
 public enum SuccessEvaluationPlanRubric
 {
     [EnumMember(Value = "NumericScale")]

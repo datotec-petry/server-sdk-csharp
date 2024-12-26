@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<OpenAiMessageRole>))]
+[JsonConverter(typeof(EnumSerializer<OpenAiMessageRole>))]
 public enum OpenAiMessageRole
 {
     [EnumMember(Value = "assistant")]

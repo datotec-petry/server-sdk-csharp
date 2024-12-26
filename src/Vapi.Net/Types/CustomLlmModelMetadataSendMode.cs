@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CustomLlmModelMetadataSendMode>))]
+[JsonConverter(typeof(EnumSerializer<CustomLlmModelMetadataSendMode>))]
 public enum CustomLlmModelMetadataSendMode
 {
     [EnumMember(Value = "off")]

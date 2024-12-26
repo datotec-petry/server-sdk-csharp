@@ -52,6 +52,12 @@ public record MakeCredential
     [JsonPropertyName("updatedAt")]
     public required DateTime UpdatedAt { get; set; }
 
+    /// <summary>
+    /// This is the name of credential. This is just for your reference.
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
     public override string ToString()
     {
         return JsonUtils.Serialize(this);

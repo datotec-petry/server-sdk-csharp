@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<DeepgramTranscriberModel>))]
+[JsonConverter(typeof(EnumSerializer<DeepgramTranscriberModel>))]
 public enum DeepgramTranscriberModel
 {
     [EnumMember(Value = "nova-2")]

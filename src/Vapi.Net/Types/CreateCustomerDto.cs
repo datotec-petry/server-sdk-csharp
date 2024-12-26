@@ -11,7 +11,6 @@ public record CreateCustomerDto
     /// This is the flag to toggle the E164 check for the `number` field. This is an advanced property which should be used if you know your use case requires it.
     ///
     /// Use cases:
-    ///
     /// - `false`: To allow non-E164 numbers like `+001234567890`, `1234`, or `abc`. This is useful for dialing out to non-E164 numbers on your SIP trunks.
     /// - `true` (default): To allow only E164 numbers like `+14155551234`. This is standard for PSTN calls.
     ///
@@ -43,7 +42,7 @@ public record CreateCustomerDto
     /// <summary>
     /// This is the name of the customer. This is just for your own reference.
     ///
-    /// For SIP inbound calls, this is extracted from the `From` SIP header with format `"Display Name" <sip:username@domain>`.
+    /// For SIP inbound calls, this is extracted from the `From` SIP header with format `"Display Name" &lt;sip:username@domain&gt;`.
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }

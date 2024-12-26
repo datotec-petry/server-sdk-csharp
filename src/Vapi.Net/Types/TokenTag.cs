@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<TokenTag>))]
+[JsonConverter(typeof(EnumSerializer<TokenTag>))]
 public enum TokenTag
 {
     [EnumMember(Value = "private")]

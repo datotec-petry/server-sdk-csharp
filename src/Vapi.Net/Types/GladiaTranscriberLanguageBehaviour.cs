@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<GladiaTranscriberLanguageBehaviour>))]
+[JsonConverter(typeof(EnumSerializer<GladiaTranscriberLanguageBehaviour>))]
 public enum GladiaTranscriberLanguageBehaviour
 {
     [EnumMember(Value = "manual")]

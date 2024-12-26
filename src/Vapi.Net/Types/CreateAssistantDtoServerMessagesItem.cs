@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CreateAssistantDtoServerMessagesItem>))]
+[JsonConverter(typeof(EnumSerializer<CreateAssistantDtoServerMessagesItem>))]
 public enum CreateAssistantDtoServerMessagesItem
 {
     [EnumMember(Value = "conversation-update")]
@@ -23,6 +23,9 @@ public enum CreateAssistantDtoServerMessagesItem
 
     [EnumMember(Value = "language-changed")]
     LanguageChanged,
+
+    [EnumMember(Value = "language-change-detected")]
+    LanguageChangeDetected,
 
     [EnumMember(Value = "model-output")]
     ModelOutput,

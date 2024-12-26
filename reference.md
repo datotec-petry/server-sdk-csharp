@@ -840,6 +840,209 @@ await client.Squads.UpdateAsync(
 </dl>
 </details>
 
+## KnowledgeBases
+<details><summary><code>client.KnowledgeBases.<a href="/src/Vapi.Net/KnowledgeBases/KnowledgeBasesClient.cs">ListAsync</a>(KnowledgeBasesListRequest { ... }) -> IEnumerable<object></code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```csharp
+await client.KnowledgeBases.ListAsync(new KnowledgeBasesListRequest());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `KnowledgeBasesListRequest` 
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.KnowledgeBases.<a href="/src/Vapi.Net/KnowledgeBases/KnowledgeBasesClient.cs">CreateAsync</a>(object { ... }) -> object</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```csharp
+await client.KnowledgeBases.CreateAsync(
+    new CreateCustomKnowledgeBaseDto { Server = new Server { Url = "url" } }
+);
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `object` 
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.KnowledgeBases.<a href="/src/Vapi.Net/KnowledgeBases/KnowledgeBasesClient.cs">GetAsync</a>(id) -> object</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```csharp
+await client.KnowledgeBases.GetAsync("id");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `string` 
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.KnowledgeBases.<a href="/src/Vapi.Net/KnowledgeBases/KnowledgeBasesClient.cs">DeleteAsync</a>(id) -> object</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```csharp
+await client.KnowledgeBases.DeleteAsync("id");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `string` 
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.KnowledgeBases.<a href="/src/Vapi.Net/KnowledgeBases/KnowledgeBasesClient.cs">UpdateAsync</a>(id) -> object</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```csharp
+await client.KnowledgeBases.UpdateAsync("id");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**id:** `string` 
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 ## Blocks
 <details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">ListAsync</a>(BlocksListRequest { ... }) -> IEnumerable<object></code></summary>
 <dl>
@@ -1103,7 +1306,14 @@ await client.Tools.ListAsync(new ToolsListRequest());
 <dd>
 
 ```csharp
-await client.Tools.CreateAsync(new CreateOutputToolDto { Async = false });
+await client.Tools.CreateAsync(
+    new CreateTextEditorToolDto
+    {
+        Async = false,
+        SubType = "text_editor_20241022",
+        Name = "str_replace_editor",
+    }
+);
 ```
 </dd>
 </dl>
@@ -1413,7 +1623,7 @@ await client.Files.UpdateAsync("id", new UpdateFileDto());
 </details>
 
 ## Analytics
-<details><summary><code>client.Analytics.<a href="/src/Vapi.Net/Analytics/AnalyticsClient.cs">GetAsync</a>(AnalyticsQueryDto { ... }) -> IEnumerable<AnalyticsQueryResult></code></summary>
+<details><summary><code>client.Analytics.<a href="/src/Vapi.Net/Analytics/AnalyticsClient.cs">GetAsync</a>()</code></summary>
 <dl>
 <dd>
 
@@ -1426,43 +1636,8 @@ await client.Files.UpdateAsync("id", new UpdateFileDto());
 <dd>
 
 ```csharp
-await client.Analytics.GetAsync(
-    new AnalyticsQueryDto
-    {
-        Queries = new List<AnalyticsQuery>()
-        {
-            new AnalyticsQuery
-            {
-                Table = "call",
-                Name = "name",
-                Operations = new List<AnalyticsOperation>()
-                {
-                    new AnalyticsOperation
-                    {
-                        Operation = AnalyticsOperationOperation.Sum,
-                        Column = AnalyticsOperationColumn.Id,
-                    },
-                },
-            },
-        },
-    }
-);
+await client.Analytics.GetAsync();
 ```
-</dd>
-</dl>
-</dd>
-</dl>
-
-#### ⚙️ Parameters
-
-<dl>
-<dd>
-
-<dl>
-<dd>
-
-**request:** `AnalyticsQueryDto` 
-    
 </dd>
 </dl>
 </dd>
@@ -1474,7 +1649,7 @@ await client.Analytics.GetAsync(
 </details>
 
 ## Logs
-<details><summary><code>client.Logs.<a href="/src/Vapi.Net/Logs/LogsClient.cs">GetAsync</a>(LogsGetRequest { ... }) -> LogsPaginatedResponse</code></summary>
+<details><summary><code>client.Logs.<a href="/src/Vapi.Net/Logs/LogsClient.cs">GetAsync</a>(LogsGetRequest { ... }) -> Pager<Log></code></summary>
 <dl>
 <dd>
 

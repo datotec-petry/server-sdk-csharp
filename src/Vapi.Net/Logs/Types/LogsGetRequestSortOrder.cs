@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<LogsGetRequestSortOrder>))]
+[JsonConverter(typeof(EnumSerializer<LogsGetRequestSortOrder>))]
 public enum LogsGetRequestSortOrder
 {
     [EnumMember(Value = "ASC")]

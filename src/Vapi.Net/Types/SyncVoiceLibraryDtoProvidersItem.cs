@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<SyncVoiceLibraryDtoProvidersItem>))]
+[JsonConverter(typeof(EnumSerializer<SyncVoiceLibraryDtoProvidersItem>))]
 public enum SyncVoiceLibraryDtoProvidersItem
 {
     [EnumMember(Value = "11labs")]
@@ -38,4 +38,7 @@ public enum SyncVoiceLibraryDtoProvidersItem
 
     [EnumMember(Value = "rime-ai")]
     RimeAi,
+
+    [EnumMember(Value = "tavus")]
+    Tavus,
 }

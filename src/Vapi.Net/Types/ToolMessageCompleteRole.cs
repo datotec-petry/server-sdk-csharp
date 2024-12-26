@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ToolMessageCompleteRole>))]
+[JsonConverter(typeof(EnumSerializer<ToolMessageCompleteRole>))]
 public enum ToolMessageCompleteRole
 {
     [EnumMember(Value = "assistant")]

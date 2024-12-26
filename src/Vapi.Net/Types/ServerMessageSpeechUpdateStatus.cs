@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ServerMessageSpeechUpdateStatus>))]
+[JsonConverter(typeof(EnumSerializer<ServerMessageSpeechUpdateStatus>))]
 public enum ServerMessageSpeechUpdateStatus
 {
     [EnumMember(Value = "started")]

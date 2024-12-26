@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<PlayHtVoiceIdEnum>))]
+[JsonConverter(typeof(EnumSerializer<PlayHtVoiceIdEnum>))]
 public enum PlayHtVoiceIdEnum
 {
     [EnumMember(Value = "jennifer")]

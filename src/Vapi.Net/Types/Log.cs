@@ -11,7 +11,7 @@ public record Log
     /// This is the timestamp at which the log was written.
     /// </summary>
     [JsonPropertyName("time")]
-    public required double Time { get; set; }
+    public required string Time { get; set; }
 
     /// <summary>
     /// This is the unique identifier for the org that this log belongs to.
@@ -24,6 +24,12 @@ public record Log
     /// </summary>
     [JsonPropertyName("type")]
     public required LogType Type { get; set; }
+
+    /// <summary>
+    /// This is the type of the webhook, given the log is from a webhook.
+    /// </summary>
+    [JsonPropertyName("webhookType")]
+    public string? WebhookType { get; set; }
 
     /// <summary>
     /// This is the specific resource, relevant only to API logs.

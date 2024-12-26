@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CallPhoneCallProvider>))]
+[JsonConverter(typeof(EnumSerializer<CallPhoneCallProvider>))]
 public enum CallPhoneCallProvider
 {
     [EnumMember(Value = "twilio")]

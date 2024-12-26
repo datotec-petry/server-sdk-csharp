@@ -113,6 +113,7 @@ public partial class AssistantsClient
                 Method = HttpMethod.Post,
                 Path = "assistant",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken
@@ -238,6 +239,7 @@ public partial class AssistantsClient
                 Method = HttpMethodExtensions.Patch,
                 Path = $"assistant/{id}",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken

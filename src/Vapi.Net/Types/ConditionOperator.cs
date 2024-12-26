@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ConditionOperator>))]
+[JsonConverter(typeof(EnumSerializer<ConditionOperator>))]
 public enum ConditionOperator
 {
     [EnumMember(Value = "eq")]

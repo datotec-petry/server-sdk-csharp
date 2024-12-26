@@ -205,6 +205,7 @@ public partial class FilesClient
                 Method = HttpMethodExtensions.Patch,
                 Path = $"file/{id}",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken

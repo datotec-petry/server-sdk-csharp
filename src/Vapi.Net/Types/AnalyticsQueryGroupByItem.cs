@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<AnalyticsQueryGroupByItem>))]
+[JsonConverter(typeof(EnumSerializer<AnalyticsQueryGroupByItem>))]
 public enum AnalyticsQueryGroupByItem
 {
     [EnumMember(Value = "type")]

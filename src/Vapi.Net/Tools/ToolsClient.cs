@@ -97,7 +97,14 @@ public partial class ToolsClient
 
     /// <example>
     /// <code>
-    /// await client.Tools.CreateAsync(new CreateOutputToolDto { Async = false });
+    /// await client.Tools.CreateAsync(
+    ///     new CreateTextEditorToolDto
+    ///     {
+    ///         Async = false,
+    ///         SubType = "text_editor_20241022",
+    ///         Name = "str_replace_editor",
+    ///     }
+    /// );
     /// </code>
     /// </example>
     public async Task<object> CreateAsync(
@@ -113,6 +120,7 @@ public partial class ToolsClient
                 Method = HttpMethod.Post,
                 Path = "tool",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken
@@ -238,6 +246,7 @@ public partial class ToolsClient
                 Method = HttpMethodExtensions.Patch,
                 Path = $"tool/{id}",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken

@@ -6,17 +6,41 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<LogResource>))]
+[JsonConverter(typeof(EnumSerializer<LogResource>))]
 public enum LogResource
 {
+    [EnumMember(Value = "org")]
+    Org,
+
     [EnumMember(Value = "assistant")]
     Assistant,
+
+    [EnumMember(Value = "analytics")]
+    Analytics,
+
+    [EnumMember(Value = "credential")]
+    Credential,
 
     [EnumMember(Value = "phone-number")]
     PhoneNumber,
 
+    [EnumMember(Value = "block")]
+    Block,
+
+    [EnumMember(Value = "voice-library")]
+    VoiceLibrary,
+
+    [EnumMember(Value = "provider")]
+    Provider,
+
     [EnumMember(Value = "tool")]
     Tool,
+
+    [EnumMember(Value = "token")]
+    Token,
+
+    [EnumMember(Value = "template")]
+    Template,
 
     [EnumMember(Value = "squad")]
     Squad,

@@ -11,13 +11,7 @@ public record UpdateGcpCredentialDto
     public required string Provider { get; set; }
 
     /// <summary>
-    /// This is the name of the GCP credential. This is just for your reference.
-    /// </summary>
-    [JsonPropertyName("name")]
-    public string? Name { get; set; }
-
-    /// <summary>
-    /// This is the GCP key. This is the JSON that can be generated in the Google Cloud Console at https://console.cloud.google.com/iam-admin/serviceaccounts/details/<service-account-id>/keys.
+    /// This is the GCP key. This is the JSON that can be generated in the Google Cloud Console at https://console.cloud.google.com/iam-admin/serviceaccounts/details/&lt;service-account-id&gt;/keys.
     ///
     /// The schema is identical to the JSON that GCP outputs.
     /// </summary>
@@ -29,6 +23,12 @@ public record UpdateGcpCredentialDto
     /// </summary>
     [JsonPropertyName("bucketPlan")]
     public BucketPlan? BucketPlan { get; set; }
+
+    /// <summary>
+    /// This is the name of credential. This is just for your reference.
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
 
     public override string ToString()
     {

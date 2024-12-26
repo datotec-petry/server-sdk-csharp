@@ -11,7 +11,6 @@ public record ServerMessageTransferUpdate
     /// This is the phone number associated with the call.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.phoneNumber`,
     /// - `call.phoneNumberId`.
     /// </summary>
@@ -42,13 +41,12 @@ public record ServerMessageTransferUpdate
     /// This is the assistant that is currently active. This is provided for convenience.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.assistant`,
     /// - `call.assistantId`,
     /// - `call.squad[n].assistant`,
     /// - `call.squad[n].assistantId`,
-    /// - `call.squadId->[n].assistant`,
-    /// - `call.squadId->[n].assistantId`.
+    /// - `call.squadId-&gt;[n].assistant`,
+    /// - `call.squadId-&gt;[n].assistantId`.
     /// </summary>
     [JsonPropertyName("assistant")]
     public CreateAssistantDto? Assistant { get; set; }
@@ -57,7 +55,6 @@ public record ServerMessageTransferUpdate
     /// This is the customer associated with the call.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.customer`,
     /// - `call.customerId`.
     /// </summary>
@@ -85,6 +82,18 @@ public record ServerMessageTransferUpdate
     /// </summary>
     [JsonPropertyName("fromAssistant")]
     public CreateAssistantDto? FromAssistant { get; set; }
+
+    /// <summary>
+    /// This is the step that the conversation moved to.
+    /// </summary>
+    [JsonPropertyName("toStepRecord")]
+    public object? ToStepRecord { get; set; }
+
+    /// <summary>
+    /// This is the step that the conversation moved from. =
+    /// </summary>
+    [JsonPropertyName("fromStepRecord")]
+    public object? FromStepRecord { get; set; }
 
     public override string ToString()
     {

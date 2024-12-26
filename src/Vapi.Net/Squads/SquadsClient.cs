@@ -98,7 +98,7 @@ public partial class SquadsClient
     /// <example>
     /// <code>
     /// await client.Squads.CreateAsync(
-    ///     new CreateSquadDto { Members = new List<SquadMemberDto>() { new SquadMemberDto() } }
+    ///     new CreateSquadDto { Members = new List&lt;SquadMemberDto&gt;() { new SquadMemberDto() } }
     /// );
     /// </code>
     /// </example>
@@ -115,6 +115,7 @@ public partial class SquadsClient
                 Method = HttpMethod.Post,
                 Path = "squad",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken
@@ -225,7 +226,7 @@ public partial class SquadsClient
     /// <code>
     /// await client.Squads.UpdateAsync(
     ///     "id",
-    ///     new UpdateSquadDto { Members = new List<SquadMemberDto>() { new SquadMemberDto() } }
+    ///     new UpdateSquadDto { Members = new List&lt;SquadMemberDto&gt;() { new SquadMemberDto() } }
     /// );
     /// </code>
     /// </example>
@@ -243,6 +244,7 @@ public partial class SquadsClient
                 Method = HttpMethodExtensions.Patch,
                 Path = $"squad/{id}",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken

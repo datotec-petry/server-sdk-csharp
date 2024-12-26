@@ -8,6 +8,12 @@ namespace Vapi.Net;
 public record VapiCost
 {
     /// <summary>
+    /// This is the sub type of the cost.
+    /// </summary>
+    [JsonPropertyName("subType")]
+    public required VapiCostSubType SubType { get; set; }
+
+    /// <summary>
     /// This is the minutes of Vapi usage. This should match `call.endedAt` - `call.startedAt`.
     /// </summary>
     [JsonPropertyName("minutes")]

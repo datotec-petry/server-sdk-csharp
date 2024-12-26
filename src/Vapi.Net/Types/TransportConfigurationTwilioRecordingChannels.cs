@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<TransportConfigurationTwilioRecordingChannels>))]
+[JsonConverter(typeof(EnumSerializer<TransportConfigurationTwilioRecordingChannels>))]
 public enum TransportConfigurationTwilioRecordingChannels
 {
     [EnumMember(Value = "mono")]

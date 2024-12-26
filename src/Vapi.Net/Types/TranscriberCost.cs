@@ -11,13 +11,12 @@ public record TranscriberCost
     /// This is the transcriber that was used during the call.
     ///
     /// This matches one of the below:
-    ///
     /// - `call.assistant.transcriber`,
-    /// - `call.assistantId->transcriber`,
+    /// - `call.assistantId-&gt;transcriber`,
     /// - `call.squad[n].assistant.transcriber`,
-    /// - `call.squad[n].assistantId->transcriber`,
-    /// - `call.squadId->[n].assistant.transcriber`,
-    /// - `call.squadId->[n].assistantId->transcriber`.
+    /// - `call.squad[n].assistantId-&gt;transcriber`,
+    /// - `call.squadId-&gt;[n].assistant.transcriber`,
+    /// - `call.squadId-&gt;[n].assistantId-&gt;transcriber`.
     /// </summary>
     [JsonPropertyName("transcriber")]
     public object Transcriber { get; set; } = new Dictionary<string, object?>();

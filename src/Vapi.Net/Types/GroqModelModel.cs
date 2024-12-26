@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<GroqModelModel>))]
+[JsonConverter(typeof(EnumSerializer<GroqModelModel>))]
 public enum GroqModelModel
 {
     [EnumMember(Value = "llama-3.1-405b-reasoning")]

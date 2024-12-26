@@ -16,18 +16,17 @@ public record ServerMessageResponseVoiceRequest
     /// Content-Type: application/json
     ///
     /// {
-    /// "messsage": {
-    /// "type": "voice-request",
-    /// "text": "Hello, world!",
-    /// "sampleRate": 24000,
-    /// ...other metadata about the call...
-    /// }
+    ///   "messsage": {
+    ///     "type": "voice-request",
+    ///     "text": "Hello, world!",
+    ///     "sampleRate": 24000,
+    ///     ...other metadata about the call...
+    ///   }
     /// }
     ///
     /// The expected response is 1-channel 16-bit raw PCM audio at the sample rate specified in the request. Here is how the response will be piped to the transport:
-    ///
     /// ```
-    /// response.on('data', (chunk: Buffer) => {
+    /// response.on('data', (chunk: Buffer) =&gt; {
     ///   outputStream.write(chunk);
     /// });
     /// ```

@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<AnalysisCostAnalysisType>))]
+[JsonConverter(typeof(EnumSerializer<AnalysisCostAnalysisType>))]
 public enum AnalysisCostAnalysisType
 {
     [EnumMember(Value = "summary")]

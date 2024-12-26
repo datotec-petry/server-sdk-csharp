@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CreateAssistantDtoBackgroundSound>))]
+[JsonConverter(typeof(EnumSerializer<CreateAssistantDtoBackgroundSound>))]
 public enum CreateAssistantDtoBackgroundSound
 {
     [EnumMember(Value = "off")]

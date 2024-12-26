@@ -54,6 +54,12 @@ public record VonageCredential
     [JsonPropertyName("vonageApplicationId")]
     public required string VonageApplicationId { get; set; }
 
+    /// <summary>
+    /// This is the name of credential. This is just for your reference.
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
     [JsonPropertyName("apiKey")]
     public required string ApiKey { get; set; }
 

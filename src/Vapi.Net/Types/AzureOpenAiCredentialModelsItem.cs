@@ -6,9 +6,12 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<AzureOpenAiCredentialModelsItem>))]
+[JsonConverter(typeof(EnumSerializer<AzureOpenAiCredentialModelsItem>))]
 public enum AzureOpenAiCredentialModelsItem
 {
+    [EnumMember(Value = "gpt-4o-2024-08-06")]
+    Gpt4O20240806,
+
     [EnumMember(Value = "gpt-4o-mini-2024-07-18")]
     Gpt4OMini20240718,
 

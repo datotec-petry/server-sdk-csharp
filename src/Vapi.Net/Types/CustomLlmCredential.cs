@@ -17,6 +17,12 @@ public record CustomLlmCredential
     public required string ApiKey { get; set; }
 
     /// <summary>
+    /// This is the authentication plan. Currently supports OAuth2 RFC 6749. To use Bearer authentication, use apiKey
+    /// </summary>
+    [JsonPropertyName("authenticationPlan")]
+    public OAuth2AuthenticationPlan? AuthenticationPlan { get; set; }
+
+    /// <summary>
     /// This is the unique identifier for the credential.
     /// </summary>
     [JsonPropertyName("id")]
@@ -39,6 +45,18 @@ public record CustomLlmCredential
     /// </summary>
     [JsonPropertyName("updatedAt")]
     public required DateTime UpdatedAt { get; set; }
+
+    /// <summary>
+    /// This is the authentication session for the credential. Available for credentials that have an authentication plan.
+    /// </summary>
+    [JsonPropertyName("authenticationSession")]
+    public Oauth2AuthenticationSession? AuthenticationSession { get; set; }
+
+    /// <summary>
+    /// This is the name of credential. This is just for your reference.
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
 
     public override string ToString()
     {

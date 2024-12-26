@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OneOf;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -11,7 +12,6 @@ public record ServerMessageToolCalls
     /// This is the phone number associated with the call.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.phoneNumber`,
     /// - `call.phoneNumberId`.
     /// </summary>
@@ -22,7 +22,26 @@ public record ServerMessageToolCalls
     /// This is the list of tools calls that the model is requesting along with the original tool configuration.
     /// </summary>
     [JsonPropertyName("toolWithToolCallList")]
-    public IEnumerable<object> ToolWithToolCallList { get; set; } = new List<object>();
+    public IEnumerable<
+        OneOf<
+            FunctionToolWithToolCall,
+            GhlToolWithToolCall,
+            MakeToolWithToolCall,
+            object,
+            object,
+            object
+        >
+    > ToolWithToolCallList { get; set; } =
+        new List<
+            OneOf<
+                FunctionToolWithToolCall,
+                GhlToolWithToolCall,
+                MakeToolWithToolCall,
+                object,
+                object,
+                object
+            >
+        >();
 
     /// <summary>
     /// This is the ISO-8601 formatted timestamp of when the message was sent.
@@ -42,13 +61,12 @@ public record ServerMessageToolCalls
     /// This is the assistant that is currently active. This is provided for convenience.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.assistant`,
     /// - `call.assistantId`,
     /// - `call.squad[n].assistant`,
     /// - `call.squad[n].assistantId`,
-    /// - `call.squadId->[n].assistant`,
-    /// - `call.squadId->[n].assistantId`.
+    /// - `call.squadId-&gt;[n].assistant`,
+    /// - `call.squadId-&gt;[n].assistantId`.
     /// </summary>
     [JsonPropertyName("assistant")]
     public CreateAssistantDto? Assistant { get; set; }
@@ -57,7 +75,6 @@ public record ServerMessageToolCalls
     /// This is the customer associated with the call.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.customer`,
     /// - `call.customerId`.
     /// </summary>

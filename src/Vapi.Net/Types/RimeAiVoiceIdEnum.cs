@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<RimeAiVoiceIdEnum>))]
+[JsonConverter(typeof(EnumSerializer<RimeAiVoiceIdEnum>))]
 public enum RimeAiVoiceIdEnum
 {
     [EnumMember(Value = "marsh")]

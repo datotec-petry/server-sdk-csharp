@@ -7,6 +7,9 @@ namespace Vapi.Net;
 
 public record TransportCost
 {
+    [JsonPropertyName("provider")]
+    public TransportCostProvider? Provider { get; set; }
+
     /// <summary>
     /// This is the minutes of `transport` usage. This should match `call.endedAt` - `call.startedAt`.
     /// </summary>

@@ -29,6 +29,18 @@ public record VapiModel
     [JsonPropertyName("toolIds")]
     public IEnumerable<string>? ToolIds { get; set; }
 
+    /// <summary>
+    /// These are the options for the knowledge base.
+    /// </summary>
+    [JsonPropertyName("knowledgeBase")]
+    public CreateCustomKnowledgeBaseDto? KnowledgeBase { get; set; }
+
+    /// <summary>
+    /// This is the ID of the knowledge base the model will use.
+    /// </summary>
+    [JsonPropertyName("knowledgeBaseId")]
+    public string? KnowledgeBaseId { get; set; }
+
     [JsonPropertyName("steps")]
     public IEnumerable<object>? Steps { get; set; }
 
@@ -43,12 +55,6 @@ public record VapiModel
     /// </summary>
     [JsonPropertyName("temperature")]
     public double? Temperature { get; set; }
-
-    /// <summary>
-    /// These are the options for the knowledge base.
-    /// </summary>
-    [JsonPropertyName("knowledgeBase")]
-    public KnowledgeBase? KnowledgeBase { get; set; }
 
     /// <summary>
     /// This is the max number of tokens that the assistant will be allowed to generate in each turn of the conversation. Default is 250.

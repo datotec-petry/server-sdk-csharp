@@ -1,6 +1,6 @@
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading;
+using System.Threading.Tasks;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -18,31 +18,10 @@ public partial class AnalyticsClient
 
     /// <example>
     /// <code>
-    /// await client.Analytics.GetAsync(
-    ///     new AnalyticsQueryDto
-    ///     {
-    ///         Queries = new List<AnalyticsQuery>()
-    ///         {
-    ///             new AnalyticsQuery
-    ///             {
-    ///                 Table = "call",
-    ///                 Name = "name",
-    ///                 Operations = new List<AnalyticsOperation>()
-    ///                 {
-    ///                     new AnalyticsOperation
-    ///                     {
-    ///                         Operation = AnalyticsOperationOperation.Sum,
-    ///                         Column = AnalyticsOperationColumn.Id,
-    ///                     },
-    ///                 },
-    ///             },
-    ///         },
-    ///     }
-    /// );
+    /// await client.Analytics.GetAsync();
     /// </code>
     /// </example>
-    public async Task<IEnumerable<AnalyticsQueryResult>> GetAsync(
-        AnalyticsQueryDto request,
+    public async Task GetAsync(
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
@@ -53,24 +32,15 @@ public partial class AnalyticsClient
                 BaseUrl = _client.Options.BaseUrl,
                 Method = HttpMethod.Post,
                 Path = "analytics",
-                Body = request,
                 Options = options,
             },
             cancellationToken
         );
-        var responseBody = await response.Raw.Content.ReadAsStringAsync();
         if (response.StatusCode is >= 200 and < 400)
         {
-            try
-            {
-                return JsonUtils.Deserialize<IEnumerable<AnalyticsQueryResult>>(responseBody)!;
-            }
-            catch (JsonException e)
-            {
-                throw new VapiClientException("Failed to deserialize response", e);
-            }
+            return;
         }
-
+        var responseBody = await response.Raw.Content.ReadAsStringAsync();
         throw new VapiClientApiException(
             $"Error with status code {response.StatusCode}",
             response.StatusCode,

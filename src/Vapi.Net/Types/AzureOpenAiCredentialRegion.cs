@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<AzureOpenAiCredentialRegion>))]
+[JsonConverter(typeof(EnumSerializer<AzureOpenAiCredentialRegion>))]
 public enum AzureOpenAiCredentialRegion
 {
     [EnumMember(Value = "australia")]
@@ -29,6 +29,9 @@ public enum AzureOpenAiCredentialRegion
 
     [EnumMember(Value = "japan")]
     Japan,
+
+    [EnumMember(Value = "uaenorth")]
+    Uaenorth,
 
     [EnumMember(Value = "northcentralus")]
     Northcentralus,

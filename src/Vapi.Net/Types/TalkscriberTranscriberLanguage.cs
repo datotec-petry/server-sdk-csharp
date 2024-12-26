@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<TalkscriberTranscriberLanguage>))]
+[JsonConverter(typeof(EnumSerializer<TalkscriberTranscriberLanguage>))]
 public enum TalkscriberTranscriberLanguage
 {
     [EnumMember(Value = "en")]

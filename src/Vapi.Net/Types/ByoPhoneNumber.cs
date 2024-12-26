@@ -9,7 +9,6 @@ public record ByoPhoneNumber
 {
     /// <summary>
     /// This is the fallback destination an inbound call will be transferred to if:
-    ///
     /// 1. `assistantId` is not set
     /// 2. `squadId` is not set
     /// 3. and, `assistant-request` message to the `serverUrl` fails
@@ -23,7 +22,6 @@ public record ByoPhoneNumber
     /// This is the flag to toggle the E164 check for the `number` field. This is an advanced property which should be used if you know your use case requires it.
     ///
     /// Use cases:
-    ///
     /// - `false`: To allow non-E164 numbers like `+001234567890`, `1234`, or `abc`. This is useful for dialing out to non-E164 numbers on your SIP trunks.
     /// - `true` (default): To allow only E164 numbers like `+14155551234`. This is standard for PSTN calls.
     ///
@@ -85,7 +83,7 @@ public record ByoPhoneNumber
     ///
     /// You can see the shape of the messages sent in `ServerMessage`.
     ///
-    /// This overrides the `org.serverUrl`. Order of precedence: tool.server.url > assistant.serverUrl > phoneNumber.serverUrl > org.serverUrl.
+    /// This overrides the `org.serverUrl`. Order of precedence: tool.server.url &gt; assistant.serverUrl &gt; phoneNumber.serverUrl &gt; org.serverUrl.
     /// </summary>
     [JsonPropertyName("serverUrl")]
     public string? ServerUrl { get; set; }

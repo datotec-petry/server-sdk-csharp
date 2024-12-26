@@ -113,6 +113,7 @@ public partial class BlocksClient
                 Method = HttpMethod.Post,
                 Path = "block",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken
@@ -238,6 +239,7 @@ public partial class BlocksClient
                 Method = HttpMethodExtensions.Patch,
                 Path = $"block/{id}",
                 Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken

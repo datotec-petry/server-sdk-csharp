@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<ClientInboundMessageControlControl>))]
+[JsonConverter(typeof(EnumSerializer<ClientInboundMessageControlControl>))]
 public enum ClientInboundMessageControlControl
 {
     [EnumMember(Value = "mute-assistant")]

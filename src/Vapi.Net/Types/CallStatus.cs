@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<CallStatus>))]
+[JsonConverter(typeof(EnumSerializer<CallStatus>))]
 public enum CallStatus
 {
     [EnumMember(Value = "queued")]

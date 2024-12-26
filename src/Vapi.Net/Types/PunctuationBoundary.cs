@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<PunctuationBoundary>))]
+[JsonConverter(typeof(EnumSerializer<PunctuationBoundary>))]
 public enum PunctuationBoundary
 {
     [EnumMember(Value = "。")]

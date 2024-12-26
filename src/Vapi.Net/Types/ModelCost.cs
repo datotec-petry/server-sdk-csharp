@@ -11,13 +11,12 @@ public record ModelCost
     /// This is the model that was used during the call.
     ///
     /// This matches one of the following:
-    ///
     /// - `call.assistant.model`,
-    /// - `call.assistantId->model`,
+    /// - `call.assistantId-&gt;model`,
     /// - `call.squad[n].assistant.model`,
-    /// - `call.squad[n].assistantId->model`,
-    /// - `call.squadId->[n].assistant.model`,
-    /// - `call.squadId->[n].assistantId->model`.
+    /// - `call.squad[n].assistantId-&gt;model`,
+    /// - `call.squadId-&gt;[n].assistant.model`,
+    /// - `call.squadId-&gt;[n].assistantId-&gt;model`.
     /// </summary>
     [JsonPropertyName("model")]
     public object Model { get; set; } = new Dictionary<string, object?>();

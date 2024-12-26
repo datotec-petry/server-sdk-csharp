@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<GladiaTranscriberModel>))]
+[JsonConverter(typeof(EnumSerializer<GladiaTranscriberModel>))]
 public enum GladiaTranscriberModel
 {
     [EnumMember(Value = "fast")]

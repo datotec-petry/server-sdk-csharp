@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<AzureVoiceIdEnum>))]
+[JsonConverter(typeof(EnumSerializer<AzureVoiceIdEnum>))]
 public enum AzureVoiceIdEnum
 {
     [EnumMember(Value = "andrew")]

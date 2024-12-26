@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<LogRequestHttpMethod>))]
+[JsonConverter(typeof(EnumSerializer<LogRequestHttpMethod>))]
 public enum LogRequestHttpMethod
 {
     [EnumMember(Value = "POST")]

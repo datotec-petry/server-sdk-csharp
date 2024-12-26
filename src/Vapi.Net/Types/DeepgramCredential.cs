@@ -41,6 +41,12 @@ public record DeepgramCredential
     public required DateTime UpdatedAt { get; set; }
 
     /// <summary>
+    /// This is the name of credential. This is just for your reference.
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>
     /// This can be used to point to an onprem Deepgram instance. Defaults to api.deepgram.com.
     /// </summary>
     [JsonPropertyName("apiUrl")]

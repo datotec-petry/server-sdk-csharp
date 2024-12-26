@@ -29,6 +29,14 @@ public record Server
     [JsonPropertyName("secret")]
     public string? Secret { get; set; }
 
+    /// <summary>
+    /// These are the custom headers to include in the request sent to your server.
+    ///
+    /// Each key-value pair represents a header name and its value.
+    /// </summary>
+    [JsonPropertyName("headers")]
+    public object? Headers { get; set; }
+
     public override string ToString()
     {
         return JsonUtils.Serialize(this);

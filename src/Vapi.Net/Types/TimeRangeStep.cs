@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<TimeRangeStep>))]
+[JsonConverter(typeof(EnumSerializer<TimeRangeStep>))]
 public enum TimeRangeStep
 {
     [EnumMember(Value = "minute")]

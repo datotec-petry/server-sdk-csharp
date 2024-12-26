@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<AssistantOverridesFirstMessageMode>))]
+[JsonConverter(typeof(EnumSerializer<AssistantOverridesFirstMessageMode>))]
 public enum AssistantOverridesFirstMessageMode
 {
     [EnumMember(Value = "assistant-speaks-first")]

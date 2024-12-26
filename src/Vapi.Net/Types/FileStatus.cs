@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<FileStatus>))]
+[JsonConverter(typeof(EnumSerializer<FileStatus>))]
 public enum FileStatus
 {
     [EnumMember(Value = "indexed")]

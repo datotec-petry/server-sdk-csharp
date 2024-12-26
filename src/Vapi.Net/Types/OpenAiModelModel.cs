@@ -6,9 +6,12 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<OpenAiModelModel>))]
+[JsonConverter(typeof(EnumSerializer<OpenAiModelModel>))]
 public enum OpenAiModelModel
 {
+    [EnumMember(Value = "gpt-4o-realtime-preview-2024-10-01")]
+    Gpt4ORealtimePreview20241001,
+
     [EnumMember(Value = "gpt-4o-mini")]
     Gpt4OMini,
 
@@ -23,6 +26,9 @@ public enum OpenAiModelModel
 
     [EnumMember(Value = "gpt-4o-2024-08-06")]
     Gpt4O20240806,
+
+    [EnumMember(Value = "gpt-4o-2024-11-20")]
+    Gpt4O20241120,
 
     [EnumMember(Value = "gpt-4-turbo")]
     Gpt4Turbo,

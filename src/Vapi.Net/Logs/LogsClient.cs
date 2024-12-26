@@ -21,7 +21,36 @@ public partial class LogsClient
     /// await client.Logs.GetAsync(new LogsGetRequest());
     /// </code>
     /// </example>
-    public async Task<LogsPaginatedResponse> GetAsync(
+    public Pager<Log> GetAsync(LogsGetRequest request, RequestOptions? options = null)
+    {
+        if (request is not null)
+        {
+            request = request with { };
+        }
+        var pager = new OffsetPager<
+            LogsGetRequest,
+            RequestOptions?,
+            LogsPaginatedResponse,
+            double?,
+            object,
+            Log
+        >(
+            request,
+            options,
+            GetAsync,
+            request => request?.Page ?? 0,
+            (request, offset) =>
+            {
+                request.Page = offset;
+            },
+            null,
+            response => response?.Results?.ToList(),
+            null
+        );
+        return pager;
+    }
+
+    internal async Task<LogsPaginatedResponse> GetAsync(
         LogsGetRequest request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -35,6 +64,10 @@ public partial class LogsClient
         if (request.Type != null)
         {
             _query["type"] = request.Type.Value.Stringify();
+        }
+        if (request.WebhookType != null)
+        {
+            _query["webhookType"] = request.WebhookType;
         }
         if (request.AssistantId != null)
         {

@@ -6,7 +6,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(StringEnumSerializer<AnalyticsOperationColumn>))]
+[JsonConverter(typeof(EnumSerializer<AnalyticsOperationColumn>))]
 public enum AnalyticsOperationColumn
 {
     [EnumMember(Value = "id")]
