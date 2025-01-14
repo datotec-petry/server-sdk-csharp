@@ -222,12 +222,12 @@ public partial class PhoneNumbersClient
 
     /// <example>
     /// <code>
-    /// await client.PhoneNumbers.UpdateAsync("id", new UpdatePhoneNumberDto());
+    /// await client.PhoneNumbers.UpdateAsync("id", new UpdateVapiPhoneNumberDto());
     /// </code>
     /// </example>
     public async Task<object> UpdateAsync(
         string id,
-        UpdatePhoneNumberDto request,
+        object request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )

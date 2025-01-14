@@ -578,7 +578,7 @@ await client.PhoneNumbers.DeleteAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">UpdateAsync</a>(id, UpdatePhoneNumberDto { ... }) -> object</code></summary>
+<details><summary><code>client.PhoneNumbers.<a href="/src/Vapi.Net/PhoneNumbers/PhoneNumbersClient.cs">UpdateAsync</a>(id, object { ... }) -> object</code></summary>
 <dl>
 <dd>
 
@@ -591,7 +591,7 @@ await client.PhoneNumbers.DeleteAsync("id");
 <dd>
 
 ```csharp
-await client.PhoneNumbers.UpdateAsync("id", new UpdatePhoneNumberDto());
+await client.PhoneNumbers.UpdateAsync("id", new UpdateVapiPhoneNumberDto());
 ```
 </dd>
 </dl>
@@ -614,7 +614,7 @@ await client.PhoneNumbers.UpdateAsync("id", new UpdatePhoneNumberDto());
 <dl>
 <dd>
 
-**request:** `UpdatePhoneNumberDto` 
+**request:** `object` 
     
 </dd>
 </dl>
@@ -1003,7 +1003,7 @@ await client.KnowledgeBases.DeleteAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.KnowledgeBases.<a href="/src/Vapi.Net/KnowledgeBases/KnowledgeBasesClient.cs">UpdateAsync</a>(id) -> object</code></summary>
+<details><summary><code>client.KnowledgeBases.<a href="/src/Vapi.Net/KnowledgeBases/KnowledgeBasesClient.cs">UpdateAsync</a>(id, object { ... }) -> object</code></summary>
 <dl>
 <dd>
 
@@ -1016,7 +1016,7 @@ await client.KnowledgeBases.DeleteAsync("id");
 <dd>
 
 ```csharp
-await client.KnowledgeBases.UpdateAsync("id");
+await client.KnowledgeBases.UpdateAsync("id", new UpdateCustomKnowledgeBaseDto());
 ```
 </dd>
 </dl>
@@ -1032,6 +1032,14 @@ await client.KnowledgeBases.UpdateAsync("id");
 <dd>
 
 **id:** `string` 
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**request:** `object` 
     
 </dd>
 </dl>
@@ -1204,7 +1212,7 @@ await client.Blocks.DeleteAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">UpdateAsync</a>(id, UpdateBlockDto { ... }) -> object</code></summary>
+<details><summary><code>client.Blocks.<a href="/src/Vapi.Net/Blocks/BlocksClient.cs">UpdateAsync</a>(id, object { ... }) -> object</code></summary>
 <dl>
 <dd>
 
@@ -1217,7 +1225,7 @@ await client.Blocks.DeleteAsync("id");
 <dd>
 
 ```csharp
-await client.Blocks.UpdateAsync("id", new UpdateBlockDto());
+await client.Blocks.UpdateAsync("id", new UpdateWorkflowBlockDto());
 ```
 </dd>
 </dl>
@@ -1240,7 +1248,7 @@ await client.Blocks.UpdateAsync("id", new UpdateBlockDto());
 <dl>
 <dd>
 
-**request:** `UpdateBlockDto` 
+**request:** `object` 
     
 </dd>
 </dl>
@@ -1420,7 +1428,7 @@ await client.Tools.DeleteAsync("id");
 </dl>
 </details>
 
-<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">UpdateAsync</a>(id, UpdateToolDto { ... }) -> object</code></summary>
+<details><summary><code>client.Tools.<a href="/src/Vapi.Net/Tools/ToolsClient.cs">UpdateAsync</a>(id, object { ... }) -> object</code></summary>
 <dl>
 <dd>
 
@@ -1433,7 +1441,7 @@ await client.Tools.DeleteAsync("id");
 <dd>
 
 ```csharp
-await client.Tools.UpdateAsync("id", new UpdateToolDto());
+await client.Tools.UpdateAsync("id", new UpdateTextEditorToolDto { Async = false });
 ```
 </dd>
 </dl>
@@ -1456,7 +1464,7 @@ await client.Tools.UpdateAsync("id", new UpdateToolDto());
 <dl>
 <dd>
 
-**request:** `UpdateToolDto` 
+**request:** `object` 
     
 </dd>
 </dl>
@@ -1678,6 +1686,48 @@ await client.Logs.GetAsync(new LogsGetRequest());
 <dd>
 
 **request:** `LogsGetRequest` 
+    
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.Logs.<a href="/src/Vapi.Net/Logs/LogsClient.cs">LoggingControllerLogsDeleteQueryAsync</a>(LoggingControllerLogsDeleteQueryRequest { ... })</code></summary>
+<dl>
+<dd>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```csharp
+await client.Logs.LoggingControllerLogsDeleteQueryAsync(
+    new LoggingControllerLogsDeleteQueryRequest()
+);
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `LoggingControllerLogsDeleteQueryRequest` 
     
 </dd>
 </dl>

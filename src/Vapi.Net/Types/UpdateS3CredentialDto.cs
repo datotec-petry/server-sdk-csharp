@@ -8,40 +8,34 @@ namespace Vapi.Net;
 public record UpdateS3CredentialDto
 {
     /// <summary>
-    /// Credential provider. Only allowed value is s3
-    /// </summary>
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
-    /// <summary>
     /// AWS access key ID.
     /// </summary>
     [JsonPropertyName("awsAccessKeyId")]
-    public required string AwsAccessKeyId { get; set; }
+    public string? AwsAccessKeyId { get; set; }
 
     /// <summary>
     /// AWS access key secret. This is not returned in the API.
     /// </summary>
     [JsonPropertyName("awsSecretAccessKey")]
-    public required string AwsSecretAccessKey { get; set; }
+    public string? AwsSecretAccessKey { get; set; }
 
     /// <summary>
     /// AWS region in which the S3 bucket is located.
     /// </summary>
     [JsonPropertyName("region")]
-    public required string Region { get; set; }
+    public string? Region { get; set; }
 
     /// <summary>
     /// AWS S3 bucket name.
     /// </summary>
     [JsonPropertyName("s3BucketName")]
-    public required string S3BucketName { get; set; }
+    public string? S3BucketName { get; set; }
 
     /// <summary>
     /// The path prefix for the uploaded recording. Ex. "recordings/"
     /// </summary>
     [JsonPropertyName("s3PathPrefix")]
-    public required string S3PathPrefix { get; set; }
+    public string? S3PathPrefix { get; set; }
 
     /// <summary>
     /// This is the name of credential. This is just for your reference.

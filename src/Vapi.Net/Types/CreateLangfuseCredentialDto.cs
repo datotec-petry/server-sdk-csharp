@@ -7,9 +7,6 @@ namespace Vapi.Net;
 
 public record CreateLangfuseCredentialDto
 {
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
     /// <summary>
     /// The public key for Langfuse project. Eg: pk-lf-...
     /// </summary>

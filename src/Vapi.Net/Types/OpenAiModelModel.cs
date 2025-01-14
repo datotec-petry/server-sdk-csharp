@@ -9,8 +9,26 @@ namespace Vapi.Net;
 [JsonConverter(typeof(EnumSerializer<OpenAiModelModel>))]
 public enum OpenAiModelModel
 {
+    [EnumMember(Value = "o1-preview")]
+    O1Preview,
+
+    [EnumMember(Value = "o1-preview-2024-09-12")]
+    O1Preview20240912,
+
+    [EnumMember(Value = "o1-mini")]
+    O1Mini,
+
+    [EnumMember(Value = "o1-mini-2024-09-12")]
+    O1Mini20240912,
+
     [EnumMember(Value = "gpt-4o-realtime-preview-2024-10-01")]
     Gpt4ORealtimePreview20241001,
+
+    [EnumMember(Value = "gpt-4o-realtime-preview-2024-12-17")]
+    Gpt4ORealtimePreview20241217,
+
+    [EnumMember(Value = "gpt-4o-mini-realtime-preview-2024-12-17")]
+    Gpt4OMiniRealtimePreview20241217,
 
     [EnumMember(Value = "gpt-4o-mini")]
     Gpt4OMini,

@@ -9,6 +9,9 @@ namespace Vapi.Net;
 [JsonConverter(typeof(EnumSerializer<GroqModelModel>))]
 public enum GroqModelModel
 {
+    [EnumMember(Value = "llama-3.3-70b-versatile")]
+    Llama3370BVersatile,
+
     [EnumMember(Value = "llama-3.1-405b-reasoning")]
     Llama31405BReasoning,
 
@@ -26,15 +29,6 @@ public enum GroqModelModel
 
     [EnumMember(Value = "llama3-70b-8192")]
     Llama370B8192,
-
-    [EnumMember(Value = "llama3-groq-8b-8192-tool-use-preview")]
-    Llama3Groq8B8192ToolUsePreview,
-
-    [EnumMember(Value = "llama3-groq-70b-8192-tool-use-preview")]
-    Llama3Groq70B8192ToolUsePreview,
-
-    [EnumMember(Value = "gemma-7b-it")]
-    Gemma7BIt,
 
     [EnumMember(Value = "gemma2-9b-it")]
     Gemma29BIt,

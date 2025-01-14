@@ -5,7 +5,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-public record UpdatePhoneNumberDto
+public record UpdateVapiPhoneNumberDto
 {
     /// <summary>
     /// This is the fallback destination an inbound call will be transferred to if:
@@ -41,22 +41,32 @@ public record UpdatePhoneNumberDto
     public string? SquadId { get; set; }
 
     /// <summary>
-    /// This is the server URL where messages will be sent for calls on this number. This includes the `assistant-request` message.
+    /// This is where Vapi will send webhooks. You can find all webhooks available along with their shape in ServerMessage schema.
     ///
-    /// You can see the shape of the messages sent in `ServerMessage`.
+    /// The order of precedence is:
     ///
-    /// This overrides the `org.serverUrl`. Order of precedence: tool.server.url &gt; assistant.serverUrl &gt; phoneNumber.serverUrl &gt; org.serverUrl.
+    /// 1. assistant.server
+    /// 2. phoneNumber.server
+    /// 3. org.server
     /// </summary>
-    [JsonPropertyName("serverUrl")]
-    public string? ServerUrl { get; set; }
+    [JsonPropertyName("server")]
+    public Server? Server { get; set; }
 
     /// <summary>
-    /// This is the secret Vapi will send with every message to your server. It's sent as a header called x-vapi-secret.
+    /// This is the SIP URI of the phone number. You can SIP INVITE this. The assistant attached to this number will answer.
     ///
-    /// Same precedence logic as serverUrl.
+    /// This is case-insensitive.
     /// </summary>
-    [JsonPropertyName("serverUrlSecret")]
-    public string? ServerUrlSecret { get; set; }
+    [JsonPropertyName("sipUri")]
+    public string? SipUri { get; set; }
+
+    /// <summary>
+    /// This enables authentication for incoming SIP INVITE requests to the `sipUri`.
+    ///
+    /// If not set, any username/password to the 401 challenge of the SIP INVITE will be accepted.
+    /// </summary>
+    [JsonPropertyName("authentication")]
+    public SipAuthentication? Authentication { get; set; }
 
     public override string ToString()
     {

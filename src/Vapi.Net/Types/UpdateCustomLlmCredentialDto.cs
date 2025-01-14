@@ -7,14 +7,11 @@ namespace Vapi.Net;
 
 public record UpdateCustomLlmCredentialDto
 {
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
     /// <summary>
     /// This is not returned in the API.
     /// </summary>
     [JsonPropertyName("apiKey")]
-    public required string ApiKey { get; set; }
+    public string? ApiKey { get; set; }
 
     /// <summary>
     /// This is the authentication plan. Currently supports OAuth2 RFC 6749. To use Bearer authentication, use apiKey

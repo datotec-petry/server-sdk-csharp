@@ -113,6 +113,12 @@ public record CreateAssistantDto
     public IEnumerable<TransportConfigurationTwilio>? TransportConfigurations { get; set; }
 
     /// <summary>
+    /// These are dynamic credentials that will be used for the assistant calls. By default, all the credentials are available for use in the call but you can supplement an additional credentials using this. Dynamic credentials override existing credentials.
+    /// </summary>
+    [JsonPropertyName("credentials")]
+    public IEnumerable<object>? Credentials { get; set; }
+
+    /// <summary>
     /// This is the name of the assistant.
     ///
     /// This is required when you want to transfer between assistants in a call.

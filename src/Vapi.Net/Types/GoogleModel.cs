@@ -48,6 +48,13 @@ public record GoogleModel
     public required GoogleModelModel Model { get; set; }
 
     /// <summary>
+    /// This is the session configuration for the Gemini Flash 2.0 Multimodal Live API.
+    /// Only applicable if the model `gemini-2.0-flash-realtime-exp` is selected.
+    /// </summary>
+    [JsonPropertyName("realtimeConfig")]
+    public GoogleRealtimeConfig? RealtimeConfig { get; set; }
+
+    /// <summary>
     /// This is the temperature that will be used for calls. Default is 0 to leverage caching for lower latency.
     /// </summary>
     [JsonPropertyName("temperature")]

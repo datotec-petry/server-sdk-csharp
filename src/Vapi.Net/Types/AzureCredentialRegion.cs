@@ -42,8 +42,8 @@ public enum AzureCredentialRegion
     [EnumMember(Value = "southcentralus")]
     Southcentralus,
 
-    [EnumMember(Value = "sweden")]
-    Sweden,
+    [EnumMember(Value = "swedencentral")]
+    Swedencentral,
 
     [EnumMember(Value = "switzerland")]
     Switzerland,

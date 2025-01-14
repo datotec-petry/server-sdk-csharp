@@ -8,12 +8,6 @@ namespace Vapi.Net;
 public record CreateS3CredentialDto
 {
     /// <summary>
-    /// Credential provider. Only allowed value is s3
-    /// </summary>
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
-    /// <summary>
     /// AWS access key ID.
     /// </summary>
     [JsonPropertyName("awsAccessKeyId")]

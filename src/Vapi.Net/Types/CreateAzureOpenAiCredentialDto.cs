@@ -7,9 +7,6 @@ namespace Vapi.Net;
 
 public record CreateAzureOpenAiCredentialDto
 {
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
     [JsonPropertyName("region")]
     public required CreateAzureOpenAiCredentialDtoRegion Region { get; set; }
 
@@ -22,6 +19,12 @@ public record CreateAzureOpenAiCredentialDto
     /// </summary>
     [JsonPropertyName("openAIKey")]
     public required string OpenAiKey { get; set; }
+
+    /// <summary>
+    /// This is not returned in the API.
+    /// </summary>
+    [JsonPropertyName("ocpApimSubscriptionKey")]
+    public string? OcpApimSubscriptionKey { get; set; }
 
     [JsonPropertyName("openAIEndpoint")]
     public required string OpenAiEndpoint { get; set; }

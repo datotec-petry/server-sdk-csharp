@@ -222,12 +222,12 @@ public partial class BlocksClient
 
     /// <example>
     /// <code>
-    /// await client.Blocks.UpdateAsync("id", new UpdateBlockDto());
+    /// await client.Blocks.UpdateAsync("id", new UpdateWorkflowBlockDto());
     /// </code>
     /// </example>
     public async Task<object> UpdateAsync(
         string id,
-        UpdateBlockDto request,
+        object request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )

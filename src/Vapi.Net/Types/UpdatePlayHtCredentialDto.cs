@@ -7,23 +7,20 @@ namespace Vapi.Net;
 
 public record UpdatePlayHtCredentialDto
 {
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
     /// <summary>
     /// This is not returned in the API.
     /// </summary>
     [JsonPropertyName("apiKey")]
-    public required string ApiKey { get; set; }
-
-    [JsonPropertyName("userId")]
-    public required string UserId { get; set; }
+    public string? ApiKey { get; set; }
 
     /// <summary>
     /// This is the name of credential. This is just for your reference.
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
+
+    [JsonPropertyName("userId")]
+    public string? UserId { get; set; }
 
     public override string ToString()
     {

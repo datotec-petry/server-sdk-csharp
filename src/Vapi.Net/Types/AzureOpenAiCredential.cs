@@ -24,6 +24,12 @@ public record AzureOpenAiCredential
     public required string OpenAiKey { get; set; }
 
     /// <summary>
+    /// This is not returned in the API.
+    /// </summary>
+    [JsonPropertyName("ocpApimSubscriptionKey")]
+    public string? OcpApimSubscriptionKey { get; set; }
+
+    /// <summary>
     /// This is the unique identifier for the credential.
     /// </summary>
     [JsonPropertyName("id")]

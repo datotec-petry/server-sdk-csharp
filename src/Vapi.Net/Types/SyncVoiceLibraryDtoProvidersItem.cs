@@ -39,6 +39,9 @@ public enum SyncVoiceLibraryDtoProvidersItem
     [EnumMember(Value = "rime-ai")]
     RimeAi,
 
+    [EnumMember(Value = "smallest-ai")]
+    SmallestAi,
+
     [EnumMember(Value = "tavus")]
     Tavus,
 }

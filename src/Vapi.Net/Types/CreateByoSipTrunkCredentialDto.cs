@@ -8,12 +8,6 @@ namespace Vapi.Net;
 public record CreateByoSipTrunkCredentialDto
 {
     /// <summary>
-    /// This can be used to bring your own SIP trunks or to connect to a Carrier.
-    /// </summary>
-    [JsonPropertyName("provider")]
-    public string? Provider { get; set; }
-
-    /// <summary>
     /// This is the list of SIP trunk's gateways.
     /// </summary>
     [JsonPropertyName("gateways")]

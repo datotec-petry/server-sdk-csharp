@@ -8,16 +8,16 @@ namespace Vapi.Net;
 public record UpdateByoSipTrunkCredentialDto
 {
     /// <summary>
-    /// This can be used to bring your own SIP trunks or to connect to a Carrier.
+    /// This is the name of credential. This is just for your reference.
     /// </summary>
-    [JsonPropertyName("provider")]
-    public string? Provider { get; set; }
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
 
     /// <summary>
     /// This is the list of SIP trunk's gateways.
     /// </summary>
     [JsonPropertyName("gateways")]
-    public IEnumerable<SipTrunkGateway> Gateways { get; set; } = new List<SipTrunkGateway>();
+    public IEnumerable<SipTrunkGateway>? Gateways { get; set; }
 
     /// <summary>
     /// This can be used to configure the outbound authentication if required by the SIP trunk.
@@ -53,12 +53,6 @@ public record UpdateByoSipTrunkCredentialDto
     /// </summary>
     [JsonPropertyName("sbcConfiguration")]
     public SbcConfiguration? SbcConfiguration { get; set; }
-
-    /// <summary>
-    /// This is the name of credential. This is just for your reference.
-    /// </summary>
-    [JsonPropertyName("name")]
-    public string? Name { get; set; }
 
     public override string ToString()
     {

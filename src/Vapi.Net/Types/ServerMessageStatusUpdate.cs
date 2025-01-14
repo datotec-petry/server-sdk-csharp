@@ -105,6 +105,12 @@ public record ServerMessageStatusUpdate
     public string? Transcript { get; set; }
 
     /// <summary>
+    /// This is the summary of the call. This is only sent if the status is "forwarding".
+    /// </summary>
+    [JsonPropertyName("summary")]
+    public string? Summary { get; set; }
+
+    /// <summary>
     /// This is the inbound phone call debugging artifacts. This is only sent if the status is "ended" and there was an error accepting the inbound phone call.
     ///
     /// This will include any errors related to the "assistant-request" if one was made.

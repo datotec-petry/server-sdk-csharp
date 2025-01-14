@@ -5,7 +5,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-public record UpdateToolDto
+public record UpdateGhlToolDto
 {
     /// <summary>
     /// This determines if the tool is async.
@@ -46,6 +46,9 @@ public record UpdateToolDto
     /// </summary>
     [JsonPropertyName("server")]
     public Server? Server { get; set; }
+
+    [JsonPropertyName("metadata")]
+    public GhlToolMetadata? Metadata { get; set; }
 
     public override string ToString()
     {

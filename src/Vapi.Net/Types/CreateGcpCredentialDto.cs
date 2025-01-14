@@ -7,9 +7,6 @@ namespace Vapi.Net;
 
 public record CreateGcpCredentialDto
 {
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
     /// <summary>
     /// This is the GCP key. This is the JSON that can be generated in the Google Cloud Console at https://console.cloud.google.com/iam-admin/serviceaccounts/details/&lt;service-account-id&gt;/keys.
     ///

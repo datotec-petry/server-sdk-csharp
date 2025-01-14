@@ -7,9 +7,6 @@ namespace Vapi.Net;
 
 public record CreateWebhookCredentialDto
 {
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
     /// <summary>
     /// This is the authentication plan. Currently supports OAuth2 RFC 6749.
     /// </summary>

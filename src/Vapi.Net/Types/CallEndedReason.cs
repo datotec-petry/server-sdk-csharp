@@ -9,126 +9,6 @@ namespace Vapi.Net;
 [JsonConverter(typeof(EnumSerializer<CallEndedReason>))]
 public enum CallEndedReason
 {
-    [EnumMember(Value = "pipeline-error-openai-voice-failed")]
-    PipelineErrorOpenaiVoiceFailed,
-
-    [EnumMember(Value = "pipeline-error-cartesia-voice-failed")]
-    PipelineErrorCartesiaVoiceFailed,
-
-    [EnumMember(Value = "pipeline-error-deepgram-voice-failed")]
-    PipelineErrorDeepgramVoiceFailed,
-
-    [EnumMember(Value = "pipeline-error-eleven-labs-voice-failed")]
-    PipelineErrorElevenLabsVoiceFailed,
-
-    [EnumMember(Value = "pipeline-error-playht-voice-failed")]
-    PipelineErrorPlayhtVoiceFailed,
-
-    [EnumMember(Value = "pipeline-error-lmnt-voice-failed")]
-    PipelineErrorLmntVoiceFailed,
-
-    [EnumMember(Value = "pipeline-error-azure-voice-failed")]
-    PipelineErrorAzureVoiceFailed,
-
-    [EnumMember(Value = "pipeline-error-rime-ai-voice-failed")]
-    PipelineErrorRimeAiVoiceFailed,
-
-    [EnumMember(Value = "pipeline-error-neets-voice-failed")]
-    PipelineErrorNeetsVoiceFailed,
-
-    [EnumMember(Value = "db-error")]
-    DbError,
-
-    [EnumMember(Value = "assistant-not-found")]
-    AssistantNotFound,
-
-    [EnumMember(Value = "license-check-failed")]
-    LicenseCheckFailed,
-
-    [EnumMember(Value = "pipeline-error-vapi-llm-failed")]
-    PipelineErrorVapiLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-vapi-400-bad-request-validation-failed")]
-    PipelineErrorVapi400BadRequestValidationFailed,
-
-    [EnumMember(Value = "pipeline-error-vapi-401-unauthorized")]
-    PipelineErrorVapi401Unauthorized,
-
-    [EnumMember(Value = "pipeline-error-vapi-403-model-access-denied")]
-    PipelineErrorVapi403ModelAccessDenied,
-
-    [EnumMember(Value = "pipeline-error-vapi-429-exceeded-quota")]
-    PipelineErrorVapi429ExceededQuota,
-
-    [EnumMember(Value = "pipeline-error-vapi-500-server-error")]
-    PipelineErrorVapi500ServerError,
-
-    [EnumMember(Value = "pipeline-no-available-model")]
-    PipelineNoAvailableModel,
-
-    [EnumMember(Value = "worker-shutdown")]
-    WorkerShutdown,
-
-    [EnumMember(Value = "unknown-error")]
-    UnknownError,
-
-    [EnumMember(Value = "vonage-disconnected")]
-    VonageDisconnected,
-
-    [EnumMember(Value = "vonage-failed-to-connect-call")]
-    VonageFailedToConnectCall,
-
-    [EnumMember(Value = "phone-call-provider-bypass-enabled-but-no-call-received")]
-    PhoneCallProviderBypassEnabledButNoCallReceived,
-
-    [EnumMember(Value = "vapifault-phone-call-worker-setup-socket-error")]
-    VapifaultPhoneCallWorkerSetupSocketError,
-
-    [EnumMember(Value = "vapifault-phone-call-worker-worker-setup-socket-timeout")]
-    VapifaultPhoneCallWorkerWorkerSetupSocketTimeout,
-
-    [EnumMember(Value = "vapifault-phone-call-worker-could-not-find-call")]
-    VapifaultPhoneCallWorkerCouldNotFindCall,
-
-    [EnumMember(Value = "vapifault-transport-never-connected")]
-    VapifaultTransportNeverConnected,
-
-    [EnumMember(Value = "vapifault-web-call-worker-setup-failed")]
-    VapifaultWebCallWorkerSetupFailed,
-
-    [EnumMember(Value = "vapifault-transport-connected-but-call-not-active")]
-    VapifaultTransportConnectedButCallNotActive,
-
-    [EnumMember(Value = "vapifault-call-started-but-connection-to-transport-missing")]
-    VapifaultCallStartedButConnectionToTransportMissing,
-
-    [EnumMember(Value = "pipeline-error-deepgram-transcriber-failed")]
-    PipelineErrorDeepgramTranscriberFailed,
-
-    [EnumMember(Value = "pipeline-error-gladia-transcriber-failed")]
-    PipelineErrorGladiaTranscriberFailed,
-
-    [EnumMember(Value = "pipeline-error-assembly-ai-transcriber-failed")]
-    PipelineErrorAssemblyAiTranscriberFailed,
-
-    [EnumMember(Value = "pipeline-error-openai-llm-failed")]
-    PipelineErrorOpenaiLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-azure-openai-llm-failed")]
-    PipelineErrorAzureOpenaiLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-groq-llm-failed")]
-    PipelineErrorGroqLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-google-llm-failed")]
-    PipelineErrorGoogleLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-xai-llm-failed")]
-    PipelineErrorXaiLlmFailed,
-
-    [EnumMember(Value = "pipeline-error-inflection-ai-llm-failed")]
-    PipelineErrorInflectionAiLlmFailed,
-
     [EnumMember(Value = "assistant-not-invalid")]
     AssistantNotInvalid,
 
@@ -192,6 +72,141 @@ public enum CallEndedReason
     [EnumMember(Value = "phone-call-provider-closed-websocket")]
     PhoneCallProviderClosedWebsocket,
 
+    [EnumMember(Value = "db-error")]
+    DbError,
+
+    [EnumMember(Value = "assistant-not-found")]
+    AssistantNotFound,
+
+    [EnumMember(Value = "license-check-failed")]
+    LicenseCheckFailed,
+
+    [EnumMember(Value = "pipeline-error-openai-voice-failed")]
+    PipelineErrorOpenaiVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-cartesia-voice-failed")]
+    PipelineErrorCartesiaVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-deepgram-voice-failed")]
+    PipelineErrorDeepgramVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-eleven-labs-voice-failed")]
+    PipelineErrorElevenLabsVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-playht-voice-failed")]
+    PipelineErrorPlayhtVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-lmnt-voice-failed")]
+    PipelineErrorLmntVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-azure-voice-failed")]
+    PipelineErrorAzureVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-rime-ai-voice-failed")]
+    PipelineErrorRimeAiVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-neets-voice-failed")]
+    PipelineErrorNeetsVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-smallest-ai-voice-failed")]
+    PipelineErrorSmallestAiVoiceFailed,
+
+    [EnumMember(Value = "pipeline-error-deepgram-transcriber-failed")]
+    PipelineErrorDeepgramTranscriberFailed,
+
+    [EnumMember(Value = "pipeline-error-gladia-transcriber-failed")]
+    PipelineErrorGladiaTranscriberFailed,
+
+    [EnumMember(Value = "pipeline-error-assembly-ai-transcriber-failed")]
+    PipelineErrorAssemblyAiTranscriberFailed,
+
+    [EnumMember(Value = "pipeline-error-talkscriber-transcriber-failed")]
+    PipelineErrorTalkscriberTranscriberFailed,
+
+    [EnumMember(Value = "pipeline-error-azure-speech-transcriber-failed")]
+    PipelineErrorAzureSpeechTranscriberFailed,
+
+    [EnumMember(Value = "pipeline-error-vapi-llm-failed")]
+    PipelineErrorVapiLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-vapi-400-bad-request-validation-failed")]
+    PipelineErrorVapi400BadRequestValidationFailed,
+
+    [EnumMember(Value = "pipeline-error-vapi-401-unauthorized")]
+    PipelineErrorVapi401Unauthorized,
+
+    [EnumMember(Value = "pipeline-error-vapi-403-model-access-denied")]
+    PipelineErrorVapi403ModelAccessDenied,
+
+    [EnumMember(Value = "pipeline-error-vapi-429-exceeded-quota")]
+    PipelineErrorVapi429ExceededQuota,
+
+    [EnumMember(Value = "pipeline-error-vapi-500-server-error")]
+    PipelineErrorVapi500ServerError,
+
+    [EnumMember(Value = "pipeline-no-available-model")]
+    PipelineNoAvailableModel,
+
+    [EnumMember(Value = "worker-shutdown")]
+    WorkerShutdown,
+
+    [EnumMember(Value = "unknown-error")]
+    UnknownError,
+
+    [EnumMember(Value = "vonage-disconnected")]
+    VonageDisconnected,
+
+    [EnumMember(Value = "vonage-failed-to-connect-call")]
+    VonageFailedToConnectCall,
+
+    [EnumMember(Value = "phone-call-provider-bypass-enabled-but-no-call-received")]
+    PhoneCallProviderBypassEnabledButNoCallReceived,
+
+    [EnumMember(Value = "vapifault-phone-call-worker-setup-socket-error")]
+    VapifaultPhoneCallWorkerSetupSocketError,
+
+    [EnumMember(Value = "vapifault-phone-call-worker-worker-setup-socket-timeout")]
+    VapifaultPhoneCallWorkerWorkerSetupSocketTimeout,
+
+    [EnumMember(Value = "vapifault-phone-call-worker-could-not-find-call")]
+    VapifaultPhoneCallWorkerCouldNotFindCall,
+
+    [EnumMember(Value = "vapifault-transport-never-connected")]
+    VapifaultTransportNeverConnected,
+
+    [EnumMember(Value = "vapifault-web-call-worker-setup-failed")]
+    VapifaultWebCallWorkerSetupFailed,
+
+    [EnumMember(Value = "vapifault-transport-connected-but-call-not-active")]
+    VapifaultTransportConnectedButCallNotActive,
+
+    [EnumMember(Value = "vapifault-call-started-but-connection-to-transport-missing")]
+    VapifaultCallStartedButConnectionToTransportMissing,
+
+    [EnumMember(Value = "pipeline-error-openai-llm-failed")]
+    PipelineErrorOpenaiLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-azure-openai-llm-failed")]
+    PipelineErrorAzureOpenaiLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-groq-llm-failed")]
+    PipelineErrorGroqLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-google-llm-failed")]
+    PipelineErrorGoogleLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-xai-llm-failed")]
+    PipelineErrorXaiLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-inflection-ai-llm-failed")]
+    PipelineErrorInflectionAiLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-cerebras-llm-failed")]
+    PipelineErrorCerebrasLlmFailed,
+
+    [EnumMember(Value = "pipeline-error-deep-seek-llm-failed")]
+    PipelineErrorDeepSeekLlmFailed,
+
     [EnumMember(Value = "pipeline-error-openai-400-bad-request-validation-failed")]
     PipelineErrorOpenai400BadRequestValidationFailed,
 
@@ -252,6 +267,21 @@ public enum CallEndedReason
     [EnumMember(Value = "pipeline-error-inflection-ai-500-server-error")]
     PipelineErrorInflectionAi500ServerError,
 
+    [EnumMember(Value = "pipeline-error-deep-seek-400-bad-request-validation-failed")]
+    PipelineErrorDeepSeek400BadRequestValidationFailed,
+
+    [EnumMember(Value = "pipeline-error-deep-seek-401-unauthorized")]
+    PipelineErrorDeepSeek401Unauthorized,
+
+    [EnumMember(Value = "pipeline-error-deep-seek-403-model-access-denied")]
+    PipelineErrorDeepSeek403ModelAccessDenied,
+
+    [EnumMember(Value = "pipeline-error-deep-seek-429-exceeded-quota")]
+    PipelineErrorDeepSeek429ExceededQuota,
+
+    [EnumMember(Value = "pipeline-error-deep-seek-500-server-error")]
+    PipelineErrorDeepSeek500ServerError,
+
     [EnumMember(Value = "pipeline-error-azure-openai-400-bad-request-validation-failed")]
     PipelineErrorAzureOpenai400BadRequestValidationFailed,
 
@@ -281,6 +311,21 @@ public enum CallEndedReason
 
     [EnumMember(Value = "pipeline-error-groq-500-server-error")]
     PipelineErrorGroq500ServerError,
+
+    [EnumMember(Value = "pipeline-error-cerebras-400-bad-request-validation-failed")]
+    PipelineErrorCerebras400BadRequestValidationFailed,
+
+    [EnumMember(Value = "pipeline-error-cerebras-401-unauthorized")]
+    PipelineErrorCerebras401Unauthorized,
+
+    [EnumMember(Value = "pipeline-error-cerebras-403-model-access-denied")]
+    PipelineErrorCerebras403ModelAccessDenied,
+
+    [EnumMember(Value = "pipeline-error-cerebras-429-exceeded-quota")]
+    PipelineErrorCerebras429ExceededQuota,
+
+    [EnumMember(Value = "pipeline-error-cerebras-500-server-error")]
+    PipelineErrorCerebras500ServerError,
 
     [EnumMember(Value = "pipeline-error-anthropic-400-bad-request-validation-failed")]
     PipelineErrorAnthropic400BadRequestValidationFailed,
@@ -549,6 +594,12 @@ public enum CallEndedReason
     [EnumMember(Value = "pipeline-error-playht-504-gateway-error")]
     PipelineErrorPlayht504GatewayError,
 
+    [EnumMember(Value = "pipeline-error-tavus-video-failed")]
+    PipelineErrorTavusVideoFailed,
+
+    [EnumMember(Value = "pipeline-error-custom-transcriber-failed")]
+    PipelineErrorCustomTranscriberFailed,
+
     [EnumMember(Value = "pipeline-error-deepgram-returning-403-model-access-denied")]
     PipelineErrorDeepgramReturning403ModelAccessDenied,
 
@@ -571,12 +622,6 @@ public enum CallEndedReason
 
     [EnumMember(Value = "pipeline-error-deepgram-returning-502-bad-gateway-ehostunreach")]
     PipelineErrorDeepgramReturning502BadGatewayEhostunreach,
-
-    [EnumMember(Value = "pipeline-error-tavus-video-failed")]
-    PipelineErrorTavusVideoFailed,
-
-    [EnumMember(Value = "pipeline-error-custom-transcriber-failed")]
-    PipelineErrorCustomTranscriberFailed,
 
     [EnumMember(Value = "silence-timed-out")]
     SilenceTimedOut,

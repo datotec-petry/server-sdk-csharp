@@ -8,12 +8,6 @@ namespace Vapi.Net;
 public record CreateXAiCredentialDto
 {
     /// <summary>
-    /// This is the api key for Grok in XAi's console. Get it from here: https://console.x.ai
-    /// </summary>
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
-    /// <summary>
     /// This is not returned in the API.
     /// </summary>
     [JsonPropertyName("apiKey")]

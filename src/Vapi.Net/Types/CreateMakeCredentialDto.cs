@@ -7,9 +7,6 @@ namespace Vapi.Net;
 
 public record CreateMakeCredentialDto
 {
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
     /// <summary>
     /// Team ID
     /// </summary>

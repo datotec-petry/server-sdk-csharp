@@ -224,11 +224,12 @@ public partial class KnowledgeBasesClient
 
     /// <example>
     /// <code>
-    /// await client.KnowledgeBases.UpdateAsync("id");
+    /// await client.KnowledgeBases.UpdateAsync("id", new UpdateCustomKnowledgeBaseDto());
     /// </code>
     /// </example>
     public async Task<object> UpdateAsync(
         string id,
+        object request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )
@@ -239,6 +240,8 @@ public partial class KnowledgeBasesClient
                 BaseUrl = _client.Options.BaseUrl,
                 Method = HttpMethodExtensions.Patch,
                 Path = $"knowledge-base/{id}",
+                Body = request,
+                ContentType = "application/json",
                 Options = options,
             },
             cancellationToken

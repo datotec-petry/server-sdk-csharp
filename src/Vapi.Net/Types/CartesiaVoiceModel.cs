@@ -14,4 +14,10 @@ public enum CartesiaVoiceModel
 
     [EnumMember(Value = "sonic-multilingual")]
     SonicMultilingual,
+
+    [EnumMember(Value = "sonic-preview")]
+    SonicPreview,
+
+    [EnumMember(Value = "sonic")]
+    Sonic,
 }

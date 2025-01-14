@@ -122,7 +122,7 @@ public record Subscription
     public string? StripePaymentMethodFingerprint { get; set; }
 
     /// <summary>
-    /// This is the stripe customer's email.
+    /// This is the customer's email on Stripe.
     /// </summary>
     [JsonPropertyName("stripeCustomerEmail")]
     public string? StripeCustomerEmail { get; set; }

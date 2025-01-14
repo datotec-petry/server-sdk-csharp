@@ -28,16 +28,24 @@ public record TransferPlan
     /// This is the message the assistant will deliver to the destination party before connecting the customer.
     ///
     /// Usage:
-    /// - Used only when `mode` is `warm-transfer-say-message` or `warm-transfer-wait-for-operator-to-speak-first-and-then-say-message`.
+    /// - Used only when `mode` is `blind-transfer-add-summary-to-sip-header`, `warm-transfer-say-message` or `warm-transfer-wait-for-operator-to-speak-first-and-then-say-message`.
     /// </summary>
     [JsonPropertyName("message")]
     public OneOf<string, CustomMessage>? Message { get; set; }
 
     /// <summary>
+    /// This specifies the SIP verb to use while transferring the call.
+    /// - 'refer': Uses SIP REFER to transfer the call (default)
+    /// - 'bye': Ends current call with SIP BYE
+    /// </summary>
+    [JsonPropertyName("sipVerb")]
+    public object? SipVerb { get; set; }
+
+    /// <summary>
     /// This is the plan for generating a summary of the call to present to the destination party.
     ///
     /// Usage:
-    /// - Used only when `mode` is `warm-transfer-say-summary` or `warm-transfer-wait-for-operator-to-speak-first-and-then-say-summary`.
+    /// - Used only when `mode` is `blind-transfer-add-summary-to-sip-header` or `warm-transfer-say-summary` or `warm-transfer-wait-for-operator-to-speak-first-and-then-say-summary`.
     /// </summary>
     [JsonPropertyName("summaryPlan")]
     public SummaryPlan? SummaryPlan { get; set; }

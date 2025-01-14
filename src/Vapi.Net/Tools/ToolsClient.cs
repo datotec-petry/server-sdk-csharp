@@ -229,12 +229,12 @@ public partial class ToolsClient
 
     /// <example>
     /// <code>
-    /// await client.Tools.UpdateAsync("id", new UpdateToolDto());
+    /// await client.Tools.UpdateAsync("id", new UpdateTextEditorToolDto { Async = false });
     /// </code>
     /// </example>
     public async Task<object> UpdateAsync(
         string id,
-        UpdateToolDto request,
+        object request,
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
     )

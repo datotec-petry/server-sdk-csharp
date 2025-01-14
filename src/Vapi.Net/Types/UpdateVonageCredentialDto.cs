@@ -7,23 +7,20 @@ namespace Vapi.Net;
 
 public record UpdateVonageCredentialDto
 {
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
     /// <summary>
     /// This is not returned in the API.
     /// </summary>
     [JsonPropertyName("apiSecret")]
-    public required string ApiSecret { get; set; }
-
-    [JsonPropertyName("apiKey")]
-    public required string ApiKey { get; set; }
+    public string? ApiSecret { get; set; }
 
     /// <summary>
     /// This is the name of credential. This is just for your reference.
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
+
+    [JsonPropertyName("apiKey")]
+    public string? ApiKey { get; set; }
 
     public override string ToString()
     {

@@ -113,6 +113,12 @@ public record AssistantOverrides
     public IEnumerable<TransportConfigurationTwilio>? TransportConfigurations { get; set; }
 
     /// <summary>
+    /// These are dynamic credentials that will be used for the assistant calls. By default, all the credentials are available for use in the call but you can supplement an additional credentials using this. Dynamic credentials override existing credentials.
+    /// </summary>
+    [JsonPropertyName("credentials")]
+    public IEnumerable<object>? Credentials { get; set; }
+
+    /// <summary>
     /// These are values that will be used to replace the template variables in the assistant messages and other text-based fields.
     /// This uses LiquidJS syntax. https://liquidjs.com/tutorials/intro-to-liquid.html
     ///

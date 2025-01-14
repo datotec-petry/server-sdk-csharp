@@ -7,14 +7,11 @@ namespace Vapi.Net;
 
 public record UpdateLmntCredentialDto
 {
-    [JsonPropertyName("provider")]
-    public required string Provider { get; set; }
-
     /// <summary>
     /// This is not returned in the API.
     /// </summary>
     [JsonPropertyName("apiKey")]
-    public required string ApiKey { get; set; }
+    public string? ApiKey { get; set; }
 
     /// <summary>
     /// This is the name of credential. This is just for your reference.

@@ -18,6 +18,12 @@ public enum ElevenLabsVoiceModel
     [EnumMember(Value = "eleven_turbo_v2_5")]
     ElevenTurboV25,
 
+    [EnumMember(Value = "eleven_flash_v2")]
+    ElevenFlashV2,
+
+    [EnumMember(Value = "eleven_flash_v2_5")]
+    ElevenFlashV25,
+
     [EnumMember(Value = "eleven_monolingual_v1")]
     ElevenMonolingualV1,
 }

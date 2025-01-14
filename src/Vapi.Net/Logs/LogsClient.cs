@@ -1,6 +1,7 @@
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
+using System.Threading.Tasks;
 using Vapi.Net.Core;
 
 #nullable enable
@@ -48,6 +49,67 @@ public partial class LogsClient
             null
         );
         return pager;
+    }
+
+    /// <example>
+    /// <code>
+    /// await client.Logs.LoggingControllerLogsDeleteQueryAsync(
+    ///     new LoggingControllerLogsDeleteQueryRequest()
+    /// );
+    /// </code>
+    /// </example>
+    public async Task LoggingControllerLogsDeleteQueryAsync(
+        LoggingControllerLogsDeleteQueryRequest request,
+        RequestOptions? options = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var _query = new Dictionary<string, object>();
+        if (request.OrgId != null)
+        {
+            _query["orgId"] = request.OrgId;
+        }
+        if (request.AssistantId != null)
+        {
+            _query["assistantId"] = request.AssistantId;
+        }
+        if (request.PhoneNumberId != null)
+        {
+            _query["phoneNumberId"] = request.PhoneNumberId;
+        }
+        if (request.CustomerId != null)
+        {
+            _query["customerId"] = request.CustomerId;
+        }
+        if (request.SquadId != null)
+        {
+            _query["squadId"] = request.SquadId;
+        }
+        if (request.CallId != null)
+        {
+            _query["callId"] = request.CallId;
+        }
+        var response = await _client.MakeRequestAsync(
+            new RawClient.JsonApiRequest
+            {
+                BaseUrl = _client.Options.BaseUrl,
+                Method = HttpMethod.Delete,
+                Path = "logs",
+                Query = _query,
+                Options = options,
+            },
+            cancellationToken
+        );
+        if (response.StatusCode is >= 200 and < 400)
+        {
+            return;
+        }
+        var responseBody = await response.Raw.Content.ReadAsStringAsync();
+        throw new VapiClientApiException(
+            $"Error with status code {response.StatusCode}",
+            response.StatusCode,
+            responseBody
+        );
     }
 
     internal async Task<LogsPaginatedResponse> GetAsync(

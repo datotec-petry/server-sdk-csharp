@@ -9,6 +9,12 @@ namespace Vapi.Net;
 [JsonConverter(typeof(EnumSerializer<GoogleModelModel>))]
 public enum GoogleModelModel
 {
+    [EnumMember(Value = "gemini-2.0-flash-exp")]
+    Gemini20FlashExp,
+
+    [EnumMember(Value = "gemini-2.0-flash-realtime-exp")]
+    Gemini20FlashRealtimeExp,
+
     [EnumMember(Value = "gemini-1.5-flash")]
     Gemini15Flash,
 

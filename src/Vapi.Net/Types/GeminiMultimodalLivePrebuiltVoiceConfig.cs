@@ -5,13 +5,10 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-public record PaymentRetryDto
+public record GeminiMultimodalLivePrebuiltVoiceConfig
 {
-    /// <summary>
-    /// This is the payment ID to retry.
-    /// </summary>
-    [JsonPropertyName("paymentId")]
-    public required string PaymentId { get; set; }
+    [JsonPropertyName("voiceName")]
+    public required GeminiMultimodalLivePrebuiltVoiceConfigVoiceName VoiceName { get; set; }
 
     public override string ToString()
     {
