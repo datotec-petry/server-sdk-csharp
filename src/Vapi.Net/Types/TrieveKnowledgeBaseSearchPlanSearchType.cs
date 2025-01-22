@@ -6,8 +6,8 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-[JsonConverter(typeof(EnumSerializer<TrieveKnowledgeBaseVectorStoreSearchPlanSearchType>))]
-public enum TrieveKnowledgeBaseVectorStoreSearchPlanSearchType
+[JsonConverter(typeof(EnumSerializer<TrieveKnowledgeBaseSearchPlanSearchType>))]
+public enum TrieveKnowledgeBaseSearchPlanSearchType
 {
     [EnumMember(Value = "fulltext")]
     Fulltext,

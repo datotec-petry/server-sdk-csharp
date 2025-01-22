@@ -16,11 +16,6 @@ public partial class CallsClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Calls.ListAsync(new CallsListRequest());
-    /// </code>
-    /// </example>
     public async Task<IEnumerable<Call>> ListAsync(
         CallsListRequest request,
         RequestOptions? options = null,
@@ -107,11 +102,6 @@ public partial class CallsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Calls.CreateAsync(new CreateCallDto());
-    /// </code>
-    /// </example>
     public async Task<Call> CreateAsync(
         CreateCallDto request,
         RequestOptions? options = null,
@@ -150,11 +140,6 @@ public partial class CallsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Calls.GetAsync("id");
-    /// </code>
-    /// </example>
     public async Task<Call> GetAsync(
         string id,
         RequestOptions? options = null,
@@ -191,11 +176,6 @@ public partial class CallsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Calls.DeleteAsync("id");
-    /// </code>
-    /// </example>
     public async Task<Call> DeleteAsync(
         string id,
         RequestOptions? options = null,
@@ -232,11 +212,6 @@ public partial class CallsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Calls.UpdateAsync("id", new UpdateCallDto());
-    /// </code>
-    /// </example>
     public async Task<Call> UpdateAsync(
         string id,
         UpdateCallDto request,

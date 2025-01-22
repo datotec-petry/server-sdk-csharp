@@ -27,12 +27,6 @@ public record FunctionToolWithToolCall
     [JsonPropertyName("messages")]
     public IEnumerable<object>? Messages { get; set; }
 
-    /// <summary>
-    /// The type of tool. "function" for Function tool.
-    /// </summary>
-    [JsonPropertyName("type")]
-    public required string Type { get; set; }
-
     [JsonPropertyName("toolCall")]
     public required ToolCall ToolCall { get; set; }
 

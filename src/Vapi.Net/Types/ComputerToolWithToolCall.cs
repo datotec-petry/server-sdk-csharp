@@ -5,7 +5,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-public record GhlToolWithToolCall
+public record ComputerToolWithToolCall
 {
     /// <summary>
     /// This determines if the tool is async.
@@ -27,11 +27,38 @@ public record GhlToolWithToolCall
     [JsonPropertyName("messages")]
     public IEnumerable<object>? Messages { get; set; }
 
+    /// <summary>
+    /// The sub type of tool.
+    /// </summary>
+    [JsonPropertyName("subType")]
+    public required string SubType { get; set; }
+
     [JsonPropertyName("toolCall")]
     public required ToolCall ToolCall { get; set; }
 
-    [JsonPropertyName("metadata")]
-    public required GhlToolMetadata Metadata { get; set; }
+    /// <summary>
+    /// The name of the tool, fixed to 'computer'
+    /// </summary>
+    [JsonPropertyName("name")]
+    public required string Name { get; set; }
+
+    /// <summary>
+    /// The display width in pixels
+    /// </summary>
+    [JsonPropertyName("displayWidthPx")]
+    public required double DisplayWidthPx { get; set; }
+
+    /// <summary>
+    /// The display height in pixels
+    /// </summary>
+    [JsonPropertyName("displayHeightPx")]
+    public required double DisplayHeightPx { get; set; }
+
+    /// <summary>
+    /// Optional display number
+    /// </summary>
+    [JsonPropertyName("displayNumber")]
+    public double? DisplayNumber { get; set; }
 
     /// <summary>
     /// This is the function definition of the tool.

@@ -16,11 +16,6 @@ public partial class AssistantsClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Assistants.ListAsync(new AssistantsListRequest());
-    /// </code>
-    /// </example>
     public async Task<IEnumerable<Assistant>> ListAsync(
         AssistantsListRequest request,
         RequestOptions? options = null,
@@ -95,11 +90,6 @@ public partial class AssistantsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Assistants.CreateAsync(new CreateAssistantDto());
-    /// </code>
-    /// </example>
     public async Task<Assistant> CreateAsync(
         CreateAssistantDto request,
         RequestOptions? options = null,
@@ -138,11 +128,6 @@ public partial class AssistantsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Assistants.GetAsync("id");
-    /// </code>
-    /// </example>
     public async Task<Assistant> GetAsync(
         string id,
         RequestOptions? options = null,
@@ -179,11 +164,6 @@ public partial class AssistantsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Assistants.DeleteAsync("id");
-    /// </code>
-    /// </example>
     public async Task<Assistant> DeleteAsync(
         string id,
         RequestOptions? options = null,
@@ -220,11 +200,6 @@ public partial class AssistantsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Assistants.UpdateAsync("id", new UpdateAssistantDto());
-    /// </code>
-    /// </example>
     public async Task<Assistant> UpdateAsync(
         string id,
         UpdateAssistantDto request,

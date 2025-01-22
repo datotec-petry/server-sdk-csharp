@@ -5,7 +5,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-public record TrieveKnowledgeBaseVectorStoreSearchPlan
+public record TrieveKnowledgeBaseSearchPlan
 {
     /// <summary>
     /// If true, stop words (specified in server/src/stop-words.txt in the git repo) will be removed. This will preserve queries that are entirely stop words.
@@ -23,7 +23,7 @@ public record TrieveKnowledgeBaseVectorStoreSearchPlan
     /// This is the search method used when searching for relevant chunks from the vector store.
     /// </summary>
     [JsonPropertyName("searchType")]
-    public required TrieveKnowledgeBaseVectorStoreSearchPlanSearchType SearchType { get; set; }
+    public required TrieveKnowledgeBaseSearchPlanSearchType SearchType { get; set; }
 
     public override string ToString()
     {

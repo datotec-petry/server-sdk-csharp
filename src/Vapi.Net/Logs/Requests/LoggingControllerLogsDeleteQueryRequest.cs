@@ -7,13 +7,10 @@ namespace Vapi.Net;
 public record LoggingControllerLogsDeleteQueryRequest
 {
     /// <summary>
-    /// This is the unique identifier for the org that this log belongs to.
+    /// This is the type of the log.
     /// </summary>
-    public string? OrgId { get; set; }
+    public LoggingControllerLogsDeleteQueryRequestType? Type { get; set; }
 
-    /// <summary>
-    /// This is the ID of the assistant.
-    /// </summary>
     public string? AssistantId { get; set; }
 
     /// <summary>

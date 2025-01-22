@@ -1,0 +1,23 @@
+using System.Text.Json.Serialization;
+using Vapi.Net.Core;
+
+#nullable enable
+
+namespace Vapi.Net;
+
+public record Say
+{
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
+
+    [JsonPropertyName("instruction")]
+    public required string Instruction { get; set; }
+
+    [JsonPropertyName("name")]
+    public required string Name { get; set; }
+
+    public override string ToString()
+    {
+        return JsonUtils.Serialize(this);
+    }
+}

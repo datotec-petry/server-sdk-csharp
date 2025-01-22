@@ -7,11 +7,6 @@ namespace Vapi.Net;
 public record LogsGetRequest
 {
     /// <summary>
-    /// This is the unique identifier for the org that this log belongs to.
-    /// </summary>
-    public string? OrgId { get; set; }
-
-    /// <summary>
     /// This is the type of the log.
     /// </summary>
     public LogsGetRequestType? Type { get; set; }

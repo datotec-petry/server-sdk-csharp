@@ -47,10 +47,10 @@ public record Subscription
     public required string Credits { get; set; }
 
     /// <summary>
-    /// This is the total concurrency limit for the subscription.
+    /// This is the total number of active calls (concurrency) across all orgs under this subscription.
     /// </summary>
-    [JsonPropertyName("concurrencyLimit")]
-    public required double ConcurrencyLimit { get; set; }
+    [JsonPropertyName("concurrencyCounter")]
+    public required double ConcurrencyCounter { get; set; }
 
     /// <summary>
     /// This is the default concurrency limit for the subscription.

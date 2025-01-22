@@ -16,11 +16,6 @@ public partial class BlocksClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Blocks.ListAsync(new BlocksListRequest());
-    /// </code>
-    /// </example>
     public async Task<IEnumerable<object>> ListAsync(
         BlocksListRequest request,
         RequestOptions? options = null,
@@ -95,11 +90,6 @@ public partial class BlocksClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Blocks.CreateAsync(new CreateWorkflowBlockDto());
-    /// </code>
-    /// </example>
     public async Task<object> CreateAsync(
         object request,
         RequestOptions? options = null,
@@ -138,11 +128,6 @@ public partial class BlocksClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Blocks.GetAsync("id");
-    /// </code>
-    /// </example>
     public async Task<object> GetAsync(
         string id,
         RequestOptions? options = null,
@@ -179,11 +164,6 @@ public partial class BlocksClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Blocks.DeleteAsync("id");
-    /// </code>
-    /// </example>
     public async Task<object> DeleteAsync(
         string id,
         RequestOptions? options = null,
@@ -220,11 +200,6 @@ public partial class BlocksClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Blocks.UpdateAsync("id", new UpdateWorkflowBlockDto());
-    /// </code>
-    /// </example>
     public async Task<object> UpdateAsync(
         string id,
         object request,

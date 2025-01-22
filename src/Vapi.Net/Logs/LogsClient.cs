@@ -17,11 +17,6 @@ public partial class LogsClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Logs.GetAsync(new LogsGetRequest());
-    /// </code>
-    /// </example>
     public Pager<Log> GetAsync(LogsGetRequest request, RequestOptions? options = null)
     {
         if (request is not null)
@@ -51,13 +46,6 @@ public partial class LogsClient
         return pager;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Logs.LoggingControllerLogsDeleteQueryAsync(
-    ///     new LoggingControllerLogsDeleteQueryRequest()
-    /// );
-    /// </code>
-    /// </example>
     public async Task LoggingControllerLogsDeleteQueryAsync(
         LoggingControllerLogsDeleteQueryRequest request,
         RequestOptions? options = null,
@@ -65,9 +53,9 @@ public partial class LogsClient
     )
     {
         var _query = new Dictionary<string, object>();
-        if (request.OrgId != null)
+        if (request.Type != null)
         {
-            _query["orgId"] = request.OrgId;
+            _query["type"] = request.Type.Value.Stringify();
         }
         if (request.AssistantId != null)
         {
@@ -119,10 +107,6 @@ public partial class LogsClient
     )
     {
         var _query = new Dictionary<string, object>();
-        if (request.OrgId != null)
-        {
-            _query["orgId"] = request.OrgId;
-        }
         if (request.Type != null)
         {
             _query["type"] = request.Type.Value.Stringify();

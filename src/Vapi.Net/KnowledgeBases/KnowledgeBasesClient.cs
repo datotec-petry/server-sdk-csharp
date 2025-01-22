@@ -16,11 +16,6 @@ public partial class KnowledgeBasesClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.KnowledgeBases.ListAsync(new KnowledgeBasesListRequest());
-    /// </code>
-    /// </example>
     public async Task<IEnumerable<object>> ListAsync(
         KnowledgeBasesListRequest request,
         RequestOptions? options = null,
@@ -95,13 +90,6 @@ public partial class KnowledgeBasesClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.KnowledgeBases.CreateAsync(
-    ///     new CreateCustomKnowledgeBaseDto { Server = new Server { Url = "url" } }
-    /// );
-    /// </code>
-    /// </example>
     public async Task<object> CreateAsync(
         object request,
         RequestOptions? options = null,
@@ -140,11 +128,6 @@ public partial class KnowledgeBasesClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.KnowledgeBases.GetAsync("id");
-    /// </code>
-    /// </example>
     public async Task<object> GetAsync(
         string id,
         RequestOptions? options = null,
@@ -181,11 +164,6 @@ public partial class KnowledgeBasesClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.KnowledgeBases.DeleteAsync("id");
-    /// </code>
-    /// </example>
     public async Task<object> DeleteAsync(
         string id,
         RequestOptions? options = null,
@@ -222,11 +200,6 @@ public partial class KnowledgeBasesClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.KnowledgeBases.UpdateAsync("id", new UpdateCustomKnowledgeBaseDto());
-    /// </code>
-    /// </example>
     public async Task<object> UpdateAsync(
         string id,
         object request,

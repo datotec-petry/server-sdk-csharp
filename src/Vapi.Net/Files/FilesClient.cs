@@ -16,11 +16,6 @@ public partial class FilesClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Files.ListAsync();
-    /// </code>
-    /// </example>
     public async Task<IEnumerable<File>> ListAsync(
         RequestOptions? options = null,
         CancellationToken cancellationToken = default
@@ -104,11 +99,6 @@ public partial class FilesClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Files.GetAsync("id");
-    /// </code>
-    /// </example>
     public async Task<File> GetAsync(
         string id,
         RequestOptions? options = null,
@@ -145,11 +135,6 @@ public partial class FilesClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Files.DeleteAsync("id");
-    /// </code>
-    /// </example>
     public async Task<File> DeleteAsync(
         string id,
         RequestOptions? options = null,
@@ -186,11 +171,6 @@ public partial class FilesClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Files.UpdateAsync("id", new UpdateFileDto());
-    /// </code>
-    /// </example>
     public async Task<File> UpdateAsync(
         string id,
         UpdateFileDto request,

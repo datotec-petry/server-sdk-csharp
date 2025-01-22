@@ -5,13 +5,19 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-public record TrieveKnowledgeBaseVectorStoreCreatePlan
+public record TrieveKnowledgeBaseChunkPlan
 {
     /// <summary>
     /// These are the file ids that will be used to create the vector store. To upload files, use the `POST /files` endpoint.
     /// </summary>
     [JsonPropertyName("fileIds")]
-    public IEnumerable<string> FileIds { get; set; } = new List<string>();
+    public IEnumerable<string>? FileIds { get; set; }
+
+    /// <summary>
+    /// These are the websites that will be used to create the vector store.
+    /// </summary>
+    [JsonPropertyName("websites")]
+    public IEnumerable<string>? Websites { get; set; }
 
     /// <summary>
     /// This is an optional field which allows you to specify the number of splits you want per chunk. If not specified, the default 20 is used. However, you may want to use a different number.

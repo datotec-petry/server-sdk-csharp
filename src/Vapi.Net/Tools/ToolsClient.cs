@@ -16,11 +16,6 @@ public partial class ToolsClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Tools.ListAsync(new ToolsListRequest());
-    /// </code>
-    /// </example>
     public async Task<IEnumerable<object>> ListAsync(
         ToolsListRequest request,
         RequestOptions? options = null,
@@ -95,18 +90,6 @@ public partial class ToolsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Tools.CreateAsync(
-    ///     new CreateTextEditorToolDto
-    ///     {
-    ///         Async = false,
-    ///         SubType = "text_editor_20241022",
-    ///         Name = "str_replace_editor",
-    ///     }
-    /// );
-    /// </code>
-    /// </example>
     public async Task<object> CreateAsync(
         object request,
         RequestOptions? options = null,
@@ -145,11 +128,6 @@ public partial class ToolsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Tools.GetAsync("id");
-    /// </code>
-    /// </example>
     public async Task<object> GetAsync(
         string id,
         RequestOptions? options = null,
@@ -186,11 +164,6 @@ public partial class ToolsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Tools.DeleteAsync("id");
-    /// </code>
-    /// </example>
     public async Task<object> DeleteAsync(
         string id,
         RequestOptions? options = null,
@@ -227,11 +200,6 @@ public partial class ToolsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Tools.UpdateAsync("id", new UpdateTextEditorToolDto { Async = false });
-    /// </code>
-    /// </example>
     public async Task<object> UpdateAsync(
         string id,
         object request,

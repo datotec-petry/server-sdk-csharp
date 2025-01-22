@@ -14,26 +14,20 @@ public record CreateTrieveKnowledgeBaseDto
     public string? Name { get; set; }
 
     /// <summary>
-    /// This is the plan on how to search the vector store while a call is going on.
-    /// </summary>
-    [JsonPropertyName("vectorStoreSearchPlan")]
-    public required TrieveKnowledgeBaseVectorStoreSearchPlan VectorStoreSearchPlan { get; set; }
-
-    /// <summary>
-    /// This is the plan if you want us to create a new vector store on your behalf. To use an existing vector store from your account, use `vectoreStoreProviderId`
-    /// </summary>
-    [JsonPropertyName("vectorStoreCreatePlan")]
-    public TrieveKnowledgeBaseVectorStoreCreatePlan? VectorStoreCreatePlan { get; set; }
-
-    /// <summary>
-    /// This is an vector store that you already have on your account with the provider. To create a new vector store, use vectorStoreCreatePlan.
+    /// This is the searching plan used when searching for relevant chunks from the vector store.
     ///
-    /// Usage:
-    /// - To bring your own vector store from Trieve, go to https://trieve.ai
-    /// - Create a dataset, and use the datasetId here.
+    /// You should configure this if you're running into these issues:
+    /// - Too much unnecessary context is being fed as knowledge base context.
+    /// - Not enough relevant context is being fed as knowledge base context.
     /// </summary>
-    [JsonPropertyName("vectorStoreProviderId")]
-    public string? VectorStoreProviderId { get; set; }
+    [JsonPropertyName("searchPlan")]
+    public TrieveKnowledgeBaseSearchPlan? SearchPlan { get; set; }
+
+    /// <summary>
+    /// This is the plan if you want us to create/import a new vector store using Trieve.
+    /// </summary>
+    [JsonPropertyName("createPlan")]
+    public object? CreatePlan { get; set; }
 
     public override string ToString()
     {

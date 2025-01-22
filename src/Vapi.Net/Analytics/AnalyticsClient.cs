@@ -16,11 +16,6 @@ public partial class AnalyticsClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Analytics.GetAsync();
-    /// </code>
-    /// </example>
     public async Task GetAsync(
         RequestOptions? options = null,
         CancellationToken cancellationToken = default

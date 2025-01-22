@@ -45,6 +45,18 @@ public record VapiModel
     public IEnumerable<object>? Steps { get; set; }
 
     /// <summary>
+    /// This is the workflow that will be used for the call. To use a transient workflow, use `workflow` instead.
+    /// </summary>
+    [JsonPropertyName("workflowId")]
+    public string? WorkflowId { get; set; }
+
+    /// <summary>
+    /// This is the workflow that will be used for the call. To use an existing workflow, use `workflowId` instead.
+    /// </summary>
+    [JsonPropertyName("workflow")]
+    public Workflow? Workflow { get; set; }
+
+    /// <summary>
     /// This is the name of the model. Ex. cognitivecomputations/dolphin-mixtral-8x7b
     /// </summary>
     [JsonPropertyName("model")]

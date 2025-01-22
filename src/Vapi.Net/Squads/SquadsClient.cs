@@ -16,11 +16,6 @@ public partial class SquadsClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Squads.ListAsync(new SquadsListRequest());
-    /// </code>
-    /// </example>
     public async Task<IEnumerable<Squad>> ListAsync(
         SquadsListRequest request,
         RequestOptions? options = null,
@@ -95,13 +90,6 @@ public partial class SquadsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Squads.CreateAsync(
-    ///     new CreateSquadDto { Members = new List&lt;SquadMemberDto&gt;() { new SquadMemberDto() } }
-    /// );
-    /// </code>
-    /// </example>
     public async Task<Squad> CreateAsync(
         CreateSquadDto request,
         RequestOptions? options = null,
@@ -140,11 +128,6 @@ public partial class SquadsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Squads.GetAsync("id");
-    /// </code>
-    /// </example>
     public async Task<Squad> GetAsync(
         string id,
         RequestOptions? options = null,
@@ -181,11 +164,6 @@ public partial class SquadsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Squads.DeleteAsync("id");
-    /// </code>
-    /// </example>
     public async Task<Squad> DeleteAsync(
         string id,
         RequestOptions? options = null,
@@ -222,14 +200,6 @@ public partial class SquadsClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.Squads.UpdateAsync(
-    ///     "id",
-    ///     new UpdateSquadDto { Members = new List&lt;SquadMemberDto&gt;() { new SquadMemberDto() } }
-    /// );
-    /// </code>
-    /// </example>
     public async Task<Squad> UpdateAsync(
         string id,
         UpdateSquadDto request,

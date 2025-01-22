@@ -8,7 +8,6 @@ namespace Vapi.Net;
 public record UpdateCustomKnowledgeBaseDto
 {
     /// <summary>
-    /// /**
     /// This is where the knowledge base request will be sent.
     ///
     /// Request Example:

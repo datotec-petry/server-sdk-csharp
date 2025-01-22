@@ -16,11 +16,6 @@ public partial class PhoneNumbersClient
         _client = client;
     }
 
-    /// <example>
-    /// <code>
-    /// await client.PhoneNumbers.ListAsync(new PhoneNumbersListRequest());
-    /// </code>
-    /// </example>
     public async Task<IEnumerable<object>> ListAsync(
         PhoneNumbersListRequest request,
         RequestOptions? options = null,
@@ -95,11 +90,6 @@ public partial class PhoneNumbersClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.PhoneNumbers.CreateAsync(new CreateVapiPhoneNumberDto { SipUri = "string" });
-    /// </code>
-    /// </example>
     public async Task<object> CreateAsync(
         object request,
         RequestOptions? options = null,
@@ -138,11 +128,6 @@ public partial class PhoneNumbersClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.PhoneNumbers.GetAsync("id");
-    /// </code>
-    /// </example>
     public async Task<object> GetAsync(
         string id,
         RequestOptions? options = null,
@@ -179,11 +164,6 @@ public partial class PhoneNumbersClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.PhoneNumbers.DeleteAsync("id");
-    /// </code>
-    /// </example>
     public async Task<object> DeleteAsync(
         string id,
         RequestOptions? options = null,
@@ -220,11 +200,6 @@ public partial class PhoneNumbersClient
         );
     }
 
-    /// <example>
-    /// <code>
-    /// await client.PhoneNumbers.UpdateAsync("id", new UpdateVapiPhoneNumberDto());
-    /// </code>
-    /// </example>
     public async Task<object> UpdateAsync(
         string id,
         object request,

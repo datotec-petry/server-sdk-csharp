@@ -5,7 +5,7 @@ using Vapi.Net.Core;
 
 namespace Vapi.Net;
 
-public record GhlToolWithToolCall
+public record BashToolWithToolCall
 {
     /// <summary>
     /// This determines if the tool is async.
@@ -27,11 +27,20 @@ public record GhlToolWithToolCall
     [JsonPropertyName("messages")]
     public IEnumerable<object>? Messages { get; set; }
 
+    /// <summary>
+    /// The sub type of tool.
+    /// </summary>
+    [JsonPropertyName("subType")]
+    public required string SubType { get; set; }
+
     [JsonPropertyName("toolCall")]
     public required ToolCall ToolCall { get; set; }
 
-    [JsonPropertyName("metadata")]
-    public required GhlToolMetadata Metadata { get; set; }
+    /// <summary>
+    /// The name of the tool, fixed to 'bash'
+    /// </summary>
+    [JsonPropertyName("name")]
+    public required string Name { get; set; }
 
     /// <summary>
     /// This is the function definition of the tool.

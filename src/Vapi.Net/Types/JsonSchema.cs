@@ -51,6 +51,12 @@ public record JsonSchema
     [JsonPropertyName("required")]
     public IEnumerable<string>? Required { get; set; }
 
+    /// <summary>
+    /// This array specifies the allowed values that can be used to restrict the output of the model.
+    /// </summary>
+    [JsonPropertyName("enum")]
+    public IEnumerable<string>? Enum { get; set; }
+
     public override string ToString()
     {
         return JsonUtils.Serialize(this);

@@ -41,43 +41,43 @@ public record Log
     /// 'This is how long the request took.
     /// </summary>
     [JsonPropertyName("requestDurationSeconds")]
-    public required double RequestDurationSeconds { get; set; }
+    public double? RequestDurationSeconds { get; set; }
 
     /// <summary>
     /// This is the timestamp at which the request began.
     /// </summary>
     [JsonPropertyName("requestStartedAt")]
-    public required string RequestStartedAt { get; set; }
+    public string? RequestStartedAt { get; set; }
 
     /// <summary>
     /// This is the timestamp at which the request finished.
     /// </summary>
     [JsonPropertyName("requestFinishedAt")]
-    public required string RequestFinishedAt { get; set; }
+    public string? RequestFinishedAt { get; set; }
 
     /// <summary>
     /// This is the body of the request.
     /// </summary>
     [JsonPropertyName("requestBody")]
-    public object RequestBody { get; set; } = new Dictionary<string, object?>();
+    public object? RequestBody { get; set; }
 
     /// <summary>
     /// This is the request method.
     /// </summary>
     [JsonPropertyName("requestHttpMethod")]
-    public required LogRequestHttpMethod RequestHttpMethod { get; set; }
+    public LogRequestHttpMethod? RequestHttpMethod { get; set; }
 
     /// <summary>
     /// This is the request URL.
     /// </summary>
     [JsonPropertyName("requestUrl")]
-    public required string RequestUrl { get; set; }
+    public string? RequestUrl { get; set; }
 
     /// <summary>
     /// This is the request path.
     /// </summary>
     [JsonPropertyName("requestPath")]
-    public required string RequestPath { get; set; }
+    public string? RequestPath { get; set; }
 
     /// <summary>
     /// This is the request query.
@@ -89,7 +89,7 @@ public record Log
     /// This the HTTP status code of the response.
     /// </summary>
     [JsonPropertyName("responseHttpCode")]
-    public required double ResponseHttpCode { get; set; }
+    public double? ResponseHttpCode { get; set; }
 
     /// <summary>
     /// This is the request IP address.

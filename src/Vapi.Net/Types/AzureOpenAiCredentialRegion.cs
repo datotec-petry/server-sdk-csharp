@@ -12,8 +12,11 @@ public enum AzureOpenAiCredentialRegion
     [EnumMember(Value = "australia")]
     Australia,
 
-    [EnumMember(Value = "canada")]
-    Canada,
+    [EnumMember(Value = "canadaeast")]
+    Canadaeast,
+
+    [EnumMember(Value = "canadacentral")]
+    Canadacentral,
 
     [EnumMember(Value = "eastus2")]
     Eastus2,
@@ -27,8 +30,11 @@ public enum AzureOpenAiCredentialRegion
     [EnumMember(Value = "india")]
     India,
 
-    [EnumMember(Value = "japan")]
-    Japan,
+    [EnumMember(Value = "japaneast")]
+    Japaneast,
+
+    [EnumMember(Value = "japanwest")]
+    Japanwest,
 
     [EnumMember(Value = "uaenorth")]
     Uaenorth,
