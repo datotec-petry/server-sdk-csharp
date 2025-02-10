@@ -49,7 +49,7 @@ public partial class CallsClient
         }
         if (request.CreatedAtGe != null)
         {
-            _query["createdAtGe"] = request.CreatedAtGe.Value.ToString(Constants.DateTimeFormat);
+            _query["createdAtGe"] = request.CreatedAtGe.Value.ToString(Constants.DateTimeFormat).Replace("+", "%2b");
         }
         if (request.CreatedAtLe != null)
         {
