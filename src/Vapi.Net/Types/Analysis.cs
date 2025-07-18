@@ -23,7 +23,7 @@ public record Analysis
     /// This is the evaluation of the call. Customize by setting `assistant.analysisPlan.successEvaluationPrompt` and/or `assistant.analysisPlan.successEvaluationRubric`.
     /// </summary>
     [JsonPropertyName("successEvaluation")]
-    public string? SuccessEvaluation { get; set; }
+    public object? SuccessEvaluation { get; set; }
 
     public override string ToString()
     {
